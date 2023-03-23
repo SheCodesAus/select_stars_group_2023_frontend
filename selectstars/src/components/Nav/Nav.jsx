@@ -14,7 +14,9 @@ function Nav() {
 
     return (
         <nav className='main-nav-container'>
-            <img src="https://shecodes.com.au/wp-content/uploads/2020/02/Purple_no_circle.svg" alt="Help Me Go Logo" width="100" height="100"></img>
+            <Link to="/">
+                <img src="https://shecodes.com.au/wp-content/uploads/2020/02/Purple_no_circle.svg" alt="Logo" />
+            </Link>
             {isLoggedIn && (
                 <>
                     {/* <Link to="/" className="nav-item">Home</Link> */}

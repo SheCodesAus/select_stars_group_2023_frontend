@@ -6,8 +6,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import LoginForm from './components/LoginPage/loginform';
 import CreateUserForm from './components/CreateUserForm/CreateUserForm';
+
 import CreateEventForm from './components/CreateEventForm/createEventForm';
+
+import CreateMentorForm from './components/CreateMentorForm/createMentorForm';
+
 import Nav from './components/Nav/Nav';
+import HomePage from './components/HomePage/HomePage';
 
 const HeaderLayout = () => {
   return (
@@ -22,10 +27,10 @@ const router = createBrowserRouter([
   {
     element: <HeaderLayout />,
     children: [
-      // {
-      //   path: '/',
-      //   element: <HomePage />,
-      // },
+      {
+        path: '/',
+        element: <HomePage />,
+      },
       {
         path: '/login',
         element: <LoginForm />,
@@ -35,9 +40,15 @@ const router = createBrowserRouter([
         element: <CreateUserForm />,
       },
 
+
       {
         path: '/event',
         element: <CreateEventForm />,
+
+      {
+        path: '/mentor',
+        element: <CreateMentorForm />,
+
       },
     ]
   }
