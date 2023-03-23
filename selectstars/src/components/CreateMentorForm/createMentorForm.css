@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+}
+
+form {
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #8246ae;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mentor_details {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #8246ae;
+}
+
+input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f3f3f3;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #8246ae;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #f3279a;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 480px) {
+    form {
+        max-width: 100%;
+    }
+}
