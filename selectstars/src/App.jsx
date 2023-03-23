@@ -6,6 +6,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import LoginForm from './components/LoginPage/loginform';
 import CreateUserForm from './components/CreateUserForm/CreateUserForm';
+import CreateEventForm from './components/CreateEventForm/createEventForm';
 import Nav from './components/Nav/Nav';
 
 const HeaderLayout = () => {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <CreateUserForm />,
+      },
+
+      {
+        path: '/event',
+        element: <CreateEventForm />,
       },
     ]
   }
