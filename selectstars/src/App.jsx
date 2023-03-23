@@ -6,11 +6,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import LoginForm from './components/LoginPage/loginform';
 import CreateUserForm from './components/CreateUserForm/CreateUserForm';
-
 import CreateEventForm from './components/CreateEventForm/createEventForm';
-
 import CreateMentorForm from './components/CreateMentorForm/createMentorForm';
-
 import Nav from './components/Nav/Nav';
 import HomePage from './components/HomePage/HomePage';
 
@@ -44,6 +41,7 @@ const router = createBrowserRouter([
       {
         path: '/event',
         element: <CreateEventForm />,
+      },
 
       {
         path: '/mentor',
@@ -53,14 +51,14 @@ const router = createBrowserRouter([
     ]
   }
 
-])
+]);
 
 function App() {
 
   return (
     <RouterProvider router={router}></RouterProvider>
   )
-}
+};
 
 export default App
 
