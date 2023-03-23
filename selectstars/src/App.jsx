@@ -44,7 +44,8 @@ const router = createBrowserRouter([
       {
         path: '/event',
         element: <CreateEventForm />,
-
+      },
+      
       {
         path: '/mentor',
         element: <CreateMentorForm />,
