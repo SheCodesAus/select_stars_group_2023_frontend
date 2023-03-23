@@ -12,11 +12,11 @@ const LoginForm = () => {
     return (
         <div className="cover">
             <h1>Welcome!</h1>
-            <input type="text" placeholder="username"/>
-            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="username" />
+            <input type="password" placeholder="password" />
 
-            <div className="login-button"onClick={popup}>Login</div>
-            <div className="createAccount-button">Create an account</div>
+            <div className="login-button" onClick={popup}>Login</div>
+            {/* <div className="createAccount-button">Create an account</div> */}
 
             <div className={popupStyle}>
                 <h3>Login Failed</h3>
