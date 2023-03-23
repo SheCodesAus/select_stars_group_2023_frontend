@@ -8,6 +8,7 @@ import LoginForm from './components/LoginPage/loginform';
 import CreateUserForm from './components/CreateUserForm/CreateUserForm';
 import CreateMentorForm from './components/CreateMentorForm/createMentorForm';
 import Nav from './components/Nav/Nav';
+import HomePage from './components/HomePage/HomePage';
 
 const HeaderLayout = () => {
   return (
@@ -22,10 +23,10 @@ const router = createBrowserRouter([
   {
     element: <HeaderLayout />,
     children: [
-      // {
-      //   path: '/',
-      //   element: <HomePage />,
-      // },
+      {
+        path: '/',
+        element: <HomePage />,
+      },
       {
         path: '/login',
         element: <LoginForm />,
