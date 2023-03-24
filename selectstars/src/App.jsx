@@ -49,10 +49,15 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "/mentor/:id",
+        element: <mentorProfile />,
+      },
+
+      {
         path: '*',
         element: <NotFound />,
       },
-      
+  
     ]
 
   }
