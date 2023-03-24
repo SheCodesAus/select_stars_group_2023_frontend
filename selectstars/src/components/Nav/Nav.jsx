@@ -10,7 +10,11 @@ function Nav() {
     const logout = () => {
         localStorage.clear();
         window.location.href = '/';
-    }
+    };
+
+
+
+    //make the nav bar NOT show on the landing login page.
 
     return (
         <nav className='main-nav-container'>
@@ -26,12 +30,13 @@ function Nav() {
                 </>
             )}
             {!isLoggedIn && (
-                <>
+                <>   
                     <Link to="/login" className="nav-item">Login</Link>
                 </>
             )}
         </nav>
     );
-}
+};
 
 export default Nav;
+
