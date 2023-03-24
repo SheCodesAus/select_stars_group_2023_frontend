@@ -10,6 +10,7 @@ import CreateEventForm from './components/CreateEventForm/createEventForm';
 import CreateMentorForm from './components/CreateMentorForm/createMentorForm';
 import Nav from './components/Nav/Nav';
 import HomePage from './components/HomePage/HomePage';
+import NotFound from './components/Custom404/NotFound';
 
 const HeaderLayout = () => {
   return (
@@ -37,7 +38,6 @@ const router = createBrowserRouter([
         element: <CreateUserForm />,
       },
 
-
       {
         path: '/event',
         element: <CreateEventForm />,
@@ -45,10 +45,16 @@ const router = createBrowserRouter([
 
       {
         path: '/mentor',
-        element: <CreateMentorForm />,
-
+        element: <CreateMentorForm />,    
       },
+
+      {
+        path: '*',
+        element: <NotFound />,
+      },
+      
     ]
+
   }
 
 ]);
