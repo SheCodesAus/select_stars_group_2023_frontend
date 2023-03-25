@@ -49,6 +49,7 @@ input:focus {
     height: 3em;
     background-color: #F9A426;
     display: flex;
+    color: white;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
