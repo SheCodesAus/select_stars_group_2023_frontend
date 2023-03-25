@@ -46,11 +46,11 @@ function CreateMentorForm() {
     }
 
     return (
-        <div>
+        <div className='mentor-page'>
             <h1>
-                Create a new Mentor 
+                Create a new mentor
             </h1>
-            <form>
+            <form className='mentor-form'>
                 <div className='mentor_details'>
                     <label htmlFor='first_name'>First name:</label>
                     <input
@@ -101,7 +101,7 @@ function CreateMentorForm() {
                     <input
                         type="url"
                         id="profile_img"
-                        placeholder="Profile picture"
+                        placeholder="Link"
                         onChange={handleChange}
                     />
                 </div>
@@ -116,48 +116,43 @@ function CreateMentorForm() {
                 </div>
                 <div className='mentor_details'>
                     <label htmlFor='interview'>Interview:</label>
-                    <input
-                        type="boolean"
-                        id="interview"
-                        placeholder="Interview completed"
-                        onChange={handleChange}
-                    />
+                    <select id="dropdown" onChange={handleChange}>
+                        <option value="">-- Select an option --</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
                 </div>
                 <div className='mentor_details'>
                     <label htmlFor='offer'>Offer:</label>
-                    <input
-                        type="boolean"
-                        id="offer"
-                        placeholder="Offer sent"
-                        onChange={handleChange}
-                    />
+                    <select id="dropdown" onChange={handleChange}>
+                        <option value="">--Select an option--</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
                 </div>
                 <div className='mentor_details'>
                     <label htmlFor='contract_sent'>Contract sent?:</label>
-                    <input
-                        type="boolean"
-                        id="contract_sent"
-                        placeholder="contract sent?"
-                        onChange={handleChange}
-                    />
+                    <select id="dropdown" onChange={handleChange}>
+                        <option value="">--Select an option--</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
                 </div>
                 <div className='mentor_details'>
                     <label htmlFor='contract_return'>Contract return?:</label>
-                    <input
-                        type="boolean"
-                        id="contract return"
-                        placeholder="Contract returned?"
-                        onChange={handleChange}
-                    />
+                    <select id="dropdown" onChange={handleChange}>
+                        <option value="">--Select an option--</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
                 </div>
                 <div className='mentor_details'>
                     <label htmlFor='onboarding_completed'>Onboarding completed?:</label>
-                    <input
-                        type="boolean"
-                        id="onboarding"
-                        placeholder="Onboarding completed?"
-                        onChange={handleChange}
-                    />
+                    <select id="dropdown" onChange={handleChange}>
+                        <option value="">--Select an option--</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
                 </div>
                 <div className='mentor_details'>
                     <button type="submit" onClick={handleSubmit}>Create</button>

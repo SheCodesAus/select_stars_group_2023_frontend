@@ -5,6 +5,12 @@
     align-items: center;
     gap: 20px;
     margin: 20px;
+    color: #8246ae;
+}
+
+.title h1 {
+    font-size: 48px;
+    color: #8246ae;
 }
 
 .event-card {
