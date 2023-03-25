@@ -1,36 +1,34 @@
 import{ useState, useEffect }from "react";
 import { useParams } from "react-router-dom";
+import { mentors } from "../../../dummydata";
+import MentorCard from "../MentorCard/mentorCard";
 
-function mentorProfile() {
-  const [mentorData, setMentorData] = useState({});
-  const { id } = useParams();
+// remember to insert [] for usestate and uncomment the use effect once API up
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}mentors/${id}`)
-    .then((results) => {
-    return results.json();
-  }).then((data) => {
-    setMentorData(data);
-  });
-}, []);
+function MentorProfile() {
+  const [mentorData, setMentorData] = useState(mentors);
+
+//   useEffect(() => {
+//     fetch(`${import.meta.env.VITE_API_URL}mentors`)
+//     .then((results) => {
+//     return results.json();
+//   }).then((data) => {
+//     setMentorData(data);
+//   });
+// }, []);
 
 return (
+
 <div>
-  <h2>{mentorData.title}</h2>
-  <h3>Created at: {mentorData.date_created}</h3>
-  <h3>{`Status:${mentorData.is_open}`}</h3>
-  <h3>Pledges:</h3>
-  <ul>{
-    mentorData.pledges.map((pledgeData, key) =>{
-      return (
-      <li>
-      ${pledgeData.amount} from {pledgeData.supporter}
-      </li>
-      );
-      })}
-    </ul>
-    
-  </div>);}
-    
-    
-  export default MentorPage;
+ 
+{mentorData.map((Mentor, key) => {
+            return <MentorCard key={key} mentorData={Mentor} />
+          })}
+  
+</div>
+
+
+);}  
+  export default MentorProfile;
+
+

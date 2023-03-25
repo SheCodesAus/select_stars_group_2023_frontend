@@ -9,13 +9,6 @@ body {
     background-color: #fff;
 }
 
-form {
-    margin: 20px auto;
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 h1 {
     color: white;
@@ -23,25 +16,10 @@ h1 {
     margin-bottom: 20px;
 }
 
-.mentor_details {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
+.mentorProfilePage{
+    display: flex;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #8246ae;
-}
-
-input {
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
-    background-color: #f3f3f3;
 }
 
 button[type="submit"] {

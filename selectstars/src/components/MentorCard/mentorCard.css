@@ -1,0 +1,19 @@
+.mentorProfile-card {
+    background-color: #87D1F5;
+    padding: 8px;
+    width: 250px;  
+    max-width: 250px;
+}
+
+.mentorProfile-card > a > img {
+    width: 150px;
+}
+
+.mentorProfile-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+
+}
