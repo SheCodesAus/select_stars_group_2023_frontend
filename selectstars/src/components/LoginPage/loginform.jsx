@@ -16,10 +16,10 @@ const LoginForm = () => {
             <input type="text" placeholder="username" />
             <input type="password" placeholder="password" />
             <div className="login-button" onClick={popup}>Login</div>
-            <div className="createAccount-button">
+            {/* <div className="createAccount-button">
                 <Link to="/register">
                     Register</Link>
-            </div>
+            </div> */}
             <div className={popupStyle}>
                 <h3>Login Failed</h3>
                 <p>Username of password is incorrect</p>
