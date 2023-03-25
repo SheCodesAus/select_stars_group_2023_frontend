@@ -23,15 +23,16 @@ function Nav() {
             </Link>
             {isLoggedIn && (
                 <>
-                    {/* <Link to="/" className="nav-item">Home</Link> */}
+                    <Link to="/" className="nav-item">Home</Link>
                     <Link to="/register" className="nav-item">Create User</Link>
-                    {/* <Link to="/event" className="nav-item">Create Event</Link> */}
+                    <Link to="/mentor" className="nav-item">Create User</Link>
+                    <Link to="/event" className="nav-item">Create Event</Link>
                     {/* <Link to="/profile" onClick={logout} className="nav-item">Mentors</Link> */}
                 </>
             )}
             {!isLoggedIn && (
-                <>   
-                    <Link to="/login" className="nav-item">Login</Link>
+                <>
+                    {/* <Link to="/login" className="nav-item">Login</Link> */}
                 </>
             )}
         </nav>

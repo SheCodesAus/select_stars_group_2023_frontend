@@ -5,18 +5,25 @@ import './HomePage.css';
 function HomePage() {
     const [eventData, setEventData] = useState({ mentors: [] });
     const { id } = useParams();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}event/${id}`)
-            .then((results) => {
-                return results.json();
-            })
-            .then((data) => {
-                setEventData(data)
-            })
+        const isLoggedIn = true;
+        if (!isLoggedIn) {
+            history.push('/login');
+        } else {
+            setIsLoggedIn(true);
+            fetch(`${import.meta.env.VITE_API_URL}event/${id}`)
+                .then((results) => {
+                    return results.json();
+                })
+                .then((data) => {
+                    setEventData(data)
+                })
+        }
     }, []);
 
-    return (
+    return isLoggedIn ? (
         <div className="home-page">
             <div className="title">
                 <h1>All Events</h1>
@@ -36,7 +43,7 @@ function HomePage() {
                 </ul>
             </div>
         </div >
-    )
+    ) : null;
 };
 
 
