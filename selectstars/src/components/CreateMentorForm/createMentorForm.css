@@ -9,22 +9,25 @@ body {
     background-color: #fff;
 }
 
-form {
-    margin: 20px auto;
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.mentor-page h1 {
+    color: #8246ae;
 }
 
-h1 {
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
+.mentor-form {
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .mentor_details {
-    margin-bottom: 20px;
+    margin: 10px;
+    width: 46%;
+    text-align: center;
 }
 
 label {
@@ -58,6 +61,11 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #f3279a;
+}
+
+#dropdown {
+    width: 350px;
+    height: 40px;
 }
 
 /* Responsive styles */
