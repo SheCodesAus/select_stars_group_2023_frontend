@@ -12,6 +12,7 @@ import Nav from './components/Nav/Nav';
 import HomePage from './components/HomePage/HomePage';
 import NotFound from './components/Custom404/NotFound';
 import MentorProfile from './components/MentorProfilePage/MentorProfile';
+import OnboardingSteps from './components/OnboardingPage/onboardingPage';
 
 const HeaderLayout = () => {
   return (
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: '/mentor',
         element: <CreateMentorForm />,    
+      },
+      {
+        path: '/onboarding',
+        element: <OnboardingSteps />,    
       },
 
       {

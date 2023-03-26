@@ -45,11 +45,11 @@ function CreateUserForm() {
     }
 
     return (
-        <div>
+        <div className='register-page'>
             <h1>
                 Create a new user
             </h1>
-            <form>
+            <form className='register-form'>
                 <div className='signUpField'>
                     <label htmlFor='first_name'>First name:</label>
                     <input
@@ -91,7 +91,7 @@ function CreateUserForm() {
                     <input
                         type="url"
                         id="profile_img"
-                        placeholder="Profile picture"
+                        placeholder="Link"
                         onChange={handleChange}
                     />
                 </div>
@@ -100,7 +100,7 @@ function CreateUserForm() {
                     <input
                         type="text"
                         id="position"
-                        placeholder="Enter first name"
+                        placeholder="Position in She Codes"
                         onChange={handleChange}
                     />
                 </div>
