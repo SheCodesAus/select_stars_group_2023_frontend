@@ -2,6 +2,7 @@ import{ useState, useEffect }from "react";
 import { useParams } from "react-router-dom";
 import { mentors } from "../../../dummydata";
 import MentorCard from "../MentorCard/mentorCard";
+import './mentorProfile.css';
 
 // remember to insert [] for usestate and uncomment the use effect once API up
 
@@ -19,7 +20,7 @@ function MentorProfile() {
 
 return (
 
-<div>
+<div className="mentorProfilePage">
  
 {mentorData.map((Mentor, key) => {
             return <MentorCard key={key} mentorData={Mentor} />
@@ -29,6 +30,7 @@ return (
 
 
 );}  
-  export default MentorProfile;
+
+export default MentorProfile;
 
 
