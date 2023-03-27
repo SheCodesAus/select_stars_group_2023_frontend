@@ -1,0 +1,53 @@
+/* * {
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 5px;
+    font-family: Arial, sans-serif;
+} */
+
+body {
+    background-color: #fff;
+}
+
+
+h1 {
+    color: rgb(13, 11, 11);
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+ .mentorProfilePage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    border: black;
+}
+
+.mentorProfilePage img{
+    width: 200px;
+} 
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #8246ae;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #f3279a;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 480px) {
+    form {
+        max-width: 100%;
+    }
+}
