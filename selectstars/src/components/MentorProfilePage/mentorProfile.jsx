@@ -6,8 +6,22 @@ import './mentorProfile.css';
 
 
 
+
+// remember to insert [] for usestate and uncomment the use effect once API up
+
+
 function MentorProfile() {
   const [mentorData, setMentorData] = useState(mentors);
+
+
+//   useEffect(() => {
+//     fetch(`${import.meta.env.VITE_API_URL}mentors`)
+//     .then((results) => {
+//     return results.json();
+//   }).then((data) => {
+//     setMentorData(data);
+//   });
+// }, []);
 
 
 return (

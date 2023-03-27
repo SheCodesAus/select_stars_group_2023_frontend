@@ -61,7 +61,7 @@ input:focus {
     transform: scale(1.1);
 }
 
-.createAccount-button {
+/* .createAccount-button {
     width: 40%;
     height: 3em;
     background-color: #F9A426;
@@ -76,7 +76,7 @@ input:focus {
 
 .createAccount-button:hover {
     transform: scale(1.1);
-}
+} */
 
 .hide {
     position: absolute;
