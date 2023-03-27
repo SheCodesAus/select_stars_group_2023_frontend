@@ -4,10 +4,15 @@ import { mentors } from "../../../dummydata";
 import MentorCard from "../MentorCard/mentorCard";
 import './mentorProfile.css';
 
+
+
+
 // remember to insert [] for usestate and uncomment the use effect once API up
+
 
 function MentorProfile() {
   const [mentorData, setMentorData] = useState(mentors);
+
 
 //   useEffect(() => {
 //     fetch(`${import.meta.env.VITE_API_URL}mentors`)
@@ -17,6 +22,7 @@ function MentorProfile() {
 //     setMentorData(data);
 //   });
 // }, []);
+
 
 return (
 
