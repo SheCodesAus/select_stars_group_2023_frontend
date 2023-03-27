@@ -16,6 +16,7 @@ function OnboardingSteps() {
 
   const [checkedValues, setCheckedValues] = useState([]);
   const [lastCheckedIndex, setLastCheckedIndex] = useState(-1);
+  const [selectedMentorIndex, setSelectedMentorIndex] = useState(-1);
 
   const handleCheckboxChange = (event) => {
     const value = parseInt(event.target.value);
@@ -33,6 +34,14 @@ function OnboardingSteps() {
         setCheckedValues([...checkedValues, value]);
         setLastCheckedIndex(value);
       }
+      setSelectedMentorIndex(-1);
+    }
+  };
+  const handleMentorCardClick = (index) => {
+    if (index === selectedMentorIndex) {
+      setSelectedMentorIndex(-1);
+    } else {
+      setSelectedMentorIndex(index);
     }
   };
 
@@ -54,7 +63,9 @@ function OnboardingSteps() {
 
       <div className="mentors-container">
         {mentors.map((mentorData, index) => (
-          <MentorCard key={index} mentorData={mentorData} />
+          <MentorCard key={index} mentorData={mentorData} 
+          selected={index === selectedMentorIndex}
+          onClick={() => handleMentorCardClick(index)}/>
         ))}
       </div>
     </div>
