@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import MentorCard from "../MentorCard/mentorCard";
 import './onboardingPage.css'; 
+import { mentors } from "../../../dummydata";
 
 
 function OnboardingSteps() {
-
   const checkboxData = [
     { id: '1', label: 'Invited to Interview' },
     { id: '2', label: 'Offered Position' },
@@ -20,8 +21,14 @@ function OnboardingSteps() {
     const value = parseInt(event.target.value);
     if (lastCheckedIndex === -1 || value === lastCheckedIndex + 1) {
       if (checkedValues.includes(value)) {
-        setCheckedValues(checkedValues.filter((v) => v !== value));
-        setLastCheckedIndex(-1);
+        setCheckedValues(
+          checkedValues.filter((v) => v !== value)
+        );
+        setLastCheckedIndex(
+          checkedValues.length > 1
+            ? checkedValues[checkedValues.length - 2]
+            : -1
+        );
       } else {
         setCheckedValues([...checkedValues, value]);
         setLastCheckedIndex(value);
@@ -30,20 +37,29 @@ function OnboardingSteps() {
   };
 
   return (
-    <form>
-      {checkboxData.map((checkbox, index) => (
-        <label key={checkbox.id} className="checkbox-label">
-          <input
-            type="checkbox"
-            value={index}
-            checked={checkedValues.includes(index)}
-            onChange={handleCheckboxChange}
-          />
-          {checkbox.label}
-        </label>
-      ))}
-    </form>
+    <div className="onboarding-container">
+      <form>
+        {checkboxData.map((checkbox, index) => (
+          <label key={checkbox.id} className="checkbox-label">
+            <input
+              type="checkbox"
+              value={index}
+              checked={checkedValues.includes(index)}
+              onChange={handleCheckboxChange}
+            />
+            {checkbox.label}
+          </label>
+        ))}
+      </form>
+
+      <div className="mentors-container">
+        {mentors.map((mentorData, index) => (
+          <MentorCard key={index} mentorData={mentorData} />
+        ))}
+      </div>
+    </div>
   );
 };
+
 
 export default OnboardingSteps;

@@ -1,7 +1,13 @@
-form {
+/* *{
+  border: 1px solid black;
+  padding: 5px;
+} */
+
+/* form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
 
   }
   
@@ -17,4 +23,32 @@ form {
     height: 30px;
     margin-right: 12px;
     
+  } */
+
+  .onboarding-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .checkbox-label {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+  }
+  
+  .mentorProfile_card {
+    margin-left: 20px;
   }
