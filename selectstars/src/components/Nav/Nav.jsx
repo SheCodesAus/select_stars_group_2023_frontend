@@ -30,7 +30,11 @@ function Nav() {
                 </>
             )}
             {!isLoggedIn && (
+<<<<<<< Updated upstream
                 <>   
+=======
+                <>
+>>>>>>> Stashed changes
                     <Link to="/login" className="nav-item">Login</Link>
                 </>
             )}
