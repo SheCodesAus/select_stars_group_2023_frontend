@@ -1,28 +1,22 @@
-/* * {
+* {
     box-sizing: border-box;
     margin: 5px;
     padding: 5px;
     font-family: Arial, sans-serif;
-} */
+}
 
 body {
     background-color: #fff;
+    color: #8246ae;
 }
 
-
-h1 {
-    color: rgb(13, 11, 11);
-    text-align: center;
-    margin-bottom: 5px;
-    margin-top: 10px;
-}
 
  .mentorProfilePage{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around; 
-    border: black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .mentorProfilePage img{
