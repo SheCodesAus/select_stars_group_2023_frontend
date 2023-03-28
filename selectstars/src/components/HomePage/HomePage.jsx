@@ -26,6 +26,7 @@ function HomePage(props) {
 
     return isLoggedIn ? (
         <div className="home-page">
+            <div className="background-image"></div>
             <div className="title">
                 <h1>All Events</h1>
             </div>

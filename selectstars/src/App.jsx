@@ -16,10 +16,10 @@ import OnboardingSteps from './components/OnboardingPage/onboardingPage';
 
 const HeaderLayout = () => {
   return (
-    <div>
+    <>
       <Nav />
       <Outlet />
-    </div>
+    </>
   )
 }
 
