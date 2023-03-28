@@ -13,7 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+* {
+  background-color: #F7EFE5;
+}
 a {
   font-weight: 500;
   color: white;
