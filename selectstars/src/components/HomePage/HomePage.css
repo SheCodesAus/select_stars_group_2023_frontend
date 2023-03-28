@@ -1,7 +1,12 @@
 .home-page {
     margin: 20px;
     color: #8246ae;
+    background-image: url("https://s35764.pcdn.co/wp-content/uploads/2022/06/Women-in-Coding_1200x62801.jpg");
+    object-fit: fill;
+    opacity: calc(30%);
 }
+
+
 
 .title h1 {
     font-size: 48px;
