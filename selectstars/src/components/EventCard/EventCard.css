@@ -1,0 +1,40 @@
+.event-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.event-card {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+}
+
+.event-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.event-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.event-card h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.event-card ul {
+    list-style: none;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+.event-card li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}

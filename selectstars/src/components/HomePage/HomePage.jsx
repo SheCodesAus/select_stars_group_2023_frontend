@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
+import { event } from '../../../dummydata';
 import './HomePage.css';
+import EventCard from '../EventCard/EventCard';
 
 function HomePage(props) {
     // const { eventData } = props
-    const [eventData, setEventData] = useState({ mentors: [] });
+    const [eventData, setEventData] = useState(event);
+    // const [eventData, setEventData] = useState([]);
+    const [filterData, setFilterData] = useState([]);
     const { id } = useParams();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         const isLoggedIn = true;
@@ -24,25 +29,32 @@ function HomePage(props) {
         }
     }, []);
 
+    useEffect(() => {
+        if (search == "") {
+            setFilterData(eventData)
+        } else if (search.length > 0) {
+            const data = eventData.filter((event) => event.event_type.toLowerCase().includes(search.toLowerCase()))
+            setFilterData(data)
+        }
+    }, [search, eventData]);
+
+    const handleChange = (event) => {
+        setSearch(event.target.value)
+    }
+
     return isLoggedIn ? (
         <div className="home-page">
             <div className="background-image"></div>
             <div className="title">
                 <h1>All Events</h1>
             </div>
-            <div className="event-card">
-                <h2>Event: {eventData.image}</h2>
-                <h2>Event: {eventData.event_type}</h2>
-                <h4>City: {eventData.location}</h4>
-                <h4>Description: {eventData.description}</h4>
-                <h4>Start time: {eventData.start_date}</h4>
-                <h4>End time: {eventData.end_date}</h4>
-                <h4>Mentors: {eventData.mentors}</h4>
-                <ul>
-                    {eventData.mentors.map((mentorsData, key) => {
-                        return <li key={key}>{mentorsData.amount}</li>;
-                    })}
-                </ul>
+            <input type="search" id="search" value={search} onChange={handleChange} className="searchFilter">
+            </input>
+            <div className="Homepage">
+                {filterData.map((event, key) => {
+                    return <EventCard key={key} eventData={event} />
+                })}
+
             </div>
         </div >
     ) : null;

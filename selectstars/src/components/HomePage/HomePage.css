@@ -4,7 +4,7 @@
 }
 
 .home-page .background-image {
-    position: absolute; 
+    position: absolute;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -12,8 +12,9 @@
     background-size: cover;
     background-position: center;
 }
+
 .home-page .background-image::after {
-    position: absolute; 
+    position: absolute;
     content: " ";
     width: 100%;
     height: 100%;
@@ -23,7 +24,6 @@
     background-position: center;
     opacity: calc(25%);
 }
-
 
 
 .title h1 {
@@ -70,4 +70,9 @@
 .event-card li {
     margin-bottom: 5px;
     font-size: 14px;
+}
+
+.searchFilter {
+    width: 30%;
+
 }
