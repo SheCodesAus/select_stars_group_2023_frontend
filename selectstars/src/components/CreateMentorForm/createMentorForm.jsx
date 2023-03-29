@@ -47,6 +47,7 @@ function CreateMentorForm() {
 
     return (
         <div className='mentor-page'>
+            <div className="background-image"></div>
             <h1>
                 Create a new mentor
             </h1>
@@ -131,7 +132,7 @@ function CreateMentorForm() {
                     </select>
                 </div>
                 <div className='mentor_details'>
-                    <label htmlFor='contract_sent'>Contract sent?:</label>
+                    <label htmlFor='contract_sent'>Contract sent:</label>
                     <select id="dropdown" onChange={handleChange}>
                         <option value="">--Select an option--</option>
                         <option value="true">Yes</option>
@@ -139,7 +140,7 @@ function CreateMentorForm() {
                     </select>
                 </div>
                 <div className='mentor_details'>
-                    <label htmlFor='contract_return'>Contract return?:</label>
+                    <label htmlFor='contract_return'>Contract return:</label>
                     <select id="dropdown" onChange={handleChange}>
                         <option value="">--Select an option--</option>
                         <option value="true">Yes</option>
@@ -147,7 +148,7 @@ function CreateMentorForm() {
                     </select>
                 </div>
                 <div className='mentor_details'>
-                    <label htmlFor='onboarding_completed'>Onboarding completed?:</label>
+                    <label htmlFor='onboarding_completed'>Onboarding completed:</label>
                     <select id="dropdown" onChange={handleChange}>
                         <option value="">--Select an option--</option>
                         <option value="true">Yes</option>

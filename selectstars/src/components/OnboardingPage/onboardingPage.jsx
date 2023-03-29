@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MentorCard from "../MentorCard/mentorCard";
-import './onboardingPage.css'; 
+import './onboardingPage.css';
 import { mentors } from "../../../dummydata";
 
 
@@ -47,7 +47,7 @@ function OnboardingSteps() {
 
   return (
     <div className="onboarding-container">
-      <form>
+      <form className="onboarding-form">
         {checkboxData.map((checkbox, index) => (
           <label key={checkbox.id} className="checkbox-label">
             <input
@@ -63,9 +63,9 @@ function OnboardingSteps() {
 
       <div className="mentors-container">
         {mentors.map((mentorData, index) => (
-          <MentorCard key={index} mentorData={mentorData} 
-          selected={index === selectedMentorIndex}
-          onClick={() => handleMentorCardClick(index)}/>
+          <MentorCard key={index} mentorData={mentorData}
+            selected={index === selectedMentorIndex}
+            onClick={() => handleMentorCardClick(index)} />
         ))}
       </div>
     </div>
