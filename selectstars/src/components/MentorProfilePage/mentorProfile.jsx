@@ -27,7 +27,7 @@ function MentorProfile() {
 return (
 
 <div className="mentorProfilePage">
- 
+<div className="mentorProfilePageBackground"></div>
 {mentorData.map((Mentor, key) => {
             return <MentorCard key={key} mentorData={Mentor} />
           })}
