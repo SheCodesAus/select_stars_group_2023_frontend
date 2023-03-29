@@ -28,6 +28,7 @@ function CreateEventForm() {
 
     return (
         <div className="event-page">
+            <div className="background-image"></div>
             <h1>Create an event</h1>
             <form>
                 <div className="eventField">
