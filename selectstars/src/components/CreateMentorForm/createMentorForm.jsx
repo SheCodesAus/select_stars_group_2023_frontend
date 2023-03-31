@@ -11,11 +11,11 @@ function CreateMentorForm() {
         bio: '',
         image: '',
         skills: '',
-        interview: true,
-        offer: true,
-        contract_sent: true,
-        contract_return: true,
-        onboading_completed: true,
+        // interview: true,
+        // offer: true,
+        // contract_sent: true,
+        // contract_return: true,
+        // onboading_completed: true,
         feedback: true,
         offboarding: true,
     });
@@ -115,7 +115,7 @@ function CreateMentorForm() {
                         onChange={handleChange}
                     />
                 </div>
-                <div className='mentor_details'>
+                {/* <div className='mentor_details'>
                     <label htmlFor='interview'>Interview:</label>
                     <select id="dropdown" onChange={handleChange}>
                         <option value="">-- Select an option --</option>
@@ -153,8 +153,8 @@ function CreateMentorForm() {
                         <option value="">--Select an option--</option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
-                    </select>
-                </div>
+                    </select> */}
+                {/* </div> */}
                 <div className='mentor_details'>
                     <button type="submit" onClick={handleSubmit}>Create</button>
                 </div>
