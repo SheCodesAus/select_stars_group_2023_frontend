@@ -33,7 +33,7 @@ function Nav() {
                 </>
                 {/* )} */}
                 {/* {!isLoggedIn && ( */}
-                <Link to="/login" className="nav-item">Login</Link>
+                <Link to="/login" className="nav-login">Login</Link>
                 {/* )} */}
             </div>
         </nav>
