@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
-import { event } from '../../../dummydata';
+// import { event } from '../../../dummydata';
 import './HomePage.css';
 import EventCard from '../EventCard/EventCard';
 
 function HomePage(props) {
     // const { eventData } = props
-    const [eventData, setEventData] = useState(event);
-    // const [eventData, setEventData] = useState([]);
+    // const [eventData, setEventData] = useState(event);
+    const [eventData, setEventData] = useState([]);
     const [filterData, setFilterData] = useState([]);
     const { id } = useParams();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,7 +19,8 @@ function HomePage(props) {
             history.push('/login');
         } else {
             setIsLoggedIn(true);
-            fetch(`${import.meta.env.VITE_API_URL}event/${id}`)
+            fetch(`${import.meta.env.VITE_API_URL}events/`)
+                // fetch(`${import.meta.env.VITE_API_URL}events/${id}`)
                 .then((results) => {
                     return results.json();
                 })
@@ -48,7 +49,7 @@ function HomePage(props) {
             <div className="title">
                 <h1>All Events</h1>
             </div>
-            <input type="search" id="search" value={search} onChange={handleChange} className="searchFilter">
+            <input type="search" id="search" value={search} onChange={handleChange} placeholder="Search by event type" className="searchFilter">
             </input>
             <div className="Homepage">
                 {filterData.map((event, key) => {

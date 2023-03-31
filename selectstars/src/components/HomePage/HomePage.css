@@ -29,6 +29,7 @@
 .title h1 {
     font-size: 48px;
     color: #8246ae;
+    text-shadow: 2px 2px #fff;
 }
 
 .event-cards-container {
@@ -75,4 +76,10 @@
 .searchFilter {
     width: 30%;
 
+}
+
+.searchFilter {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
 }

@@ -13,8 +13,8 @@ const LoginForm = () => {
     return (
         <div className="cover">
             <h1>Welcome!</h1>
-            <input type="text" placeholder="username" />
-            <input type="password" placeholder="password" />
+            <input type="text" placeholder="Enter your email" />
+            <input type="password" placeholder="Enter your password" />
             <div className="login-button" onClick={popup}>Login</div>
             {/* <div className="createAccount-button">
                 <Link to="/register">

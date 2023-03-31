@@ -5,12 +5,30 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #8246AE;
+.event-page .background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("https://s35764.pcdn.co/wp-content/uploads/2022/06/Women-in-Coding_1200x62801.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.event-page .background-image::after {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #8246AF;
+    background-size: cover;
+    background-position: center;
+    opacity: calc(25%);
 }
 
 .event-page h1 {
-    color: #8246AE;
+    color: whitesmoke;
 }
 
 form {
@@ -55,6 +73,7 @@ input {
 
 button[type="submit"] {
     display: block;
+    margin: 0 auto;
     width: 100%;
     border: none;
     border-radius: 5px;
