@@ -28,7 +28,7 @@
 }
 
 .event-page h1 {
-    color: #8246AE;
+    color: whitesmoke;
 }
 
 form {
@@ -73,6 +73,7 @@ input {
 
 button[type="submit"] {
     display: block;
+    margin: 0 auto;
     width: 100%;
     border: none;
     border-radius: 5px;
