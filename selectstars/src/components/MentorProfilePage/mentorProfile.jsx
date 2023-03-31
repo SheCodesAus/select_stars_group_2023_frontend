@@ -11,17 +11,17 @@ import './mentorProfile.css';
 
 
 function MentorProfile() {
-  const [mentorData, setMentorData] = useState(mentors);
+  const [mentorData, setMentorData] = useState([]);
 
 
-//   useEffect(() => {
-//     fetch(`${import.meta.env.VITE_API_URL}mentors`)
-//     .then((results) => {
-//     return results.json();
-//   }).then((data) => {
-//     setMentorData(data);
-//   });
-// }, []);
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}api-token-auth/`,)
+    .then((results) => {
+    return results.json();
+  }).then((data) => {
+    setMentorData(data);
+  });
+}, []);
 
 
 return (
