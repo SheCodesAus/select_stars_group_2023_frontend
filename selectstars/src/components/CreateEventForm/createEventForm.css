@@ -29,6 +29,7 @@
 
 .event-page h1 {
     color: whitesmoke;
+    text-align: center;
 }
 
 form {
@@ -39,7 +40,7 @@ form {
     box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
     background-color: white;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 h1 {
@@ -50,7 +51,7 @@ h1 {
 
 .eventField {
     margin: 10px;
-    width: 46%;
+    width: 100%;
     text-align: center;
 }
 
