@@ -32,10 +32,17 @@ function CreateMentorForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(event.first_name);
+
+        postData().then((response)=>{
+            window.localStorage.setItem("token", response.token)
+            navigate('');
+        } )
     };
 
+
     const postData = async () => {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}users/`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}mentor/`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json",

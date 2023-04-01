@@ -9,33 +9,33 @@ import './mentorProfile.css';
 
 
 function MentorProfile() {
-
-  const [mentorData, setMentorData] = useState([]);
+  const [mentorsData, setMentorsData] = useState([]);
+  const { id } = useParams();
 
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}api-token-auth/`,)
+    fetch(`${import.meta.env.VITE_API_URL}mentor`)
     .then((results) => {
     return results.json();
   }).then((data) => {
-    setMentorData(data);
+    setMentorsData(data);
   });
 }, []);
 
-    fetch(`${import.meta.env.VITE_API_URL}mentors`)
-      .then((results) => {
-        return results.json();
-      }).then((data) => {
-        setMentorData(data);
-      });
-  }, []);
+    // fetch(`${import.meta.env.VITE_API_URL}mentors`)
+    //   .then((results) => {
+    //     return results.json();
+    //   }).then((data) => {
+    //     setMentorData(data);
+    //   });
+ 
 
 
   return (
     <div className="mentorProfilePage">
       <div className="mentorProfilePageBackground"></div>
-      {mentorData.map((Mentor, key) => {
-        return <MentorCard key={key} mentorData={Mentor} />
+      {mentorsData.map((mentor, key) => {
+        return <MentorCard key={key} mentorData={mentor} />
       })}
 
     </div>
