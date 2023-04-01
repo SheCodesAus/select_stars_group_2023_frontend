@@ -53,7 +53,7 @@ function CreateMentorForm() {
         <div className='mentor-page'>
             <div className="background-image"></div>
             <h1>
-                Create a new mentor
+                Create New Mentor
             </h1>
             <form className='mentor-form'>
                 <div className='mentor_details'>
