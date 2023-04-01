@@ -90,8 +90,10 @@ function LoginForm() {
                     placeholder="Password"
                     onChange={handleChange}
                 />
-                <button type="submit" onClick={handleSubmit} id="login-button">Login</button>
+
             </div>
+
+            <button type="submit" onClick={handleSubmit} id="login-button">Login</button>
         </form>
     )
 }
