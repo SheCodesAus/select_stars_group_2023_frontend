@@ -11,11 +11,6 @@ function CreateMentorForm() {
         bio: '',
         image: '',
         skills: '',
-        // interview: true,
-        // offer: true,
-        // contract_sent: true,
-        // contract_return: true,
-        // onboading_completed: true,
         feedback: true,
         offboarding: true,
     });
@@ -48,9 +43,11 @@ function CreateMentorForm() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(credentials),
-        })
-        return response.json()
-    }
+        });
+        const data = await response.json();
+        console.log(data);
+        navigate("/success");
+    };
 
     return (
         <div className='mentor-page'>

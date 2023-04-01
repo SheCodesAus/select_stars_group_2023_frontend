@@ -5,12 +5,30 @@ import './nav.css';
 
 function Nav() {
     const location = useLocation();
-    const isLoggedIn = location.state?.isLoggedIn || false;
+    // const isLoggedIn = location.state?.isLoggedIn || false;
 
     const logout = () => {
         localStorage.clear();
         window.location.href = '/';
     };
+
+    const [isUserSignedIn, setIsUserSignedIn] = useState(false);
+    const token = window.localStorage.getItem("token");
+
+    useEffect(() => {
+        // console.log("useEffect called");
+        
+
+        if( token !== null){
+            setIsUserSignedIn(prevState => {
+                return {
+                    ...prevState,
+                    isUserSignedIn : !isUserSignedIn
+                }
+            });
+        }
+        
+    }, [token]);
 
 
 
@@ -33,7 +51,9 @@ function Nav() {
                 </>
                 {/* )} */}
                 {/* {!isLoggedIn && ( */}
-                <Link to="/login" className="nav-login">Login</Link>
+                {isUserSignedIn?<p className="nav-login">Logged In</p>:<Link to="/login" className="nav-login">Login</Link>}
+                {/* <Link to="/login" className="nav-login">Login</Link> */}
+                <Link to="/user/change-password/" className="nav-item">Change Password</Link>
                 {/* )} */}
             </div>
         </nav>

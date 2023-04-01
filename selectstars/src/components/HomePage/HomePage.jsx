@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
-// import { event } from '../../../dummydata';
+
 import './HomePage.css';
 import EventCard from '../EventCard/EventCard';
 
@@ -19,7 +19,7 @@ function HomePage(props) {
             history.push('/login');
         } else {
             setIsLoggedIn(true);
-            fetch(`${import.meta.env.VITE_API_URL}events/`)
+            fetch(`${import.meta.env.VITE_API_URL}event/`)
                 // fetch(`${import.meta.env.VITE_API_URL}events/${id}`)
                 .then((results) => {
                     return results.json();
