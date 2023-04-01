@@ -19,7 +19,7 @@ function HomePage(props) {
             history.push('/login');
         } else {
             setIsLoggedIn(true);
-            fetch(`${import.meta.env.VITE_API_URL}events/`)
+            fetch(`${import.meta.env.VITE_API_URL}event/`)
                 // fetch(`${import.meta.env.VITE_API_URL}events/${id}`)
                 .then((results) => {
                     return results.json();
