@@ -16,19 +16,19 @@ function MentorProfile() {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}api-token-auth/`,)
     .then((results) => {
-    return results.json();
-  }).then((data) => {
-    setMentorData(data);
-  });
-}, []);
+      return results.json();
+    }).then((data) => {
+      setMentorData(data);
+    });
+  }, []);
 
-    fetch(`${import.meta.env.VITE_API_URL}mentors`)
+  fetch(`${import.meta.env.VITE_API_URL}mentor/`)
       .then((results) => {
         return results.json();
       }).then((data) => {
         setMentorData(data);
       });
-  }, []);
+
 
 
   return (
