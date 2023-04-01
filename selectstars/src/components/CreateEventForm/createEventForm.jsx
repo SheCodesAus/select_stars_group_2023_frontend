@@ -24,6 +24,10 @@ function CreateEventForm() {
         event.preventDefault();
         console.log('Entering event details', eventDetails);
 
+        postData().then((response)=>{
+                window.localStorage.setItem("token", response.token)
+                navigate('');
+        })
     };
 
     return (
