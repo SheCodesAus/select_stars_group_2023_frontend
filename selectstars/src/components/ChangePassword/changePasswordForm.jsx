@@ -70,13 +70,14 @@ function ChangePasswordForm() {
     }
 
     return (
-        <div className='change-password-page'>
+        <div >
+            
+            <form className='cover'>
             <h1>
                 Change password
             </h1>
-            <form className='change-password-page'>
-                <div className='field'>
-                    <label htmlFor='old_password'>Old password:</label>
+                <div className='field_container'>
+                    <label htmlFor='old_password' className="login_label">Current password:</label>
                     <input
                         type="text"
                         id="old_password"
@@ -84,8 +85,8 @@ function ChangePasswordForm() {
                         onChange={handleChange}
                     />
                 </div>
-                <div className='field'>
-                    <label htmlFor='new_password'>New password:</label>
+                <div className='field_container'>
+                    <label htmlFor='new_password' className="login_label">New password:</label>
                     <input
                         type="text"
                         id="new_password"
@@ -93,9 +94,9 @@ function ChangePasswordForm() {
                         onChange={handleChange}
                     />
                 </div>
-                <div className='field'>
-                    <button type="submit" onClick={handleSubmit} className="update-button">Update</button>
-                </div>
+              
+                <button type="submit" onClick={handleSubmit} id="update-button">Update</button>
+           
             </form>
         </div>
     )
