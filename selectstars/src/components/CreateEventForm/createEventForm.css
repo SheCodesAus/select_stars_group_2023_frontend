@@ -5,13 +5,31 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #8246AE;
+.event-page .background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("https://s35764.pcdn.co/wp-content/uploads/2022/06/Women-in-Coding_1200x62801.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-form {
+.event-page .background-image::after {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #8246AF;
+    background-size: cover;
+    background-position: center;
+    opacity: calc(25%);
+}
+
+.event-page form {
     margin: 20px auto;
-    max-width: 700px;
+    max-width: 600px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -20,38 +38,50 @@ form {
     flex-wrap: wrap;
 }
 
-h1 {
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
+.event-page h1 {
+    padding-top: 2%;
+    color: #F5EAEA;
+    margin-bottom: auto;
+    
 }
 
 .eventField {
-    margin: 10px;
-    width: 46%;
-    text-align: center;
-}
+    padding-right: 20px;
+    margin: 10px auto;
+    width: 100%;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
 
-label {
-    display: block;
+
+
+.eventField label {
+    display: inline-block;
+    margin-right: 10%;
     margin-bottom: 5px;
     font-weight: bold;
     color: #8246ae;
-}
+    text-align: left;
+    white-space: nowrap;
+  }
+  
 
-input {
+.eventField input {
     width: 100%;
     border: none;
     border-radius: 5px;
     padding: 10px;
     font-size: 16px;
     color: #333;
-    background-color: #f3f3f3;
-}
-
-button[type="submit"] {
+    text-align: right;
+  }
+  
+.eventField button[type="submit"] {
     display: block;
-    width: 100%;
+    margin: 0 auto;
+    width: 50%;
     border: none;
     border-radius: 5px;
     padding: 10px;
