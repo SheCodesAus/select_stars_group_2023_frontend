@@ -52,13 +52,10 @@
     text-align: right;
     display: flex;
     align-items: flex-end;
-
-    
 }
 
 .eventField label {
     display: inline-block;
-    float: left;
     clear: left;
     width: 250px;
     margin-right: 10%;

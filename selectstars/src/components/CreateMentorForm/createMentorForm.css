@@ -29,46 +29,57 @@
 
 
 .mentor-page h1 {
-    color: orange;
+    color: #F5F5F5;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 1;
 }
 
-.mentor-form {
-    max-width: 800px;
-    padding: 20px;
+.mentor-page form {
+    margin: 20px auto;
+    max-width: 70%;
+    padding: 3%;
     border-radius: 10px;
     box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
-    background-color: white;
+    background-color: #F5F5F5;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
 }
-
 .mentor_details {
-    margin: 10px;
-    width: 46%;
-    text-align: center;
-}
+    
+        margin: 1%;
+        width: 90%;
+        text-align: right;
+        display: flex;
+        align-items: flex-end;
+    }
 
-label {
-    display: block;
+.mentor-page label {
+    display: inline-block;
+    clear: left;
+    width: 25%;
+    margin-right: 5%;
     margin-bottom: 5px;
     font-weight: bold;
     color: #8246ae;
+    text-align: right;
 }
-
-input {
-    width: 100%;
+        
+.mentor-page input {
+    display: inline-block;
+    width: 70%;
     border: none;
     border-radius: 5px;
     padding: 10px;
     font-size: 16px;
     color: #333;
-    background-color: #f3f3f3;
+    background-color: white;
 }
 
-button[type="submit"] {
-    
-    width: 100%;
+.mentor_details button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -76,23 +87,13 @@ button[type="submit"] {
     color: #fff;
     background-color: #8246ae;
     cursor: pointer;
-    display: block;
-    margin: 0 auto;
-
 }
 
-button[type="submit"]:hover {
+.mentor_details button[type="submit"]:hover {
     background-color: #f3279a;
     transform: scale(1.1);
     
 }
-
-
-#dropdown {
-    width: 350px;
-    height: 40px;
-}
-
 /* Responsive styles */
 @media screen and (max-width: 480px) {
     form {
