@@ -46,8 +46,9 @@ function CreateUserForm() {
 
     return (
         <div className='register-page'>
+            <div className="background-image"></div>
             <h1>
-                Create a new user
+                Create New User
             </h1>
             <form className='register-form'>
                 <div className='signUpField'>
