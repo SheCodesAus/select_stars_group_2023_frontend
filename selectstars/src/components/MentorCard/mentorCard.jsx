@@ -3,7 +3,7 @@ import './mentorCard.css';
 
 
 function MentorCard(props) {
-    const {mentorData} = props
+    const {mentorsData} = props
     
 
 
@@ -11,11 +11,11 @@ return (
 
 <div className="mentorProfile_card">
   <ol>
-  <h3>{mentorData.first_name} {mentorData.last_name}</h3>
-  <h3><img src={mentorData.image} alt="Profile picture" /></h3>
-  <h3>Tech Stack: {mentorData.skills}</h3>
-  <h3>Offer to Position:  {mentorData.location}</h3>
-  <h3>Status: {mentorData.events}</h3>
+  <h3>{mentorsData.first_name} {mentorsData.last_name}</h3>
+  <h3><img src={mentorsData.image} alt="Profile picture" /></h3>
+  <h3>Tech Stack: {mentorsData.skills}</h3>
+  <h3>Offer to Position:  {mentorsData.location}</h3>
+  <h3>Status: {mentorsData.events}</h3>
   </ol>
 </div>
 

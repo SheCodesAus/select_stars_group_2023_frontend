@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import MentorCard from "../MentorCard/mentorCard";
 import './mentorProfile.css';
 
+
 function MentorProfile(props) {
 
   const [mentorData, setMentorData] = useState([]);
@@ -10,6 +11,13 @@ function MentorProfile(props) {
   useEffect(() => {
 
     fetch(`${import.meta.env.VITE_API_URL}mentor`)
+
+function MentorProfile() {
+  const [mentorsData, setMentorData] = useState( [] ); 
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}mentor/`)
+
     .then((results) => {
       
       return results.json();
@@ -17,11 +25,12 @@ function MentorProfile(props) {
       setMentorData(data);
     });
   }, []);
+
   return (
     <div className="mentorProfilePage">
       <div className="mentorProfilePageBackground"></div>
       {mentorsData.map((mentor, key) => {
-        return <MentorCard key={key} mentorData={mentor} />
+        return <MentorCard key={key} mentorsData={mentor} />
       })}
     </div>
   );
