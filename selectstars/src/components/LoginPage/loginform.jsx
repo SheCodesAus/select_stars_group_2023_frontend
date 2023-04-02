@@ -12,7 +12,6 @@ function LoginForm() {
 
     const navigate = useNavigate();
 
-
     const handleChange = (event) => {
         const {id, value} = event.target;
         setCredentials((prevCredentials) => ({
@@ -31,6 +30,10 @@ function LoginForm() {
         );
         return response.json();
     }
+    // const handleLogout = () => {
+    //     window.localStorage.removeItem("token");
+    //     navigate("/login");
+    // }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -44,6 +47,7 @@ function LoginForm() {
     }
 
     return (
+        
         <form className="cover">
             <div className="background-image-login"></div>
             <h1>Welcome!</h1>
@@ -69,7 +73,8 @@ function LoginForm() {
 
             <button type="submit" onClick={handleSubmit} id="login-button">Login</button>
         </form>
-    )
-}
+        
+    );
+};
 
 export default LoginForm
