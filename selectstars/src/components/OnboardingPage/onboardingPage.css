@@ -20,7 +20,7 @@
   position: relative;
 }
 
-input[type="checkbox"] {
+.onboarding-container input[type="checkbox"] {
   width: 20px;
   height: 20px;
   margin-right: 10px;
