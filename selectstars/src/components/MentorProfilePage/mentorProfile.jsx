@@ -4,14 +4,7 @@ import MentorCard from "../MentorCard/mentorCard";
 import './mentorProfile.css';
 
 
-function MentorProfile(props) {
-
-  const [mentorData, setMentorData] = useState([]);
-
-  useEffect(() => {
-
-    fetch(`${import.meta.env.VITE_API_URL}mentor`)
-
+  
 function MentorProfile() {
   const [mentorsData, setMentorData] = useState( [] ); 
 
@@ -37,5 +30,3 @@ function MentorProfile() {
 }
 
 export default MentorProfile;
-
-
