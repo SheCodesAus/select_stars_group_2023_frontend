@@ -89,10 +89,11 @@
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
+.signUpField button[type="submit"]:hover {
     background-color: #f3279a;
+    transform: scale(1.1);
+    
 }
-
 /* Responsive styles */
 @media screen and (max-width: 480px) {
     form {

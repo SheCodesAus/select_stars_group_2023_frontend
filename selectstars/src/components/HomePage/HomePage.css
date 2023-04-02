@@ -1,7 +1,3 @@
-/* .home-page {
-    color: #8246ae;
-    height: 100%;
-} */
 
 .home-page .background-image {
     position: absolute;
@@ -25,11 +21,12 @@
     opacity: calc(25%);
 }
 
-
 .title h1 {
-    font-size: 48px;
-    color: #8246ae;
-    text-shadow: 2px 2px #fff;
+    font-size: 42px;
+    color: #F5F5F5;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .event-cards-container {
@@ -74,7 +71,7 @@
 }
 
 .searchFilter {
-    width: 30%;
+    width: 40%;
 
 }
 
