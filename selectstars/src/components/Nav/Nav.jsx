@@ -22,11 +22,12 @@ function Nav() {
 
   return (
     <nav className='main-nav-container'>
-      <Link to='/'>
-        <img src='https://shecodes.com.au/wp-content/uploads/2020/02/Purple_no_circle.svg' alt='Logo' />
-      </Link>
+
       <div className='nav-tabs'>
         <>
+        <Link to='/'>
+        <img src='https://shecodes.com.au/wp-content/uploads/2020/02/Purple_no_circle.svg' alt='Logo' />
+        </Link>
           <Link to='/' className='nav-item'>
             Home
           </Link>
