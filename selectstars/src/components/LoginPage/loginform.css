@@ -27,7 +27,7 @@
 } */
 
 
-.cover h1, .login_label{
+.login-cover h1, .login_label{
     color: white;
 }
 
@@ -39,15 +39,16 @@
     align-items: center;
 } */
 
-/* .field_container{
+.field_container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  
 
-} */
+}
 
-/* .cover {
+.login-cover {
     background-color: #8246AE;
     width: 30em;
     height: 35em;
@@ -59,7 +60,7 @@
     align-items: center;
     justify-content: space-around;
     margin: 0 auto;
-} */
+}
 
 .field_container label{
     margin-bottom: 5%;
@@ -69,15 +70,20 @@
 .field_container input {
     border: none;
     background-color: white;
-    height: 4em;
-    width: 150%;
+    height: 10%;
+    width: 180%;
     border-radius: 0.25em;
     text-align: center;
-    padding: 2em;
+    padding: 15%;
 }
 
 .field_container input:focus {
     outline-color: #F9A426;
+}
+
+.password-reset {
+    color:#F9A426;
+    
 }
 
 #login-button {
