@@ -60,9 +60,6 @@ function Nav() {
           </Link>
         )}
 
-        <Link to='/user/change-password/' className='nav-item'>
-          Change Password
-        </Link>
       </div>
     </nav>
   );

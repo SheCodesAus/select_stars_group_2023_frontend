@@ -30,10 +30,7 @@ function LoginForm() {
         );
         return response.json();
     }
-    // const handleLogout = () => {
-    //     window.localStorage.removeItem("token");
-    //     navigate("/login");
-    // }
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -48,8 +45,8 @@ function LoginForm() {
 
     return (
         
-        <form className="cover">
-            <div className="background-image-login"></div>
+        <form className="login-cover">
+
             <h1>Welcome!</h1>
             
             <div className="field_container">
@@ -72,6 +69,12 @@ function LoginForm() {
             </div>
 
             <button type="submit" onClick={handleSubmit} id="login-button">Login</button>
+
+            <div className="password_container">
+                <Link to='/user/change-password/' className='password-reset'>
+                Forgotten your password?
+                </Link>
+            </div>
         </form>
         
     );
