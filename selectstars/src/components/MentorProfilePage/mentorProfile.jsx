@@ -1,23 +1,29 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { mentors } from "../../../dummydata";
 import MentorCard from "../MentorCard/mentorCard";
 import './mentorProfile.css';
 
+
+function MentorProfile(props) {
+
+  const [mentorData, setMentorData] = useState([]);
+
+  useEffect(() => {
+
+    fetch(`${import.meta.env.VITE_API_URL}mentor`)
 
 function MentorProfile() {
   const [mentorsData, setMentorData] = useState( [] ); 
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}mentor/`)
+
     .then((results) => {
       
       return results.json();
     }).then((data) => {
       setMentorData(data);
     });
-
-    
   }, []);
 
   return (
@@ -26,10 +32,7 @@ function MentorProfile() {
       {mentorsData.map((mentor, key) => {
         return <MentorCard key={key} mentorsData={mentor} />
       })}
-
     </div>
-
-
   );
 }
 

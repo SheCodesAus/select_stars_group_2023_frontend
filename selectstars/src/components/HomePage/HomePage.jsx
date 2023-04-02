@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
-
 import './HomePage.css';
 import EventCard from '../EventCard/EventCard';
 
 function HomePage(props) {
-    // const { eventData } = props
-    // const [eventData, setEventData] = useState(event);
     const [eventData, setEventData] = useState([]);
     const [filterData, setFilterData] = useState([]);
     const { id } = useParams();
