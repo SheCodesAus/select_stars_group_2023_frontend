@@ -4,6 +4,29 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+.cover .background-image-login {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("https://s35764.pcdn.co/wp-content/uploads/2022/06/Women-in-Coding_1200x62801.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.cover .background-image-login::after {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #8246AF;
+    background-size: cover;
+    background-position: center;
+    opacity: calc(25%);
+}
+
+
 .cover h1, .login_label{
     color: white;
 }
@@ -37,20 +60,22 @@
     justify-content: space-around;
     margin: 0 auto;
 }
+.field_container label{
+    margin-bottom: 5%;
 
+}
 
-
-input {
+.field_container input {
     border: none;
     background-color: white;
     height: 4em;
-    width: 80%;
+    width: 150%;
     border-radius: 0.25em;
     text-align: center;
     padding: 2em;
 }
 
-input:focus {
+.field_container input:focus {
     outline-color: #F9A426;
 }
 
@@ -71,23 +96,6 @@ input:focus {
 #login-button:hover {
     transform: scale(1.1);
 }
-
-/* .createAccount-button {
-    width: 40%;
-    height: 3em;
-    background-color: #F9A426;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    border-radius: 0.25em;
-    cursor: pointer;
-}
-
-.createAccount-button:hover {
-    transform: scale(1.1);
-} */
 
 .hide {
     position: absolute;

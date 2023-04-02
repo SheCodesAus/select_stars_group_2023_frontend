@@ -3,32 +3,6 @@ import { useParams, Link } from "react-router-dom"
 import './loginform.css';
 import {useNavigate} from "react-router-dom";
 
-// const LoginForm = () => {
-    
-
-//     const [popupStyle, showPopup] = useState("hide")
-
-//     const popup = () => {
-//         showPopup("login-popup")
-//         setTimeout(() => showPopup("hide"), 3000)
-//     }
-//     return (
-//         <div className="cover">
-//             <h1>Welcome!</h1>
-//             <input type="text" placeholder="Enter your email" />
-//             <input type="password" placeholder="Enter your password" />
-//             <div className="login-button" onClick={popup}>Login</div>
-//             {/* <div className="createAccount-button">
-//                 <Link to="/register">
-//                     Register</Link>
-//             </div> */}
-//             <div className={popupStyle}>
-//                 <h3>Login Failed</h3>
-//                 <p>Username of password is incorrect</p>
-//             </div>
-//         </div>
-//     );
-// };
 
 function LoginForm() {
     const [credentials, setCredentials] = useState({
@@ -38,7 +12,6 @@ function LoginForm() {
 
     const navigate = useNavigate();
 
- 
 
     const handleChange = (event) => {
         const {id, value} = event.target;
@@ -72,7 +45,9 @@ function LoginForm() {
 
     return (
         <form className="cover">
+            <div className="background-image-login"></div>
             <h1>Welcome!</h1>
+            
             <div className="field_container">
                 <label htmlFor="username" className="login_label">Username:</label>
                 <input
@@ -90,7 +65,6 @@ function LoginForm() {
                     placeholder="Enter password"
                     onChange={handleChange}
                 />
-
             </div>
 
             <button type="submit" onClick={handleSubmit} id="login-button">Login</button>
