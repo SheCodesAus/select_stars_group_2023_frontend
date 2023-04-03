@@ -4,7 +4,7 @@ import { useState } from 'react'
 import "./App.css";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import LoginForm from './Components/LoginPage/loginForm';
+import loginForm from './Components/LoginPage/loginForm';
 import CreateUserForm from './Components/CreateUserForm/createUserForm';
 import CreateEventForm from './Components/CreateEventForm/createEventForm';
 import CreateMentorForm from './Components/CreateMentorForm/createMentorForm';
