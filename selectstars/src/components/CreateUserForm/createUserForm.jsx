@@ -34,7 +34,7 @@ function CreateUserForm() {
     };
 
     const postData = async () => {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}users/`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}user/`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
