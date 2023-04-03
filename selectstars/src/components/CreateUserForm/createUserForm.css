@@ -5,8 +5,7 @@
     font-family: Arial, sans-serif;
 }
 
-
-.register-page .background-image {
+/* .register-page .background-image {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -26,7 +25,12 @@
     background-size: cover;
     background-position: center;
     opacity: calc(25%);
+} */
+
+.register-page {
+    background-color: #8246ae;
 }
+
 .register-page h1 {
     color: #F5F5F5;
     text-align: center;
@@ -92,8 +96,9 @@
 .signUpField button[type="submit"]:hover {
     background-color: #f3279a;
     transform: scale(1.1);
-    
+
 }
+
 /* Responsive styles */
 @media screen and (max-width: 480px) {
     form {
