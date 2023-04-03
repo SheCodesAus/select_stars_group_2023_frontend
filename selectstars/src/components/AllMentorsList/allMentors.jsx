@@ -19,14 +19,16 @@ function MentorProfile() {
   //   });
   // }, []);
 
-  // return (
-  //   <div className="allMentorPage">
-  //     <div className="allMentorPage-Background"></div>
-  //     {mentorsData.map((mentor, key) => {
-  //       return <MentorCard key={key} mentorsData={mentor} />
-  //     })}
-  //   </div>
-  // );
-}
+  return (
+    <div className="allMentors-page">
+  
+        <div className="background-image"></div>
+  
+        <div className="allMentorsPage-title">
+          <h1>All Mentors</h1>
+        </div>
+        </div>
+        );
+};
 
 export default MentorProfile;
