@@ -14,7 +14,7 @@
     background-position: center;
 }
 
-.login-page::after {
+/* .login-page-background::after {
     position: absolute;
     content: " ";
     width: 100%;
@@ -24,7 +24,7 @@
     background-size: cover;
     background-position: center;
     opacity: calc(25%);
-}
+} */
 
 
 .login-cover h1, .login_label{
