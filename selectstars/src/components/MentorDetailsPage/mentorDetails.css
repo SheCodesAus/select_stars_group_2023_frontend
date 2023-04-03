@@ -1,4 +1,4 @@
-.onboarding-container {
+/* .onboarding-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -52,7 +52,7 @@ input[type="checkbox"]:checked {
   height: 30px;
   /* border: 2px solid #ccc;
   border-radius: 50%; */
-  text-align: center;
+  /* text-align: center;
   line-height: 40px;
   font-size: 16px;
   font-weight: bold;
@@ -90,4 +90,4 @@ input[type="checkbox"]:checked {
 
 .mentorProfile_card {
   margin: 10px;
-}
+} */ 
