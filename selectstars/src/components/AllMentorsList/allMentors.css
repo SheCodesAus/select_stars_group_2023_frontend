@@ -1,27 +1,27 @@
 * {
     box-sizing: border-box;
-    margin: 5px;
-    padding: 5px;
+    /* margin: 5px;
+    padding: 5px; */
     font-family: Arial, sans-serif;
-} */
+}
 
-.body {
+*/ .body {
     background-color: #fff;
     color: #8246ae;
 }
 
 
- .allMentorPage{
+.allMentorPage {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around; 
+    justify-content: space-around;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.allMentorPage img{
+.allMentorPage img {
     width: 250px;
-} 
+}
 
 
 /* Responsive styles */
@@ -30,5 +30,3 @@
         max-width: 100%;
     }
 }
-
-

@@ -5,7 +5,7 @@
     font-family: Arial, sans-serif;
 }
 
-.mentor-page .background-image {
+/* .mentor-page .background-image {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -25,8 +25,11 @@
     background-size: cover;
     background-position: center;
     opacity: calc(25%);
-}
+} */
 
+.mentor-page {
+    background-color: #8246ae;
+}
 
 .mentor-page h1 {
     color: #F5F5F5;
@@ -45,14 +48,15 @@
     display: flex;
     flex-direction: column;
 }
+
 .mentor_details {
-    
-        margin: 1%;
-        width: 90%;
-        text-align: right;
-        display: flex;
-        align-items: flex-end;
-    }
+
+    margin: 1%;
+    width: 90%;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+}
 
 .mentor-page label {
     display: inline-block;
@@ -64,7 +68,7 @@
     color: #8246ae;
     text-align: right;
 }
-        
+
 .mentor-page input {
     display: inline-block;
     width: 70%;
@@ -92,8 +96,9 @@
 .mentor_details button[type="submit"]:hover {
     background-color: #f3279a;
     transform: scale(1.1);
-    
+
 }
+
 /* Responsive styles */
 @media screen and (max-width: 480px) {
     form {
