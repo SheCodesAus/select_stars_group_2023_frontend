@@ -4,16 +4,16 @@ import { useState } from 'react'
 import "./App.css";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import LoginForm from './components/LoginPage/loginform';
-import CreateUserForm from './components/CreateUserForm/CreateUserForm';
-import CreateEventForm from './components/CreateEventForm/createEventForm';
-import CreateMentorForm from './components/CreateMentorForm/createMentorForm';
-import Nav from './components/Nav/Nav';
-import HomePage from './components/HomePage/HomePage';
-import NotFound from './components/Custom404/NotFound';
-import ChangePasswordForm from './components/ChangePassword/changePasswordForm';
-import MentorProfile from './components/AllMentorsList/allMentors';
-import MentorDetails from './components/MentorDetailsPage/mentorDetails';
+import LoginForm from './Components/LoginPage/loginForm';
+import CreateUserForm from './Components/CreateUserForm/CreateUserForm';
+import CreateEventForm from './Components/CreateEventForm/createEventForm';
+import CreateMentorForm from './Components/CreateMentorForm/createMentorForm';
+import Nav from './Components/Nav/Nav';
+import HomePage from './Components/HomePage/HomePage';
+import NotFound from './Components/Custom404/NotFound';
+import ChangePasswordForm from './Components/ChangePassword/changePasswordForm';
+import MentorProfile from './Components/AllMentorsList/allMentors';
+import MentorDetails from './Components/MentorDetailsPage/mentorDetails';
 
 const HeaderLayout = () => {
   return (
@@ -48,11 +48,11 @@ const router = createBrowserRouter([
 
       {
         path: '/mentor',
-        element: <CreateMentorForm />,    
+        element: <CreateMentorForm />,
       },
       {
         path: '/mentordetails',
-        element: <MentorDetails/>,    
+        element: <MentorDetails />,
       },
 
       {
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
         path: '/user/change-password/',
         element: <ChangePasswordForm />,
       },
-  
+
     ]
 
   }
