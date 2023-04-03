@@ -4,29 +4,6 @@ import './changePasswordForm.css';
 
 function ChangePasswordForm() {
 
-    // class PasswordResetForm extends React.Component {
-    //     constructor(props) {
-    //       super(props);
-    //       this.state = {
-    //         password: "",
-    //         passwordVerify: "",
-    //       };
-      
-    //       this.handleInputChange = this.handleInputChange.bind(this);
-    //       this.handleSubmit = this.handleSubmit.bind(this);
-    //     }
-      
-    //     // Whenever an input changes value, change the corresponding state variable
-    //     handleInputChange(event) {
-    //       event.preventDefault();
-    //       const target = event.target;
-    //       this.setState({
-    //         [target.name]: target.value,
-    //       });
-    //     }
-    // }
-
-
     const [password, setPassword] = useState({
         // username: '',
         // email: '',

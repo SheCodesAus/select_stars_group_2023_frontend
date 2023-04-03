@@ -11,9 +11,9 @@ import CreateMentorForm from './components/CreateMentorForm/createMentorForm';
 import Nav from './components/Nav/Nav';
 import HomePage from './components/HomePage/HomePage';
 import NotFound from './components/Custom404/NotFound';
-import MentorProfile from './components/MentorProfilePage/MentorProfile';
-import OnboardingSteps from './components/OnboardingPage/onboardingPage';
 import ChangePasswordForm from './components/ChangePassword/changePasswordForm';
+import MentorProfile from './components/AllMentorsList/allMentors';
+import MentorDetails from './components/MentorDetailsPage/mentorDetails';
 
 const HeaderLayout = () => {
   return (
@@ -51,8 +51,8 @@ const router = createBrowserRouter([
         element: <CreateMentorForm />,    
       },
       {
-        path: '/onboarding',
-        element: <OnboardingSteps />,    
+        path: '/mentordetails',
+        element: <MentorDetails/>,    
       },
 
       {
