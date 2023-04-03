@@ -45,10 +45,10 @@ function CreateEventForm() {
                     <input type="text" placeholder="Enter name of event" id="event_name" onChange={handleChange} />
                 </div>
 
-                <div className="eventField">
+                {/* <div className="eventField">
                     <label htmlFor='event_date'>Event Date:</label>
                     <input type="date" placeholder="Enter date of event" id="event_date" onChange={handleChange} />
-                </div>
+                </div> */}
 
                 <div className="eventField">
                     <label htmlFor='location'>Location:</label>
