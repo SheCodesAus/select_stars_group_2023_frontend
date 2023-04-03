@@ -4,7 +4,7 @@ import { useState } from 'react'
 import "./App.css";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import loginForm from './Components/LoginPage/loginForm';
+import LoginForm from 'Components/LoginPage/LoginForm'
 import CreateUserForm from './Components/CreateUserForm/createUserForm';
 import CreateEventForm from './Components/CreateEventForm/createEventForm';
 import CreateMentorForm from './Components/CreateMentorForm/createMentorForm';
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <loginForm />,
+        element: <LoginForm />,
       },
       {
         path: '/register',

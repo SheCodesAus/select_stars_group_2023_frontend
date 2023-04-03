@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from "react-router-dom"
-import './loginForm.css';
+import './LoginForm.css';
 import { useNavigate } from "react-router-dom";
 
 
-function loginForm() {
+function LoginForm() {
     const [credentials, setCredentials] = useState({
         username: "",
         password: ""
@@ -82,4 +82,4 @@ function loginForm() {
     );
 };
 
-export default loginForm
+export default LoginForm
