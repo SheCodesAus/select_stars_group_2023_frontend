@@ -10,6 +10,7 @@ function MentorProfile(props) {
   const { id } = useParams();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [search, setSearch] = useState("")
+  const [mentorsData, setMentorsData] = useState([]);
 
   useEffect(() => {
     const isLoggedIn = true;
@@ -17,12 +18,12 @@ function MentorProfile(props) {
         history.push('/login');
     } else {
         setIsLoggedIn(true);
-        fetch(`${import.meta.env.VITE_API_URL}event/`)
+        fetch(`${import.meta.env.VITE_API_URL}mentor/`)
             .then((results) => {
                 return results.json();
             })
             .then((data) => {
-                setEventData(data)
+                setMentorsData(data)
             })
     }
 }, []);
