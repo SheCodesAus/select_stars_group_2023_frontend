@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:selectstars/src/components/OnboardingPage/onboardingPage.css
 .onboarding-container {
   display: flex;
   flex-direction: row;
@@ -91,3 +92,5 @@ input[type="checkbox"]:checked {
 .mentorProfile_card {
   margin: 10px;
 }
+=======
+>>>>>>> Stashed changes:selectstars/src/components/MentorDetailsPage/mentorDetails.css

@@ -2,18 +2,18 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { useState } from 'react'
 import "./App.css";
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import LoginForm from './components/LoginPage/loginform';
-import CreateUserForm from './components/CreateUserForm/CreateUserForm';
-import CreateEventForm from './components/CreateEventForm/createEventForm';
-import CreateMentorForm from './components/CreateMentorForm/createMentorForm';
-import Nav from './components/Nav/Nav';
-import HomePage from './components/HomePage/HomePage';
-import NotFound from './components/Custom404/NotFound';
-import MentorProfile from './components/MentorProfilePage/MentorProfile';
-import OnboardingSteps from './components/OnboardingPage/onboardingPage';
-import ChangePasswordForm from './components/ChangePassword/changePasswordForm';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import LoginForm from './Components/LoginPage/LoginForm';
+import CreateUserForm from './Components/CreateUserForm/createUserForm';
+import CreateEventForm from './Components/CreateEventForm/createEventForm';
+import CreateMentorForm from './Components/CreateMentorForm/createMentorForm';
+import Nav from './Components/Nav/Nav';
+import HomePage from './Components/HomePage/HomePage';
+import NotFound from './Components/Custom404/NotFound';
+import ChangePasswordForm from './Components/ChangePassword/changePasswordForm';
+import MentorProfiles from './Components/AllMentorsList/allMentors';
+import MentorDetails from './Components/MentorDetailsPage/mentorDetails';
 
 const HeaderLayout = () => {
   return (
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
 
       {
         path: '/mentorlist',
-        element: <MentorProfile />,
+        element: <MentorProfiles />,
       },
 
       {
