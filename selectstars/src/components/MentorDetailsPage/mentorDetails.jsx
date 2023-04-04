@@ -1,14 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './mentorDetails.css'; 
-import { mentors } from "../../../dummydata";
+// import { mentors } from "../../../dummydata";
 
 
 
 function MentorDetails(){
-  const [mentorDetailData, setmentorDetailData ] = useState({mentor_tech_stack : []})/*({ events : []});*/
+
+  const navigate = useNavigate();
+
   const { id } = useParams();
+  const { id:mentorId } = useParams();
+  // console.log(mentorId)
+  const [mentorDetailData, setmentorDetailData ] = useState({mentor_tech_stack : []})/*({ events : []});*/
+  const [techStack, setTechStack] = useState([]);
+  const [events, setEvents] = useState([]);
+  const [onboarding, setOnboarding] = useState({
+    interview: false,
+    offer: false,
+    contract_sent: false,
+    contract_return: false,
+    onboarding_completed: false,
+    feedback: false,
+    offboarding: false,
+    mentor: mentorId,
+    event: '',
+
+  });
+
+
+  
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}mentor/${id}`)
@@ -22,7 +45,87 @@ function MentorDetails(){
 
   },[]);
 
-  
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}tech_stack/`)
+    .then((results) => {
+        return results.json();
+    })
+    .then((data) => {
+        setTechStack(data);
+    })
+  }, []);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}event/`)
+    .then((results) => {
+        return results.json();
+    })
+    .then((data) => {
+      setEvents(data);
+    })
+  }, []);
+
+  // useEffect(() => {
+  //   fetch(`${import.meta.env.VITE_API_URL}onboarding/`)
+  //   .then((results) => {
+  //       return results.json();
+  //   })
+  //   .then((data) => {
+  //     setEvents(data);
+  //   })
+  // }, []);
+
+  // let eventItems = events.array.map((item) =>
+  //       <option key={item}>{item}</option>
+  // );
+
+  const handleChange = (event) => {
+    const { id, value } = event.target;
+    console.log(id);
+    console.log(value);
+
+    if (id == "event") {
+      setOnboarding((prevOnboarding) => ({
+        ...prevOnboarding,
+        [id]: value
+      }));
+
+    } 
+
+  };
+
+  const postData = async () => {
+    const token = window.localStorage.getItem("token");
+    console.log(JSON.stringify(onboarding));
+    // console.log(token);
+    const response = await fetch(`${import.meta.env.VITE_API_URL}onboarding/`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `token ${token}`
+        },
+        body: JSON.stringify(onboarding),
+    });
+
+    // console.log('here')
+
+    if (response.status !== 201) {
+        throw new Error(response.statusText);
+    }
+    return response.json();
+
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    postData().then((response)=>{
+        // if(response.status == 201){
+            navigate("/");
+        // }
+        
+    } )
+  };
+
 
   return(
     <>
@@ -33,8 +136,22 @@ function MentorDetails(){
         <h3>Mentor type: {mentorDetailData.level}</h3>
         {/* <h5>Location:</h5><span>{mentorsData.location}</span> */}
         <h3>Willing to travel: {mentorDetailData.can_travel}</h3>
-        <Link className="" to={`/mentordetails/:id/addEvent`}>Add Mentor To Event</Link>
-        </section>
+
+        <div className="add_mentor_event">
+            <label htmlFor='add_mentor_event'>Add mentor to event:</label>
+            <select id='event' onChange={handleChange}>
+                <option value=""> </option>
+                {events.map((events) => {
+                    return <option key={events.id} value={events.id} > {events.title}</option>
+                })}
+            </select>
+        </div>
+        <div className='add_mentor_event'>
+            <button type="submit" onClick={handleSubmit}>Add</button>
+         </div>
+        
+        {/* <Link className="" to={`/mentordetails/:id/addEvent`}>Add Mentor To Event</Link> */}
+      </section>
     </>
   )
   // const checkboxData = [
