@@ -30,15 +30,19 @@
 
 .allMentorSection{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 0 5%;
+    width: 40%;
+    }
     
-  }
-/* Responsive styles */
+    .allMentorCard {
+    flex-basis: 10%;
+    }
+
 @media screen and (max-width: 480px) {
     form {
         max-width: 100%;
     }
-}
+} 
+
