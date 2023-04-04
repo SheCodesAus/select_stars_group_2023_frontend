@@ -56,15 +56,16 @@ function CreateEventForm() {
         event.preventDefault();
         console.log('Entering event details', eventDetails);
 
-       {postData().then((response)=>{
-            if (response.detail == 'invalid token.'){
+       postData().then((response)=>{
+        console.log(response)
+            if (response.detail == 'Invalid token.'){
                 alert ('Please login to create event')
                 navigate('/login')
             }
             else {navigate("/")};
         })
     };
-     };
+    
 
 
     const postData = async ()  => {
