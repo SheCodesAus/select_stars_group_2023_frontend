@@ -47,7 +47,7 @@ function MentorProfile() {
   
         <div className="allMentorsPage-title">
           <h1>All Mentors</h1>
-          <div classNmae="allMentorSection">
+          <div className="allMentorSection">
             {mentorsData.map((mentorsData, key) => {
                     return <MentorCard key={key} mentorsData={mentorsData} />
                 })}
