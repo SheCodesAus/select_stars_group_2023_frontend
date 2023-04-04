@@ -22,34 +22,30 @@ function Nav() {
 
   return (
     <nav className='main-nav-container'>
-
       <div className='nav-tabs'>
-        <>
-          <Link to='/' className='logo'>
-            <img src='https://shecodes.com.au/wp-content/uploads/2020/02/Purple_no_circle.svg' alt='Logo' />
-          </Link>
-          <Link to='/' className='nav-item'>
-            Home
-          </Link>
-          <Link to='/register' className='nav-item'>
-            Create User
-          </Link>
-          <Link to='/mentor' className='nav-item'>
-            Create Mentor
-          </Link>
-          <Link to='/event' className='nav-item'>
-            Create Event
-          </Link>
-          <Link to='/mentorlist' className='nav-item'>
-            Mentors
-          </Link>
-        </>
-
+        <Link to='/' className='logo'>
+          <img src='https://shecodes.com.au/wp-content/uploads/2020/02/Purple_no_circle.svg' alt='Logo' />
+        </Link>
         {isUserSignedIn ? (
           <>
-            <Link to='/profile' className='nav-item'>
-              Profile
+            <Link to='/' className='nav-item'>
+              Home
             </Link>
+            <Link to='/register' className='nav-item'>
+              Create User
+            </Link>
+            <Link to='/mentor' className='nav-item'>
+              Create Mentor
+            </Link>
+            <Link to='/event' className='nav-item'>
+              Create Event
+            </Link>
+            <Link to='/mentorlist' className='nav-item'>
+              Mentors
+            </Link>
+            {/* <Link to='/profile' className='nav-item'>
+              Profile
+            </Link> */}
             <button onClick={logout} className='nav-logout'>
               Logout
             </button>
