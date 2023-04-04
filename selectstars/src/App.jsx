@@ -4,17 +4,17 @@ import { useState } from 'react';
 import "./App.css";
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import CreateUserForm from './components/CreateUserForm/createUserForm';
+import CreateUserForm from './components/CreateUserForm/CreateUserForm';
 import LoginForm from './components/LoginPage/LoginForm';
-import CreateEventForm from './components/CreateEventForm/createEventForm';
-import CreateMentorForm from './components/CreateMentorForm/createMentorForm';
+import CreateEventForm from './components/CreateEventForm/CreateEventForm';
+import CreateMentorForm from './components/CreateMentorForm/CreateMentorForm';
 import Nav from './components/Nav/Nav';
 import HomePage from './components/HomePage/HomePage';
 import NotFound from './components/Custom404/NotFound';
-import ChangePasswordForm from './components/ChangePassword/changePasswordForm';
-import MentorProfile from './components/AllMentorsList/allMentors';
-import MentorDetails from './components/MentorDetailsPage/mentorDetails';
-import MentorAddEvent from './components/MentorAddEventPage/index';
+import ChangePasswordForm from './components/ChangePassword/ChangePasswordForm';
+import MentorProfile from './components/AllMentorsList/AllMentors';
+import MentorDetails from './components/MentorDetailsPage/MentorDetails';
+import MentorAddEvent from './components/MentorAddEventPage/Index';
 
 const HeaderLayout = () => {
   return (

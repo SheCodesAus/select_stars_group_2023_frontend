@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* .register-page .background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("https://s35764.pcdn.co/wp-content/uploads/2022/06/Women-in-Coding_1200x62801.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.register-page .background-image::after {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #8246AF;
+    background-size: cover;
+    background-position: center;
+    opacity: calc(25%);
+} */
+
+.register-page {
+    background-color: #8246ae;
+}
+
+.register-page h1 {
+    color: #F5F5F5;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 1;
+}
+
+.register-page .register-form {
+    margin: 20px auto;
+    max-width: 70%;
+    padding: 3%;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.signUpField {
+    margin: 1%;
+    width: 90%;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+}
+
+.signUpField label {
+    display: inline-block;
+    clear: left;
+    width: 250px;
+    margin-right: 10%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #8246ae;
+    text-align: right;
+}
+
+.signUpField input {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 1;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+}
+
+.signUpField button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #8246ae;
+    cursor: pointer;
+}
+
+.signUpField button[type="submit"]:hover {
+    background-color: #f3279a;
+    transform: scale(1.1);
+
+}
+
+/* Responsive styles */
+@media screen and (max-width: 480px) {
+    form {
+        max-width: 100%;
+    }
+
+    .signUpField {
+        width: 100%;
+    }
+}
