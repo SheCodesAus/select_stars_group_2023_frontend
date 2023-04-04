@@ -7,6 +7,8 @@ function CreateEventForm() {
         eventName: '',
         eventDate: '',
         eventLocation: '',
+        eventType:'',
+        description:''
 
     });
 
@@ -14,8 +16,8 @@ function CreateEventForm() {
 
     const handleChange = (event) => {
         const { id, value } = event.target;
-        setEventDetails((prevDetails) => ({
-            ...prevDetails,
+        setEventDetails((prevEventDetails) => ({
+            ...prevEventDetails,
             [id]: value
         }));
     };
@@ -24,11 +26,31 @@ function CreateEventForm() {
         event.preventDefault();
         console.log('Entering event details', eventDetails);
 
-        postData().then((response)=>{
-                window.localStorage.setItem("token", response.token)
-                navigate('');
-        })
+    //    {postData().then((response)=>{
+    //         if (response.detail == 'invalid token.'){
+    //             alert ('Please login to create event')
+    //             navigate('/login')
+    //         }
+    //         else {navigate('/event/${response.id}')};
+    //     })
+    // };
+     };
+
+
+    const postData = async ()  => {
+        const token = window.localStorage.getItem('token')
+        const response = await 
+        fetch(`${import.meta.env.VITE_API_URL}event/`, {
+            method: 'post',
+            headers: {                                 
+                'Content-Type': "application/json",  
+                'Authorization':`token ${token}`          
+            },
+            body: JSON.stringify(eventDetails)
+        });
+        return response.json();
     };
+
 
     return (
         <div className="event-page">
@@ -52,7 +74,20 @@ function CreateEventForm() {
 
                 <div className="eventField">
                     <label htmlFor='location'>Location:</label>
-                    <input type="text" placeholder="Enter location" id="location" onChange={handleChange} />
+                    <select id='location' onChange={handleChange}> 
+                    <option value="sydney">Sydney</option>
+                    <option value="brisbane">Brisbane</option>
+                    <option value="perth">Perth</option>
+                </select>
+                </div>
+
+                <div className="eventField">
+                    <label htmlFor='type'>Event Type:</label>
+                    <select id='type' onChange={handleChange}>
+                    <option value="flash">Flash</option>
+                    <option value="plus">Plus</option>
+                    <option value="one day workshop">One Day Workshop</option>
+                </select>
                 </div>
 
                 <div className="eventField">
@@ -66,13 +101,13 @@ function CreateEventForm() {
                 </div>
 
                 <div className="eventField">
-                    <label htmlFor='start_date'>Start time:</label>
-                    <input type="datetime-local" placeholder="Start time" id="start_date" onChange={handleChange} />
+                    <label htmlFor='start_date'>Start Date:</label>
+                    <input type="datetime-local" placeholder="Start Date" id="start_date" onChange={handleChange} />
                 </div>
 
                 <div className="eventField">
-                    <label htmlFor='end'>End time:</label>
-                    <input type="datetime-local" placeholder="End time" id="end_date" onChange={handleChange} />
+                    <label htmlFor='end_date'>End Date:</label>
+                    <input type="datetime-local" placeholder="End Date" id="end_date" onChange={handleChange} />
                 </div>
 
                 <div className='eventField'>
@@ -85,4 +120,4 @@ function CreateEventForm() {
 
 };
 
-export default CreateEventForm 
+export default CreateEventForm; 
