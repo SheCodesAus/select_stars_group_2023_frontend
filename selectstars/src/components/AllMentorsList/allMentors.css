@@ -27,6 +27,15 @@
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+.allMentorSection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 5%;
+    
+  }
 /* Responsive styles */
 @media screen and (max-width: 480px) {
     form {
