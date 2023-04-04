@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import './mentorDetails.css'; 
-// import { mentors } from "../../../dummydata";
-
-
 
 function MentorDetails(){
 
@@ -30,9 +27,6 @@ function MentorDetails(){
 
   });
 
-
-  
-
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}mentor/${id}`)
     .then((results) => {
@@ -41,7 +35,6 @@ function MentorDetails(){
     .then((data) => {
         setmentorDetailData(data)
     })
-
 
   },[]);
 
@@ -126,8 +119,7 @@ function MentorDetails(){
     } )
   };
 
-
-  return(
+  return (
     <>
       <section className="">   
         <h3><img src={mentorDetailData.image} alt="Profile picture" /></h3>             
