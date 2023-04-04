@@ -11,6 +11,8 @@ function MentorProfile() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [search, setSearch] = useState("")
   const [mentorsData, setMentorsData] = useState([]);
+  const [techStack, setTechStack] = useState([]);
+
 
   useEffect(() => {
     const isLoggedIn = true;
@@ -26,7 +28,18 @@ function MentorProfile() {
                 setMentorsData(data)
             })
     }
-}, []);
+  }, []);
+
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}tech_stack/`)
+    .then((results) => {
+        return results.json();
+    })
+    .then((data) => {
+        setTechStack(data);
+    })
+  }, []);
 // useEffect(() => {
 //   if (search == "") {
 //       setFilterData(mentorsData)
@@ -47,13 +60,14 @@ function MentorProfile() {
   
         <div className="allMentorsPage-title">
           <h1>All Mentors</h1>
+          </div>
 
           <div className="allMentorSection">
             {mentorsData.map((mentorsData, key) => {
-                    return <MentorCard key={key} mentorsData={mentorsData} />
+                    return <MentorCard key={key} mentorsData={mentorsData} techStack={techStack}/>
                 })}
           </div>
-        </div>
+
         </div>
       ) : null;
 };

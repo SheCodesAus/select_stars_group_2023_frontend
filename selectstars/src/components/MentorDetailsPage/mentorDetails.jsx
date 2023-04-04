@@ -7,20 +7,22 @@ import { mentors } from "../../../dummydata";
 
 
 function MentorDetails(){
-const [mentorDetailData, setmentorDetailData ] = useState({mentor_tech_stack : []})/*({ events : []});*/
-const { id } = useParams();
+  const [mentorDetailData, setmentorDetailData ] = useState({mentor_tech_stack : []})/*({ events : []});*/
+  const { id } = useParams();
 
-useEffect(() => {
-  fetch(`${import.meta.env.VITE_API_URL}mentor/${id}`)
-  .then((results) => {
-      return results.json();
-})
-  .then((data) => {
-      setmentorDetailData(data)
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}mentor/${id}`)
+    .then((results) => {
+        return results.json();
   })
+    .then((data) => {
+        setmentorDetailData(data)
+    })
 
 
-},[]);
+  },[]);
+
+  
 
   return(
     <>
