@@ -4,9 +4,9 @@ import './createEventForm.css';
 
 function CreateEventForm() {
     const [eventDetails, setEventDetails] = useState({
-        eventName: '',
-        eventDate: '',
-        eventLocation: '',
+        // eventName: '',
+        // eventDate: '',
+        // eventLocation: '',
 
     });
 
@@ -23,12 +23,30 @@ function CreateEventForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Entering event details', eventDetails);
+    
 
-        postData().then((response)=>{
-                window.localStorage.setItem("token", response.token)
+      postData().then((response)=>{
+                // window.localStorage.setItem("token", response.token)
                 navigate('');
         })
     };
+
+        const postData = async () => {
+            const token = window.localStorage.getItem("token")
+            const response = await fetch(`${import.meta.env.VITE_API_URL}event/`, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `token ${token}`
+                },
+                body: JSON.stringify(eventDetails),
+            });
+            const data = await response.json();
+            console.log(data);
+            navigate("/success");
+    };
+
+
 
     return (
         <div className="event-page">
@@ -37,23 +55,29 @@ function CreateEventForm() {
             <form>
                 <div className="eventField">
                     <label htmlFor='image'>Image:</label>
-                    <input type="url" placeholder="Link of image" id="event_image" onChange={handleChange} />
+                    <input type="url" placeholder="Link of image" id="image" onChange={handleChange} />
                 </div>
 
                 <div className="eventField">
-                    <label htmlFor='event_name'>Event Name:</label>
-                    <input type="text" placeholder="Enter name of event" id="event_name" onChange={handleChange} />
+                    <label htmlFor='title'>Event Name:</label>
+                    <input type="text" placeholder="Enter name of event" id="title" onChange={handleChange} />
                 </div>
 
-                {/* <div className="eventField">
-                    <label htmlFor='event_date'>Event Date:</label>
-                    <input type="date" placeholder="Enter date of event" id="event_date" onChange={handleChange} />
-                </div> */}
+                <div className="eventField">
+                    <label htmlFor='type'>Event Type:</label> 
+                    <select name='event_type' id='event_type' onChange={handleChange}>
+                        <option value="flash">Flash</option>
+                        <option value="one day workshop">One Day Workshop</option>
+                        <option value="plus">Plus</option>
+                </select>
+                </div>
 
                 <div className="eventField">
                     <label htmlFor='location'>Location:</label>
                     <input type="text" placeholder="Enter location" id="location" onChange={handleChange} />
                 </div>
+
+                
 
                 <div className="eventField">
                     <label htmlFor='description'>Description:</label>
@@ -61,8 +85,8 @@ function CreateEventForm() {
                 </div>
 
                 <div className="eventField">
-                    <label htmlFor='assigned_mentor'>Mentors Assigned:</label>
-                    <input type="text" placeholder="Assign a mentor" id="assigned_mentor" onChange={handleChange} />
+                    <label htmlFor='mentor'>Mentors Assigned:</label>
+                    <input type="text" placeholder="Assign a mentor" id="mentor" onChange={handleChange} />
                 </div>
 
                 <div className="eventField">
@@ -71,9 +95,23 @@ function CreateEventForm() {
                 </div>
 
                 <div className="eventField">
-                    <label htmlFor='end'>End time:</label>
+                    <label htmlFor='end_date'>End time:</label>
                     <input type="datetime-local" placeholder="End time" id="end_date" onChange={handleChange} />
                 </div>
+
+                <div className="eventField">
+                    <label htmlFor='event_tech_stack'>Event tech Stack:</label> 
+                    <select name='event_tech_stack' id='event_tech_stack' onChange={handleChange}>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="React">React</option>
+                        <option value="Django">Django</option>
+                        <option value="DRF">DRF</option>
+                        <option value="JavaScript">JavaScript</option>
+                </select>
+                </div>
+
+
 
                 <div className='eventField'>
                     <button type="submit" onClick={handleSubmit}>Create Event</button>
