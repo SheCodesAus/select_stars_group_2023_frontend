@@ -51,9 +51,8 @@
 }
 
 .mentor_details {
-
     margin: 1%;
-    width: 90%;
+    width: 100%;
     text-align: right;
     display: flex;
     align-items: flex-end;
