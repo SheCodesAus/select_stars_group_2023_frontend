@@ -54,10 +54,10 @@
 
 .signUpField {
     margin: 1%;
-    width: 90%;
     text-align: right;
     display: flex;
     align-items: flex-end;
+    width: 100%;
 }
 
 .signUpField label {
