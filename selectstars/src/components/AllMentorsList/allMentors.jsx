@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
-import { useParams } from "react-router-dom";
-import MentorCard from "../MentorCard/mentorCard";
+// import { useParams } from "react-router-dom";
+import MentorCard from "../MentorCard";
 import './allMentors.css';
 
 
 
   
-function MentorProfile(props) {
-  const { id } = useParams();
+function MentorProfile() {
+  // const { id } = useParams();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [search, setSearch] = useState("")
   const [mentorsData, setMentorsData] = useState([]);
@@ -18,7 +18,7 @@ function MentorProfile(props) {
         history.push('/login');
     } else {
         setIsLoggedIn(true);
-        fetch(`${import.meta.env.VITE_API_URL}mentor/`)
+        fetch(`${import.meta.env.VITE_API_URL}mentor`)
             .then((results) => {
                 return results.json();
             })
@@ -40,7 +40,6 @@ function MentorProfile(props) {
 //   setSearch(mentor.target.value)
 // }
 
-
   return isLoggedIn ? (
     <div className="allMentors-page">
   
@@ -48,6 +47,11 @@ function MentorProfile(props) {
   
         <div className="allMentorsPage-title">
           <h1>All Mentors</h1>
+          <div classNmae="allMentorSection">
+            {mentorsData.map((mentorsData, key) => {
+                    return <MentorCard key={key} mentorsData={mentorsData} />
+                })}
+          </div>
         </div>
         </div>
       ) : null;

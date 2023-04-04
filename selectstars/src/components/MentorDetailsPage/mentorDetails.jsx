@@ -1,10 +1,40 @@
-import React, { useState } from "react";
-import MentorCard from "../MentorCard/mentorCard";
+import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import './mentorDetails.css'; 
 import { mentors } from "../../../dummydata";
 
 
-function MentorDetails() {
+
+function MentorDetails(){
+const [mentorDetailData, setmentorDetailData ] = useState({mentor_tech_stack : []})/*({ events : []});*/
+const { id } = useParams();
+
+useEffect(() => {
+  fetch(`${import.meta.env.VITE_API_URL}mentor/${id}`)
+  .then((results) => {
+      return results.json();
+})
+  .then((data) => {
+      setmentorDetailData(data)
+  })
+
+
+},[]);
+
+  return(
+    <>
+      <section className="">   
+        <h3><img src={mentorDetailData.image} alt="Profile picture" /></h3>             
+        <h1>{mentorDetailData.first_name} {mentorDetailData.first_name}</h1>
+        <h3>Tech Stack: {mentorDetailData.mentor_tech_stack}</h3>
+        <h3>Mentor type: {mentorDetailData.level}</h3>
+        {/* <h5>Location:</h5><span>{mentorsData.location}</span> */}
+        <h3>Willing to travel: {mentorDetailData.can_travel}</h3>
+        <Link className="" to={`/mentordetails/:id/addEvent`}>Add Mentor To Event</Link>
+        </section>
+    </>
+  )
   // const checkboxData = [
   //   { id: '1', label: 'Invited to Interview' },
   //   { id: '2', label: 'Offered Position' },
