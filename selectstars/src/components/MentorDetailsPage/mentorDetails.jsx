@@ -7,8 +7,14 @@ import { mentors } from "../../../dummydata";
 
 
 function MentorDetails(){
+<<<<<<< Updated upstream
   const [mentorDetailData, setmentorDetailData ] = useState({mentor_tech_stack : []})/*({ events : []});*/
   const { id } = useParams();
+=======
+const [mentorDetailData, setmentorDetailData ] = useState([])/*({ events : []});*/
+const [techStack, setTechStack] = useState([]);
+const { id } = useParams();
+>>>>>>> Stashed changes
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}mentor/${id}`)
@@ -23,6 +29,16 @@ function MentorDetails(){
   },[]);
 
   
+
+useEffect(() => {
+  fetch(`${import.meta.env.VITE_API_URL}tech_stack/`)
+  .then((results) => {
+      return results.json();
+  })
+  .then((data) => {
+      setTechStack(data);
+  })
+}, []);
 
   return(
     <>
