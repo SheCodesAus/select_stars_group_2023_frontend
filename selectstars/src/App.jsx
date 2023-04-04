@@ -1,19 +1,20 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import { useState } from 'react'
+import { useState } from 'react';
 import "./App.css";
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import LoginForm from './components/LoginPage/loginform';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
 import CreateUserForm from './components/CreateUserForm/CreateUserForm';
-import CreateEventForm from './components/CreateEventForm/createEventForm';
-import CreateMentorForm from './components/CreateMentorForm/createMentorForm';
+import LoginForm from './components/LoginPage/LoginForm';
+import CreateEventForm from './components/CreateEventForm/CreateEventForm';
+import CreateMentorForm from './components/CreateMentorForm/CreateMentorForm';
 import Nav from './components/Nav/Nav';
 import HomePage from './components/HomePage/HomePage';
 import NotFound from './components/Custom404/NotFound';
-import ChangePasswordForm from './components/ChangePassword/changePasswordForm';
-import MentorProfile from './components/AllMentorsList/allMentors';
-import MentorDetails from './components/MentorDetailsPage/mentorDetails';
+import ChangePasswordForm from './components/ChangePassword/ChangePasswordForm';
+import MentorProfile from './components/AllMentorsList/AllMentors';
+import MentorDetails from './components/MentorDetailsPage/MentorDetails';
+import MentorAddEvent from './components/MentorAddEventPage/Index';
 
 const HeaderLayout = () => {
   return (
@@ -48,12 +49,17 @@ const router = createBrowserRouter([
 
       {
         path: '/mentor',
-        element: <CreateMentorForm />,    
+        element: <CreateMentorForm />,
       },
       {
-        path: '/mentordetails',
-        element: <MentorDetails/>,    
+        path: '/mentordetails/:id',
+        element: <MentorDetails />,
       },
+      {
+        path: '/mentordetails/:id/addEvent',
+        element: <MentorAddEvent />,
+      }
+      ,
 
       {
         path: '/mentorlist',
@@ -69,7 +75,7 @@ const router = createBrowserRouter([
         path: '/user/change-password/',
         element: <ChangePasswordForm />,
       },
-  
+
     ]
 
   }
