@@ -28,8 +28,6 @@ function CreateMentorForm() {
         location: '',
         can_travel: false,
         mentor_tech_stack: [],
-        // feedback: true,
-        // offboarding: true,
     });
 
     const navigate = useNavigate();
@@ -38,11 +36,7 @@ function CreateMentorForm() {
     const handleChange = (event) => {
         const { id, value } = event.target;
         const checked = event.target.checked
-        
 
-        // console.log(id);
-        // console.log(value);
-        // console.log(checked);
         if(id == "can_travel" ){
             // console.log(can_travel);
             var travel = false;
