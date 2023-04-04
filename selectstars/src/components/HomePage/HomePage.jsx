@@ -48,7 +48,7 @@ function HomePage(props) {
             </div>
             <input type="search" id="search" value={search} onChange={handleChange} placeholder="Search by event type" className="searchFilter">
             </input>
-            <div className="Homepage">
+            <div className="events-container">
                 {filterData.map((event, key) => {
                     return <EventCard key={key} eventData={event} />
                 })}
