@@ -9,7 +9,7 @@ function HomePage(props) {
     const { id } = useParams();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [search, setSearch] = useState("")
-    const [isUserSignedIn, setIsUserSignedIn] = useState(false);
+    // const [isUserSignedIn, setIsUserSignedIn] = useState(false);
     const token = window.localStorage.getItem('token');
 
     useEffect(() => {
@@ -55,7 +55,8 @@ function HomePage(props) {
         setSearch(event.target.value)
     }
 
-    return isLoggedIn ? (
+    // return isLoggedIn ? (
+    return (
         <div className="home-page">
             <div className="background-image"></div>
             <div className="title">
@@ -70,7 +71,7 @@ function HomePage(props) {
 
             </div>
         </div >
-    ) : null;
+    )
 };
 
 
