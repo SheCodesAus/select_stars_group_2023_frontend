@@ -14,7 +14,7 @@ return (
   <Link to={`/mentordetails/${mentorsData.id}`}>
     <ol>
       <h3><img src={mentorsData.image} alt="Profile picture" /></h3>
-      <h3>{mentorsData.first_name} {mentorsData.last_name}</h3>
+      <h3 class="mentorname">{mentorsData.first_name} {mentorsData.last_name}</h3>
       <h3>Tech Stack: {mentorsData.mentor_tech_stack}</h3>
       <h3>Mentor type: {mentorsData.level}</h3>
       {/* <h5>Location:</h5><span>{mentorsData.location}</span> */}
