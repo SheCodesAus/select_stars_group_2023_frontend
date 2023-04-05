@@ -23,8 +23,20 @@
         flex-basis: 10%;
         }
     @media screen and (max-width: 480px) {
-        form {
-            max-width: 100%;
+
+        .nav-tabs .logo {
+            display: none;
+        }
+    
+        .nav-tabs {
+            margin-top: 2px;
+            height: 230px;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .allMentorSection {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
     
