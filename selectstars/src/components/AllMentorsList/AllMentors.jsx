@@ -36,17 +36,18 @@ function MentorProfile() {
       });
   }, []);
 
+
   useEffect(() => {
     if (search === "") {
       setFilteredMentorsData(mentorsData);
     } else {
       const filteredData = mentorsData.filter((mentor) =>
-      mentor.mentor_type && mentor.mentor_type.toLowerCase().includes(search.toLowerCase())
+        mentor.first_name && mentor.first_name.toLowerCase().includes(search.toLowerCase())
       );
       setFilteredMentorsData(filteredData);
     }
   }, [search, mentorsData]);
-
+  
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
