@@ -268,7 +268,6 @@ function CreateMentorForm() {
                     /> */}
     
                 {/* </div>
-
             
                 <div className='mentor_details'>
                     <label htmlFor='level'>Mentor Level:</label>
@@ -281,7 +280,6 @@ function CreateMentorForm() {
                 </div> */}
 
                 <div className='mentor_details'>
-
                     <label className='title' htmlFor='mentor_tech_stack'>Tech stack:</label>
                         <ul id="mentor_tech_stack">
                             {techStack.map(({name}, index) => {
@@ -301,23 +299,9 @@ function CreateMentorForm() {
                                 )
                             })}
                         </ul>
-
                 </div>
-
-                <div className='mentor_details'>
-                    <div className='travel-box'>
-                        
-                        <label htmlFor='can_travel'>Can travel?</label>
-
-                            <input
-                                type="checkbox"
-                                id="can_travel"
-                                name="can_travel"
-                                onChange={handleChange}
-                            />
-                    </div>
-                </div>
-
+                
+                
                 <div className='mentor_details'>
                     <button type="submit" onClick={handleSubmit}>Create</button>
                 </div>
