@@ -35,7 +35,8 @@ function MentorDetails(){
   const [onboardingArray, setOnboardingArray] = useState([]);
   const [onboardingId, setOnboardingId] = useState(0);
   const [onboarding, setOnboarding] = useState({
-    interview: false,
+    id: '',
+    interview: true,
     offer: false,
     contract_sent: false,
     contract_return: false,
@@ -96,14 +97,15 @@ function MentorDetails(){
     })
   }, []);
 
+  
+  let onboardingObject = {};
   for (let i = 0; i < onboardingArray.length; i ++){
     // console.log("mentorId: ", mentorId);
     // console.log("onboardingArray[i].mentor: ", onboardingArray[i].mentor);
     if(onboardingArray[i].mentor == mentorId ){
 
       tempId = onboardingArray[i].id
-      
-      
+      onboardingObject = onboardingArray[i];
       
     }
   }
@@ -139,12 +141,14 @@ function MentorDetails(){
 
 
 
+
+
   let onboardingIdValue = Object.values(onboardingId); 
 
   useEffect(() => {
        
     
-    if(onboardingIdValue == tempId) {
+   
       fetch(`${import.meta.env.VITE_API_URL}onboarding/5/`)
       .then((results) => {
           return results.json();
@@ -152,10 +156,28 @@ function MentorDetails(){
       .then((data) => {
         setOnboarding(data);
       })
+      // ${onboardingIdValue}
+  
+    // const values = Object.values(onboardingObject)
+    // console.log("values: ", values)
 
-    }
+    // setOnboarding((prevOnboarding) => ({
+    //   ...prevOnboarding,
+    //   id: values[0],
+    //   interview: values[1],
+    //   offer: values[2],
+    //   contract_sent: values[3],
+    //   contract_return: values[4],
+    //   onboarding_completed: values[5],
+    //   feedback: values[6],
+    //   offboarding: values[7],
+    //   mentor: values[8],
+    //   event: values[9],
+    // }));
+
+  
    
-  }, [onboardingIdValue]);
+  }, []);
 
   // console.log("onboarding: ", onboarding)
 
@@ -164,8 +186,6 @@ function MentorDetails(){
 
   const handleChange = (event) => {
     const { id, value } = event.target;
-    // console.log(id);
-    // console.log(value);
 
     if (id == "event") {
       setOnboarding((prevOnboarding) => ({
@@ -177,15 +197,14 @@ function MentorDetails(){
 
     setOnboarding((prevOnboarding) => ({
       ...prevOnboarding,
-      [mentorId]: mentorId
+      mentor : mentorId
     }));
 
   };
 
   const postData = async () => {
     const token = window.localStorage.getItem("token");
-    // console.log(JSON.stringify(onboarding));
-    // console.log(token);
+    console.log(onboarding);
     const response = await fetch(`${import.meta.env.VITE_API_URL}onboarding/`, {
         method: "post",
         headers: {
@@ -207,9 +226,6 @@ function MentorDetails(){
   const handleSubmit = (event) => {
     event.preventDefault();
     postData().then((response)=>{
-        // if(response.status == 201){
-            navigate("/");
-        // }
         
     } )
   };
@@ -217,21 +233,8 @@ function MentorDetails(){
 
   // ONBOARDING
 
-  //storing the values of the boxes that have been checked
-
-  // const [checkedValues, setCheckedValues] = useState([]);
-  // const [lastCheckedIndex, setLastCheckedIndex] = useState(-1);
-
-  //once checked, updating the checked values and calling the function updateOnboarding
 
   const handleCheckboxChange = (event) => {
-    // const value = parseInt(event.target.value);
-    // console.log("event.target.value: ", event.target.value)
-    
-    // setCheckedValues([...checkedValues, value]);
-    // setLastCheckedIndex(value);
-
-    // updateOnboarding(event);
 
     const { id } = event.target;
     const checked = event.target.checked;
@@ -244,21 +247,13 @@ function MentorDetails(){
         ...prevOnboarding,
         [id]: true
       }), putData().then((response)=>{
-        // if(response.status == 201){
-            // navigate("/");
-        // }
-        
+       
       } ));
 
       // console.log("updateOnboarding check",onboarding.interview);
 
       event.preventDefault();
-      // putData().then((response)=>{
-      //   // if(response.status == 201){
-      //       // navigate("/");
-      //   // }
-        
-      // } )
+    
 
     }
     
@@ -322,8 +317,9 @@ function MentorDetails(){
   
 
   for (let i = 0; i < events.length; i ++){
-    if(onboarding.event = events[i].id){
+    if(onboardingObject.event == events[i].id){
       eventName = events[i].title;
+      // console.log(eventName);
     }
   }
 
@@ -350,8 +346,8 @@ function MentorDetails(){
     // console.log(result);
   }
 
-  
-
+  // console.log("nan", isNaN(+onboarding.event));
+  // console.log(typeof(onboarding.event) === 'undefined');
 
   return(
   
@@ -367,8 +363,8 @@ function MentorDetails(){
           <h3>Willing to travel: {mentorDetailData.can_travel}</h3>
           <h3>Assigned event: {eventName}</h3>
 
-          {
-            onboarding.event == '' &&
+          {/* {
+            isNaN(onboarding.event) && */}
             <div>
 
               <div className="add_mentor_event">
@@ -385,8 +381,9 @@ function MentorDetails(){
               </div>      
 
             </div>
-          }
+          {/* }  */}
 
+      
          
         
         </div> 
