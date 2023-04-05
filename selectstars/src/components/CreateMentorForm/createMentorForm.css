@@ -29,6 +29,7 @@
 
 .mentor-page {
     background-color: #8246ae;
+    padding-bottom: 30px;
 }
 
 .mentor-page h1 {
@@ -50,9 +51,8 @@
 }
 
 .mentor_details {
-
     margin: 1%;
-    width: 90%;
+    width: 100%;
     text-align: right;
     display: flex;
     align-items: flex-end;

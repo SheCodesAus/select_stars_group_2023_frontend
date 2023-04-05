@@ -9,15 +9,14 @@ function HomePage(props) {
     const { id } = useParams();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [search, setSearch] = useState("")
+    // const [isUserSignedIn, setIsUserSignedIn] = useState(false);
+    const token = window.localStorage.getItem('token');
 
     useEffect(() => {
-        const isLoggedIn = true;
-        if (!isLoggedIn) {
-            history.push('/login');
+        if (token === null) {
+            window.location.replace('/login');
         } else {
-            setIsLoggedIn(true);
             fetch(`${import.meta.env.VITE_API_URL}event/`)
-                // fetch(`${import.meta.env.VITE_API_URL}events/${id}`)
                 .then((results) => {
                     return results.json();
                 })
@@ -25,7 +24,23 @@ function HomePage(props) {
                     setEventData(data)
                 })
         }
-    }, []);
+    }, [token]);
+
+    // useEffect(() => {
+    //     const isLoggedIn = true;
+    //     if (!isLoggedIn) {
+    //         window.location.replace('/login');
+    //     } else {
+    //         setIsLoggedIn(true);
+    //         fetch(`${import.meta.env.VITE_API_URL}event/`)
+    //             .then((results) => {
+    //                 return results.json();
+    //             })
+    //             .then((data) => {
+    //                 setEventData(data)
+    //             })
+    //     }
+    // }, []);
 
     useEffect(() => {
         if (search == "") {
@@ -40,7 +55,8 @@ function HomePage(props) {
         setSearch(event.target.value)
     }
 
-    return isLoggedIn ? (
+    // return isLoggedIn ? (
+    return (
         <div className="home-page">
             <div className="background-image"></div>
             <div className="title">
@@ -48,14 +64,14 @@ function HomePage(props) {
             </div>
             <input type="search" id="search" value={search} onChange={handleChange} placeholder="Search by event type" className="searchFilter">
             </input>
-            <div className="Homepage">
+            <div className="events-container">
                 {filterData.map((event, key) => {
                     return <EventCard key={key} eventData={event} />
                 })}
 
             </div>
         </div >
-    ) : null;
+    )
 };
 
 
