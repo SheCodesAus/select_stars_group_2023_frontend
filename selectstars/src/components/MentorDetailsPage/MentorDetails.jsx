@@ -8,8 +8,6 @@ import './mentorDetails.css';
 
 let tempId = 0;
 
-
-
 function MentorDetails(){
 
   const navigate = useNavigate();
