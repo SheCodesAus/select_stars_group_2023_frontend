@@ -20,22 +20,32 @@ function MentorCard(props) {
       }
     }
 
-    
-
+  let can_travel = mentorsData.can_travel ? "Yes" : "No";
+    console.log(can_travel)
 return (
 
 <div className="mentorProfile_card">
   <Link to={`/mentordetails/${mentorsData.id}`}>
-    <ol>
       <h3><img src={mentorsData.image} alt="Profile picture" /></h3>
-
-      <h3 className="mentorname">{mentorsData.first_name} {mentorsData.last_name}</h3>
-      <h3>Tech Stack: {tech_stack_names}</h3>
-      <h3>Mentor type: {mentorsData.level}</h3>
-      {/* <h5>Location:</h5><span>{mentorsData.location}</span> */}
-      <h3>Willing to travel: {mentorsData.can_travel}</h3>
-    {/* <h3>Offer to Position:  {mentorsData.location}</h3> */}
-    </ol>
+      <section className="mentorCardText">
+        <h3 className="mentorname">{mentorsData.first_name} {mentorsData.last_name}</h3>
+        <div>
+          <h6>Tech Stack:</h6>
+          <span>{tech_stack_names}</span>
+        </div>
+        <div>
+          <h6>Mentor type:</h6>
+          <span>{mentorsData.level}</span>
+        </div>
+        <div>
+          <h6>Location:</h6>
+          <span>{mentorsData.location}</span>
+        </div>
+        <div>
+          <h6>Willing to travel:</h6>
+          <span>{can_travel}</span>
+        </div>
+      </section>
   </Link>
 </div>
 

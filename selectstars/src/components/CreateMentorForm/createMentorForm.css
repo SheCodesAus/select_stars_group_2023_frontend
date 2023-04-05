@@ -57,6 +57,24 @@
     color: #333;
     background-color: white;
 }
+.mentor_details select {
+
+    display: inline-block;
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    padding: 1;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+    height: 60px;
+    text-align: center;
+
+}
+
+select:focus {
+    outline-color: #F9A426;
+}
 
 #mentor_tech_stack {
     width: 70%;
@@ -108,6 +126,42 @@
 
 }
 
+
+#mentor_tech_stack li{
+    list-style: none;
+    width: 30%;
+}
+
+.title label {
+    text-align:start;
+    padding-bottom: 20%;
+}
+
+
+
+input[type="checkbox"] {
+    
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+    /* display: grid;
+    place-content: center; */
+    accent-color: orange;
+  } 
+
+  input[type="checkbox"]::before {
+    content: "";
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: #F9A426;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+
+/* Responsive styles */
 
 @media screen and (max-width: 480px) {
     form {

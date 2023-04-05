@@ -23,7 +23,7 @@ function CreateMentorForm() {
         last_name: '',
         email: '',
         bio: '',
-        image: '',
+        image: 'https://unloc.b-cdn.net/wp-content/uploads/2020/04/24150810/283-2833820_user-icon-orange-png.png',
         level: '',
         location: '',
         can_travel: false,
@@ -37,21 +37,21 @@ function CreateMentorForm() {
         const { id, value } = event.target;
         const checked = event.target.checked
 
-        if(id == "can_travel" ){
-            // console.log(can_travel);
-            var travel = false;
-            if(checked){
-                travel = true;
-            } 
+        // if(id == "can_travel" ){
+        //     // console.log(can_travel);
+        //     var travel = false;
+        //     if(checked){
+        //         travel = true;
+        //     } 
 
-            setCredentials((prevCredentials) => ({
-                ...prevCredentials,
-                [id]: travel
-            }));
+        //     setCredentials((prevCredentials) => ({
+        //         ...prevCredentials,
+        //         [id]: travel
+        //     }));
  
 
-        } else if (id == "mentor_tech_stack" ) {
-
+        // } else if (id == "mentor_tech_stack" ) {
+            if (id == "mentor_tech_stack" ) {
             // var techStackObject = {};
             var techStackId = {};
             const tech_stack_array = [...credentials.mentor_tech_stack];
@@ -195,6 +195,7 @@ function CreateMentorForm() {
                         onChange={handleChange}
                     />
                 </div>
+
                 <div className='mentor_details'>
                     <label htmlFor='email'>Email:</label>
                     <input
@@ -202,18 +203,71 @@ function CreateMentorForm() {
                         id="email"
                         placeholder="Enter email"
                         onChange={handleChange}
-                    />
+                />
                 </div>
-                <div className='mentor_details'>
-                    <label htmlFor='location'>Location:</label>
+
+                    <div className='mentor_details'>
+                    <label htmlFor='bio'>Bio:</label>
                     <input
                         type="text"
-                        id="location"
-                        placeholder="Location"
+                        id="bio"
+                        placeholder="Write your bio"
                         onChange={handleChange}
                     />
                 </div>
 
+                <div className='mentor_details'>
+                    <label htmlFor='image'>Profile picture:</label>
+                    <input
+                        type="url"
+                        id="image"
+                        placeholder="Mentor photo URL"
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div className='mentor_details'>
+                <label htmlFor='location'>Location:</label>
+                <select id="location" onChange={handleChange}>
+                <option value="">--Select an option--</option>
+                    <option value="Sydney">Sydney</option>
+                    <option value="Perth">Perth</option>
+                    <option value="Brisbane">Brisbane</option>
+                </select>
+                </div>
+
+                <div className='mentor_details'>
+                    <label htmlFor='level'>Mentor Level:</label>
+                    <select id="level" onChange={handleChange}>
+                        <option value="">--Select an option--</option>
+                        <option value="Junior">Junior</option>
+                        <option value="Industry">Industry</option>
+                        <option value="Industry">Lead</option>
+                    </select>
+                </div> 
+
+                <div className='mentor_details'>
+                    <label htmlFor='can_travel'>Willing to travel?</label>
+                    <select id="can_travel" onChange={handleChange}>
+                        <option value="">--Select an option--</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div> 
+
+                {/* <div className='mentor_details'>
+                    <label htmlFor='can_travel'>Can travel?</label>
+                    
+                    <input
+                        type="checkbox"
+                        id="can_travel"
+                        name="can_travel"
+                        // value="Yes"
+                        // defaultChecked={isChecked}
+                        onChange={handleChange}
+                    /> */}
+    
+                {/* </div>
             
                 <div className='mentor_details'>
                     <label htmlFor='level'>Mentor Level:</label>
@@ -223,62 +277,31 @@ function CreateMentorForm() {
                         placeholder="Mentor level"
                         onChange={handleChange}
                     />
-                </div>
-                <div className='mentor_details'>
-                    <label htmlFor='bio'>Bio:</label>
-                    <input
-                        type="text"
-                        id="bio"
-                        placeholder="Write your bio"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className='mentor_details'>
-                    <label htmlFor='image'>Profile picture:</label>
-                    <input
-                        type="url"
-                        id="image"
-                        placeholder="Link"
-                        onChange={handleChange}
-                    />
-                </div>
+                </div> */}
 
                 <div className='mentor_details'>
-                    <label htmlFor='mentor_tech_stack'>Tech stack:</label>
-                   <ul id="mentor_tech_stack">
-                        {techStack.map(({name}, index) => {
-                            return (
-                                <ul key={index}>
-                                    <input
-                                    type="checkbox"
-                                    id="mentor_tech_stack"
-                                    name={name}
-                                    value={name}
-                                  
-                                    onChange= {handleChange}
-                                    />
-                                    <label htmlFor="mentor_tech_stack">{name}</label>
-                                    
-                                </ul>
-                            )
-                        })}
-                   </ul>
+                    <label className='title' htmlFor='mentor_tech_stack'>Tech stack:</label>
+                        <ul id="mentor_tech_stack">
+                            {techStack.map(({name}, index) => {
+                                return (
+                                    <li key={index}>
+                                        <input
+                                        type="checkbox"
+                                        id="mentor_tech_stack"
+                                        name={name}
+                                        value={name}
+                                        // checked={mentorTechState[index]}
+                                        onChange= {handleChange}
+                                        />
+                                        <label htmlFor="mentor_tech_stack">{name}</label>
+
+                                    </li>
+                                )
+                            })}
+                        </ul>
                 </div>
-
-                <div className='mentor_details'>
-                    <div className='travel-box'>
-                        
-                        <label htmlFor='can_travel'>Can travel?</label>
-
-                            <input
-                                type="checkbox"
-                                id="can_travel"
-                                name="can_travel"
-                                onChange={handleChange}
-                            />
-                    </div>
-                </div>
-
+                
+                
                 <div className='mentor_details'>
                     <button type="submit" onClick={handleSubmit}>Create</button>
                 </div>
