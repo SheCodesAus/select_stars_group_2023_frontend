@@ -94,6 +94,10 @@ select:focus {
     background-color: #f3279a;
 }
 
+.footer {
+    background-color: orange;
+}
+
 /* Responsive styles */
 @media screen and (max-width: 480px) {
     form {
