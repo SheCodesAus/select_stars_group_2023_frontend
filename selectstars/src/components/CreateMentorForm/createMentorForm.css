@@ -71,15 +71,23 @@
     padding: 0;
 }
 
-.travel-box {
-    text-align: left;
-    width: 33.33%;
-    padding: 5px;
-    box-sizing: border-box;
-    margin-left: -15px;
-  }
-  
+.mentor_details .travel-box{
+    width: 70%;
+    margin: 0;
+    padding: 5%;
+    background-color: aqua;
+}
 
+.mentor_details .travel-box label {
+    display: inline-block;
+    clear: left;
+    width: 25%;
+    margin-right: 5%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #8246ae;
+    text-align: right;
+}
 
 .mentor_details button[type="submit"] {
     display: block;
