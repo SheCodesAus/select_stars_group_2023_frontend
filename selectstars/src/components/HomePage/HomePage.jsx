@@ -9,7 +9,6 @@ function HomePage(props) {
     const { id } = useParams();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [search, setSearch] = useState("")
-    // const [isUserSignedIn, setIsUserSignedIn] = useState(false);
     const token = window.localStorage.getItem('token');
 
     useEffect(() => {
@@ -26,22 +25,6 @@ function HomePage(props) {
         }
     }, [token]);
 
-    // useEffect(() => {
-    //     const isLoggedIn = true;
-    //     if (!isLoggedIn) {
-    //         window.location.replace('/login');
-    //     } else {
-    //         setIsLoggedIn(true);
-    //         fetch(`${import.meta.env.VITE_API_URL}event/`)
-    //             .then((results) => {
-    //                 return results.json();
-    //             })
-    //             .then((data) => {
-    //                 setEventData(data)
-    //             })
-    //     }
-    // }, []);
-
     useEffect(() => {
         if (search == "") {
             setFilterData(eventData)
@@ -55,7 +38,6 @@ function HomePage(props) {
         setSearch(event.target.value)
     }
 
-    // return isLoggedIn ? (
     return (
         <div className="home-page">
             <div className="background-image"></div>
