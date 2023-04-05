@@ -107,4 +107,21 @@
     .nav-tabs .logo {
         display: none;
     }
+
+    .nav-tabs {
+        margin-top: 2px;
+        height: 230px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-card h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    .event-card h3 {
+        font-size: 10px;
+        margin-bottom: 3px;
+    }
 }
