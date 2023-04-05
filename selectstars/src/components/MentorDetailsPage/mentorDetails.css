@@ -1,6 +1,7 @@
 #profile_pic {
-  height: 300px;
+  max-height: 20rem;
 }
+
 .onboarding-container {
   display: flex;
   flex-direction: row;
@@ -61,6 +62,99 @@ input[type="checkbox"]:checked {
   font-weight: bold;
 }
 
+.mentorInfoBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80vw;
+  height: 50vh;
+  padding: 3%;
+}
+
+.mentorInfo{
+  padding: 3%;
+}
+
+.mentorname {
+  font-size: 24px;
+  color: #8246AE;
+}
+
+.mentorInfo h6 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: black;
+  display: inline-block;
+  padding-right: 0.5rem;
+  font-weight: 550;
+  
+}
+
+.mentorInfo span{
+  color: black;
+  padding-right: 0.25rem;
+
+}
+
+/* ==============Onboarding======================
+=============================================== */
+
+
+.oboardingManBox{
+  padding: 5% 30%;
+  
+
+}
+
+.borderOnboarding{
+  border: #F9A426 solid 2px;
+  background-color: #F5F5F5;
+  padding: 10%;
+}
+
+select {
+
+  display: inline-block;
+  width: 70%;
+  border: none;
+  border-radius: 5px;
+  padding: 1;
+  font-size: 16px;
+  color: #333;
+  background-color: white;
+  height: 60px;
+  text-align: center;
+
+}
+
+select:focus {
+  outline-color: #F9A426;
+}
+
+#onboarding_checkboxes li{
+  list-style: none;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  margin-left: 30%;
+  border: none;
+  border-radius: 5px;
+  padding: 2%;
+  font-size: 16px;
+  color: #fff;
+  background-color: #8246ae;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #f3279a;
+  transform: scale(1.1);
+  /* width: 20%; */
+
+}
 /* .checkbox-label:nth-of-type(1):before {
   content: '1';
 }
