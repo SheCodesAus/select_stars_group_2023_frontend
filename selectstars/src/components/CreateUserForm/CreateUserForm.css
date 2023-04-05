@@ -29,6 +29,8 @@
 
 .register-page {
     background-color: #8246ae;
+    /* height: 100%; */
+    padding-bottom: 30px;
 }
 
 .register-page h1 {
@@ -52,10 +54,10 @@
 
 .signUpField {
     margin: 1%;
-    width: 90%;
     text-align: right;
     display: flex;
     align-items: flex-end;
+    width: 100%;
 }
 
 .signUpField label {

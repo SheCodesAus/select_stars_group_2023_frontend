@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import './mentorDetails.css'; 
+
 // import { mentors } from "../../../dummydata";
 
 let tempId = 0;
-
 
 function MentorDetails(){
 
@@ -47,6 +47,7 @@ function MentorDetails(){
 
   });
 
+
   let onboarding_steps = 
   ["interview", "offer", "contract_sent",
   "contract_return","onboarding_completed", "feedback",
@@ -61,7 +62,6 @@ function MentorDetails(){
     .then((data) => {
         setmentorDetailData(data)
     })
-
 
   },[]);
 
@@ -213,6 +213,7 @@ function MentorDetails(){
         
     } )
   };
+
 
 
   // ONBOARDING
