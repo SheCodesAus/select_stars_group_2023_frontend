@@ -80,7 +80,8 @@ select:focus {
 .eventField button[type="submit"] {
     display: block;
     margin: 0 auto;
-    width: 40%;
+    width: 70%;
+    margin-left: 30%;
     border: none;
     border-radius: 5px;
     padding: 10px;

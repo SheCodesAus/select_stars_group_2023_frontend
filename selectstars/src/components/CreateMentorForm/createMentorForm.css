@@ -96,7 +96,7 @@ select:focus {
     background-color: aqua;
 }
 
-.mentor_details .travel-box label {
+/* .mentor_details .travel-box label {
     display: inline-block;
     clear: left;
     width: 25%;
@@ -105,12 +105,14 @@ select:focus {
     font-weight: bold;
     color: #8246ae;
     text-align: right;
-}
+    padding-left: 20%;
+} */
 
 .mentor_details button[type="submit"] {
     display: block;
     margin: 0 auto;
-    width: 40%;
+    width: 70%;
+    margin-left: 30%;
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -123,6 +125,7 @@ select:focus {
 .mentor_details button[type="submit"]:hover {
     background-color: #f3279a;
     transform: scale(1.1);
+    /* width: 20%; */
 
 }
 
@@ -131,6 +134,7 @@ select:focus {
     list-style: none;
     width: 30%;
 }
+
 
 .title label {
     text-align:start;
@@ -147,6 +151,7 @@ input[type="checkbox"] {
     /* display: grid;
     place-content: center; */
     accent-color: orange;
+    padding-right: 20%;
   } 
 
   input[type="checkbox"]::before {
