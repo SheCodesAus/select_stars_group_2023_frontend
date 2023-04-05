@@ -226,7 +226,6 @@ function CreateMentorForm() {
                     />
                 </div>
 
-
                 <div className='mentor_details'>
                 <label htmlFor='location'>Location:</label>
                 <select id="location" onChange={handleChange}>
@@ -270,8 +269,18 @@ function CreateMentorForm() {
     
                 {/* </div>
 
+            
+                <div className='mentor_details'>
+                    <label htmlFor='level'>Mentor Level:</label>
+                    <input
+                        type="text"
+                        id="level"
+                        placeholder="Mentor level"
+                        onChange={handleChange}
+                    />
+                </div> */}
 
-
+                <div className='mentor_details'>
 
                     <label className='title' htmlFor='mentor_tech_stack'>Tech stack:</label>
                         <ul id="mentor_tech_stack">
