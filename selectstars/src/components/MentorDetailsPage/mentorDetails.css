@@ -1,4 +1,7 @@
-/* .onboarding-container {
+#profile_pic {
+  height: 300px;
+}
+.onboarding-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -51,14 +54,14 @@ input[type="checkbox"]:checked {
   width: 30px;
   height: 30px;
   /* border: 2px solid #ccc;
-  border-radius: 50%; */
-  /* text-align: center;
+  border-radius: 50%;  */
+  text-align: center;
   line-height: 40px;
   font-size: 16px;
   font-weight: bold;
 }
 
-.checkbox-label:nth-of-type(1):before {
+/* .checkbox-label:nth-of-type(1):before {
   content: '1';
 }
 
@@ -80,14 +83,14 @@ input[type="checkbox"]:checked {
 
 .checkbox-label:nth-of-type(6):before {
   content: '6';
-}
+} */
 
-.mentors-container {
+/* .mentors-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
 
-.mentorProfile_card {
+/* .mentorProfile_card {
   margin: 10px;
-} */ 
+}  */
