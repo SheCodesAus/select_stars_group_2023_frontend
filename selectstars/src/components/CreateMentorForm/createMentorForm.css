@@ -61,7 +61,12 @@
 #mentor_tech_stack {
     width: 70%;
     margin: 0;
-    padding: 5%;
+    /* padding: 5%; */
+}
+
+#mentor_tech_stack input {
+    height: 2em;
+    width: 2em;
 }
 
 .mentor_details ul {
@@ -69,13 +74,21 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 5%;
     padding: 0;
+    font-size: small;
 }
 
-.mentor_details .travel-box{
-    width: 70%;
+.mentor_details .travel-box {
+    width: 100%;
     margin: 0;
     padding: 5%;
-    background-color: aqua;
+    padding-left: 0;
+    display: flex;
+}
+
+.travel-box input {
+    height: 2em;
+    width: 2em;
+    margin-left: 1.5%;
 }
 
 .mentor_details .travel-box label {
