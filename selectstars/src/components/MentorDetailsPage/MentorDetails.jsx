@@ -349,71 +349,92 @@ function MentorDetails(){
 
   // console.log("nan", isNaN(+onboarding.event));
   // console.log(typeof(onboarding.event) === 'undefined');
+  let tech_stack_names = [];
+    for (let i = 0; i < mentorDetailData.mentor_tech_stack.length ; i ++){
+      for (let j = 0; j < techStack.length ; j++) {
+        if(mentorDetailData.mentor_tech_stack[i] == techStack[j].id){
+          tech_stack_names.push(techStack[j].name);
+        }
+      }
+    }
 
+  let can_travel = mentorDetailData.can_travel ? "Yes" : "No";
   return(
   
     <>
       
       <section className="">
-        <div className="mentors-container">
-          <h3><img src={mentorDetailData.image} alt="Profile picture" id="profile_pic"/></h3>             
-          <h1>{mentorDetailData.first_name} {mentorDetailData.first_name}</h1>
-          <h3>Tech Stack: {mentorDetailData.mentor_tech_stack}</h3>
-          <h3>Mentor type: {mentorDetailData.level}</h3>
-          {/* <h5>Location:</h5><span>{mentorsData.location}</span> */}
-          <h3>Willing to travel: {mentorDetailData.can_travel}</h3>
-          <h3>Assigned event: {eventName}</h3>
-
-          {/* {
-            isNaN(onboarding.event) && */}
-            <div>
-
-              <div className="add_mentor_event">
-                  <label htmlFor='add_mentor_event'>Add mentor to event:</label>
-                  <select id='event' onChange={handleChange}>
-                      <option value=""> </option>
-                      {events.map((events) => {
-                          return <option key={events.id} value={events.id} > {events.title}</option>
-                      })}
-                  </select>
-              </div>
-              <div className='add_mentor_event'>
-                  <button type="submit" onClick={handleSubmit}>Add</button>
-              </div>      
-
+          <section className="mentorInfoBox">
+            <div className="mentoravatar">
+              <h3><img src={mentorDetailData.image} alt="Profile picture" id="profile_pic"/></h3> 
             </div>
-          {/* }  */}
+            <div className="mentorInfo">
+              <h1 className="mentorname">{mentorDetailData.first_name} {mentorDetailData.first_name}</h1>
+              <div>
+                <h6>Tech Stack:</h6>
+                <span>{tech_stack_names}</span>
+              </div>
+              <div>
+                <h6>Mentor type:</h6>
+                <span>{mentorDetailData.level}</span>
+              </div>
+              <div>
+                <h6>Location:</h6>
+                <span>{mentorDetailData.location}</span>
+              </div>
+              <div>
+                <h6>Willing to travel:</h6>
+                <span>{can_travel}</span>
+              </div>
+            </div>          
+          </section>
 
-      
-         
-        
-        </div> 
+            <section  className="oboardingManBox">
+            <section className="borderOnboarding">
+            <h3>Assign {mentorDetailData.first_name} to event: {eventName}</h3>
+            {/* {
+              isNaN(onboarding.event) && */}
+            <div className="add_mentor_event">
+              <label htmlFor='add_mentor_event'></label>
+                <select id='event' onChange={handleChange}>
+                <option value="">--  Select Event  --</option>
+                    {events.map((events) => {
+                      return <option key={events.id} value={events.id} > {events.title}</option>
+                        })};
+                </select>
+            </div>    
+                      
+                      
+             <div className='onboarding_container'>
+              <label htmlFor='onboarding_checkboxes'>Onboarding Checklist</label>
+              <ul id="onboarding_checkboxes">
+                {onboarding_steps.map((key, index) => {
+                  return (
+                    <li key={index}>
+                      <input
+                      type="checkbox"
+                      id= {onboarding_steps[index]}
+                      name= {onboarding_steps[index]}
+                      value={index}
+                      checked={result[index+1]}
+                      onChange= {handleCheckboxChange}
+                      disabled={result[index] != true && onboarding_steps[index] != "interview"}
+                      />
+                      <label htmlFor="steps" className="checkbox-label">{onboarding_steps[index]}</label>
+                    </li>
+                        )
+                    })}
+              </ul>
+              <div className='add_mentor_event'>
+                <button type="submit" onClick={handleSubmit}>Add</button>
+              </div>  
 
-        <div className='onboarding_container'>
-            <label htmlFor='onboarding_checkboxes'>Onboarding steps:</label>
-            <ul id="onboarding_checkboxes">
-                  {onboarding_steps.map((key, index) => {
-                      return (
-                          <li key={index}>
-                              <input
-                              type="checkbox"
-                              id= {onboarding_steps[index]}
-                              name= {onboarding_steps[index]}
-                              value={index}
-                              checked={result[index+1]}
-                              onChange= {handleCheckboxChange}
-                              disabled={result[index] != true && onboarding_steps[index] != "interview"}
-                              />
+            </div>  
+            </section>
+            </section>
 
-                          
-                              <label htmlFor="steps" className="checkbox-label">{onboarding_steps[index]}</label>
-                              
-                          </li>
-                      )
-                  })}
-            </ul>
-    </div>  
-        
+
+          </section>
         {/* <form>
             {checkboxData.map((checkbox, index) => (
               <label key={checkbox.id} className="checkbox-label">
@@ -427,11 +448,8 @@ function MentorDetails(){
               </label>
             ))}
         </form> */}
-        
         {/* <Link className="" to={`/mentordetails/:id/addEvent`}>Add Mentor To Event</Link> */}
-      </section>
     </>
-  )
   // const checkboxData = [
   //   { id: '1', label: 'Invited to Interview' },
   //   { id: '2', label: 'Offered Position' },
@@ -500,7 +518,7 @@ function MentorDetails(){
   //     </div>
   //   </div>
   // );
-};
+);}
 
 
 export default MentorDetails;
