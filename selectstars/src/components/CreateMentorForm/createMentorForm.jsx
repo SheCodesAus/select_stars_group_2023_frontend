@@ -213,30 +213,7 @@ function CreateMentorForm() {
                         onChange={handleChange}
                     />
                 </div>
-                {/* <div className='mentor_details'>
-                    <label htmlFor='can_travel'>Can travel?</label>
-                    <select id="dropdown" onChange={handleChange}>
-                        <option value="">--Select an option--</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
-                </div> */}
 
-                <div className='mentor_details'>
-                    <label htmlFor='can_travel'>Can travel?</label>
-                    
-                    <input
-                        type="checkbox"
-                        id="can_travel"
-                        name="can_travel"
-                        // value="Yes"
-                        // defaultChecked={isChecked}
-                        onChange={handleChange}
-                    />
-               
-                    
-    
-                </div>
             
                 <div className='mentor_details'>
                     <label htmlFor='level'>Mentor Level:</label>
@@ -271,75 +248,37 @@ function CreateMentorForm() {
                    <ul id="mentor_tech_stack">
                         {techStack.map(({name}, index) => {
                             return (
-                                <li key={index}>
+                                <ul key={index}>
                                     <input
                                     type="checkbox"
                                     id="mentor_tech_stack"
                                     name={name}
                                     value={name}
-                                    // checked={mentorTechState[index]}
+                                  
                                     onChange= {handleChange}
-                                    
                                     />
-
                                     <label htmlFor="mentor_tech_stack">{name}</label>
                                     
-                                </li>
+                                </ul>
                             )
                         })}
                    </ul>
                 </div>
-{/*                 
-                <div className='mentor_details'>
-                    <label htmlFor='mentor_tech_stack'>Skills:</label>
-                    <input
-                        type="text"
-                        id="mentor_tech_stack"
-                        placeholder="Skills stack"
-                        onChange={handleChange}
-                    />
-                </div> */}
 
-                {/* <div className='mentor_details'>
-                    <label htmlFor='interview'>Interview:</label>
-                    <select id="dropdown" onChange={handleChange}>
-                        <option value="">-- Select an option --</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
-                </div>
                 <div className='mentor_details'>
-                    <label htmlFor='offer'>Offer:</label>
-                    <select id="dropdown" onChange={handleChange}>
-                        <option value="">--Select an option--</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
+                    <div className='travel-box'>
+                        
+                        <label htmlFor='can_travel'>Can travel?</label>
+
+                            <input
+                                type="checkbox"
+                                id="can_travel"
+                                name="can_travel"
+                                onChange={handleChange}
+                            />
+                    </div>
                 </div>
-                <div className='mentor_details'>
-                    <label htmlFor='contract_sent'>Contract sent:</label>
-                    <select id="dropdown" onChange={handleChange}>
-                        <option value="">--Select an option--</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
-                </div>
-                <div className='mentor_details'>
-                    <label htmlFor='contract_return'>Contract return:</label>
-                    <select id="dropdown" onChange={handleChange}>
-                        <option value="">--Select an option--</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
-                </div>
-                <div className='mentor_details'>
-                    <label htmlFor='onboarding_completed'>Onboarding completed:</label>
-                    <select id="dropdown" onChange={handleChange}>
-                        <option value="">--Select an option--</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select> */}
-                {/* </div> */}
+
                 <div className='mentor_details'>
                     <button type="submit" onClick={handleSubmit}>Create</button>
                 </div>
