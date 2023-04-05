@@ -34,8 +34,6 @@ function CreateEventForm() {
 
 
     const navigate = useNavigate();
-
-    
     const handleChange = (event) => {
         const { id, value } = event.target;
         setEventDetails((prevEventDetails) => ({
@@ -87,6 +85,7 @@ function CreateEventForm() {
         <div className="event-page">
             <div className="background-image"></div>
             <h1>Create An Event</h1>
+
             <form>
                 <div className="eventField">
                     <label htmlFor='image'>Image:</label>
@@ -98,11 +97,6 @@ function CreateEventForm() {
                     <input type="text" placeholder="Enter name of event" id="title" onChange={handleChange} />
                 </div>
 
-                {/* <div className="eventField">
-                    <label htmlFor='event_date'>Event Date:</label>
-                    <input type="date" placeholder="Enter date of event" id="event_date" onChange={handleChange} />
-                </div> */}
-
                 <div className="eventField">
                     <label htmlFor='location'>Location:</label>
                     <select id='location' onChange={handleChange}> 
@@ -113,6 +107,7 @@ function CreateEventForm() {
                 </div>
 
                 <div className="eventField">
+                  
                     <label htmlFor='type'>Event Type:</label>
                     <select id='event_type' onChange={handleChange}>
                     <option value="Flash">Flash</option>
