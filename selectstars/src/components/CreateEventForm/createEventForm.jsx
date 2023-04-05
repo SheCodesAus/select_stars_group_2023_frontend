@@ -2,6 +2,8 @@ import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './createEventForm.css';
 
+
+
 function CreateEventForm() {
     const [eventDetails, setEventDetails] = useState({
         title: '',
@@ -145,6 +147,7 @@ function CreateEventForm() {
                     <button type="submit" onClick={handleSubmit}>Create Event</button>
                 </div>
             </form>
+
         </div>
 
     )
