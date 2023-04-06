@@ -8,12 +8,12 @@ function CreateMentorForm() {
 
     useEffect(() => {
         fetch(`${import.meta.env.VITE_API_URL}tech_stack/`)
-        .then((results) => {
-            return results.json();
-        })
-        .then((data) => {
-            setTechStack(data);
-        })
+            .then((results) => {
+                return results.json();
+            })
+            .then((data) => {
+                setTechStack(data);
+            })
     }, []);
 
     // console.log("techStack: ", techStack);
@@ -31,7 +31,7 @@ function CreateMentorForm() {
     });
 
     const navigate = useNavigate();
-    
+
 
     const handleChange = (event) => {
         const { id, value } = event.target;
@@ -48,17 +48,17 @@ function CreateMentorForm() {
         //         ...prevCredentials,
         //         [id]: travel
         //     }));
- 
+
 
         // } else if (id == "mentor_tech_stack" ) {
-            if (id == "mentor_tech_stack" ) {
+        if (id == "mentor_tech_stack") {
             // var techStackObject = {};
             var techStackId = {};
             const tech_stack_array = [...credentials.mentor_tech_stack];
 
-            if(checked){
-                for(var i = 0; i < techStack.length; i++){
-                    if(techStack[i].name == value){
+            if (checked) {
+                for (var i = 0; i < techStack.length; i++) {
+                    if (techStack[i].name == value) {
                         // techStackObject = techStack[i];
                         techStackId = techStack[i].id;
                     }
@@ -85,7 +85,7 @@ function CreateMentorForm() {
 
         }
 
-        
+
     };
 
     // const [mentorTechState, setMentorTechState] = useState(new Array(techStack.length).fill(false));
@@ -106,9 +106,9 @@ function CreateMentorForm() {
     //                     mentor_tech_stack: [...prevCredentials, techStack[index]]
     //                 }));
     //             }
-                  
+
     //         }
-            
+
     //     )
 
     //     // if(checkedState === true) {
@@ -155,20 +155,20 @@ function CreateMentorForm() {
             throw new Error(response.statusText);
         }
         return response.json();
-    
+
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        postData().then((response)=>{
+        postData().then((response) => {
             // if(response.status == 201){
-                navigate("/");
+            navigate("/mentorlist");
             // }
-            
-        } )
+
+        })
     };
 
-    
+
 
     return (
         <div className='mentor-page'>
@@ -179,13 +179,13 @@ function CreateMentorForm() {
 
             <form className='mentor-form'>
                 <div className='mentor_details'>
-                        <label htmlFor='image'>Profile picture:</label>
-                        <input
-                            type="url"
-                            id="image"
-                            placeholder="Mentor photo URL or Empty for Default Image"
-                            onChange={handleChange}
-                        />
+                    <label htmlFor='image'>Profile picture:</label>
+                    <input
+                        type="url"
+                        id="image"
+                        placeholder="Mentor photo URL or Empty for Default Image"
+                        onChange={handleChange}
+                    />
                 </div>
 
                 <div className='mentor_details'>
@@ -214,10 +214,10 @@ function CreateMentorForm() {
                         id="email"
                         placeholder="Enter email"
                         onChange={handleChange}
-                />
+                    />
                 </div>
 
-                    <div className='mentor_details'>
+                <div className='mentor_details'>
                     <label htmlFor='bio'>Bio:</label>
                     <input
                         type="text"
@@ -228,13 +228,13 @@ function CreateMentorForm() {
                 </div>
 
                 <div className='mentor_details'>
-                <label htmlFor='location'>Location:</label>
-                <select id="location" onChange={handleChange}>
-                <option value="">--Select an option--</option>
-                    <option value="Sydney">Sydney</option>
-                    <option value="Perth">Perth</option>
-                    <option value="Brisbane">Brisbane</option>
-                </select>
+                    <label htmlFor='location'>Location:</label>
+                    <select id="location" onChange={handleChange}>
+                        <option value="">--Select an option--</option>
+                        <option value="Sydney">Sydney</option>
+                        <option value="Perth">Perth</option>
+                        <option value="Brisbane">Brisbane</option>
+                    </select>
                 </div>
 
                 <div className='mentor_details'>
@@ -245,7 +245,7 @@ function CreateMentorForm() {
                         <option value="Industry">Industry</option>
                         <option value="Industry">Lead</option>
                     </select>
-                </div> 
+                </div>
 
                 <div className='mentor_details'>
                     <label htmlFor='can_travel'>Willing to travel?</label>
@@ -254,7 +254,7 @@ function CreateMentorForm() {
                         <option value="true">Yes</option>
                         <option value="false">No</option>
                     </select>
-                </div> 
+                </div>
 
                 {/* <div className='mentor_details'>
                     <label htmlFor='can_travel'>Can travel?</label>
@@ -267,7 +267,7 @@ function CreateMentorForm() {
                         // defaultChecked={isChecked}
                         onChange={handleChange}
                     /> */}
-    
+
                 {/* </div>
             
                 <div className='mentor_details'>
@@ -282,27 +282,27 @@ function CreateMentorForm() {
 
                 <div className='mentor_details'>
                     <label className='title' htmlFor='mentor_tech_stack'>Tech stack:</label>
-                        <ul id="mentor_tech_stack">
-                            {techStack.map(({name}, index) => {
-                                return (
-                                    <li key={index}>
-                                        <input
+                    <ul id="mentor_tech_stack">
+                        {techStack.map(({ name }, index) => {
+                            return (
+                                <li key={index}>
+                                    <input
                                         type="checkbox"
                                         id="mentor_tech_stack"
                                         name={name}
                                         value={name}
                                         // checked={mentorTechState[index]}
-                                        onChange= {handleChange}
-                                        />
-                                        <label htmlFor="mentor_tech_stack">{name}</label>
+                                        onChange={handleChange}
+                                    />
+                                    <label htmlFor="mentor_tech_stack">{name}</label>
 
-                                    </li>
-                                )
-                            })}
-                        </ul>
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </div>
-                
-                
+
+
                 <div className='mentor_details'>
                     <button type="submit" onClick={handleSubmit}>Create</button>
                 </div>

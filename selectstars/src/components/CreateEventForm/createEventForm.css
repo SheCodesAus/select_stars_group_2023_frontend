@@ -93,6 +93,7 @@ select:focus {
 
 .eventField button[type="submit"]:hover {
     background-color: #f3279a;
+    transform: scale(1.02);
 }
 
 .footer {

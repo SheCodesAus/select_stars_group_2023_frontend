@@ -98,8 +98,7 @@
 
 .signUpField button[type="submit"]:hover {
     background-color: #f3279a;
-    transform: scale(1.1);
-
+    transform: scale(1.02);
 }
 
 /* Responsive styles */
