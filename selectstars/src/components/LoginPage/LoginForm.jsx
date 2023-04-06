@@ -46,7 +46,7 @@ function LoginForm() {
     return (
         <div className='login-page-background'>
 
-            <form className="login-cover">
+            <form className='login-cover'>
 
                 <h1>Welcome!</h1>
 
