@@ -428,7 +428,7 @@ function MentorDetails(){
             </div>    
                       
                       
-              <div className='onboarding_container'>
+             <div className='onboarding_container'>
             <label htmlFor='onboarding_checkboxes'>Onboarding steps:</label>
             <ul id="onboarding_checkboxes">
                   {onboarding_steps.map((key, index) => {
@@ -459,8 +459,9 @@ function MentorDetails(){
             </section>
             </section>
 
-          </section>
 
+
+          </section>
         {/* <form>
             {checkboxData.map((checkbox, index) => (
               <label key={checkbox.id} className="checkbox-label">
