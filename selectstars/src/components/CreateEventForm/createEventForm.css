@@ -96,6 +96,47 @@ select:focus {
     transform: scale(1.02);
 }
 
+#event_tech_stack{
+    width: 70%;
+    margin: 0;
+}
+#event_tech_stack input {
+    height: 2em;
+    width: 2em;
+}
+#event_tech_stack ul{
+list-style: none;
+width: 30%;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-gap: 0%;
+font-size: small;
+}
+
+input[type="checkbox"] {
+
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+    /* display: grid;
+    place-content: center; */
+    accent-color: orange;
+    padding-right: 20%;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: #F9A426;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+
 .footer {
     background-color: orange;
 }
