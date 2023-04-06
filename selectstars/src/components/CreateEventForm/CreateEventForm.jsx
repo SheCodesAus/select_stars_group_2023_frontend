@@ -91,7 +91,7 @@ function CreateEventForm() {
             <form>
                 <div className="eventField">
                     <label htmlFor='image'>Image:</label>
-                    <input type="url" placeholder="Link of image" id="image" onChange={handleChange} />
+                    <input type="url" placeholder="Add Event Image or Leave Empty for Default Image" id="image" onChange={handleChange} />
                 </div>
 
                 <div className="eventField">
