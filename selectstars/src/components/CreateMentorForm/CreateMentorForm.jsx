@@ -221,7 +221,7 @@ function CreateMentorForm() {
                     <input
                         type="url"
                         id="image"
-                        placeholder="Mentor photo URL"
+                        placeholder="Mentor photo URL or Leave Empty for Default Image"
                         onChange={handleChange}
                     />
                 </div>
