@@ -1,67 +1,7 @@
 #profile_pic {
   max-height: 20rem;
+  border: #F9A426 solid 2px;
 }
-
-.onboarding-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 20px;
-}
-
-.onboarding-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 30px;
-}
-
-.checkbox-label {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.onboarding-container input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  appearance: none;
-  background-color: #fff;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  outline: none;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-input[type="checkbox"]:hover {
-  border-color: #aaa;
-}
-
-input[type="checkbox"]:checked {
-  background-color: #8a2be2;
-  border-color: #8a2be2;
-}
-
-.checkbox-label:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: -1px;
-  left: -3px;
-  width: 30px;
-  height: 30px;
-  /* border: 2px solid #ccc;
-  border-radius: 50%;  */
-  text-align: center;
-  line-height: 40px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
 .mentorInfoBox{
   display: flex;
   flex-direction: row;
@@ -69,10 +9,12 @@ input[type="checkbox"]:checked {
   width: 80vw;
   height: 50vh;
   padding: 3%;
+  border: #F9A426 solid 2px;
 }
 
 .mentorInfo{
   padding: 3%;
+  border: blue solid 2px;
 }
 
 .mentorname {
@@ -100,9 +42,10 @@ input[type="checkbox"]:checked {
 =============================================== */
 
 
-.oboardingManBox{
+.onboardingManBox{
   padding: 5% 30%;
-  
+  width: auto;
+  margin-top: 10px;
 
 }
 
@@ -112,23 +55,30 @@ input[type="checkbox"]:checked {
   padding: 10%;
 }
 
-select {
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
 
-  display: inline-block;
-  width: 70%;
+select {
+  display: block;
+  width: 100%;
   border: none;
-  border-radius: 5px;
-  padding: 1;
+  border-radius: 90px;
+  padding: 10px;
   font-size: 16px;
   color: #333;
-  background-color: white;
-  height: 60px;
+  background-color: #fff;
+  height: 50px;
   text-align: center;
-
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 select:focus {
-  outline-color: #F9A426;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 #onboarding_checkboxes li{
@@ -155,36 +105,3 @@ button[type="submit"]:hover {
   /* width: 20%; */
 
 }
-/* .checkbox-label:nth-of-type(1):before {
-  content: '1';
-}
-
-.checkbox-label:nth-of-type(2):before {
-  content: '2';
-}
-
-.checkbox-label:nth-of-type(3):before {
-  content: '3';
-}
-
-.checkbox-label:nth-of-type(4):before {
-  content: '4';
-}
-
-.checkbox-label:nth-of-type(5):before {
-  content: '5';
-}
-
-.checkbox-label:nth-of-type(6):before {
-  content: '6';
-} */
-
-/* .mentors-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-} */
-
-/* .mentorProfile_card {
-  margin: 10px;
-}  */

@@ -389,7 +389,7 @@ function MentorDetails(){
             </div>          
           </section>
 
-            <section  className="oboardingManBox">
+            <section  className="onboardingManBox">
             <section className="borderOnboarding">
             <h3>Assign {mentorDetailData.first_name} to event: {eventName}</h3>
             {/* {
