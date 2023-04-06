@@ -47,7 +47,7 @@ function ChangePasswordForm() {
     }
 
     return (
-        <div >
+        <div className='change-password-background'>
             
             <form className='cover'>
             <h1>

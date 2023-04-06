@@ -14,31 +14,18 @@
     background-position: center;
 }
 
-/* .login-page-background::after {
-    position: absolute;
-    content: " ";
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: #8246AF;
-    background-size: cover;
-    background-position: center;
-    opacity: calc(25%);
-} */
-
-
-.login-cover h1,
-.login_label {
+.login-cover h1 {
     color: white;
 }
 
-/* .page {
+.page {
     height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-} */
+}
+
 
 .field_container {
     display: flex;
@@ -61,6 +48,7 @@
     align-items: center;
     justify-content: space-around;
     margin: 0 auto;
+    margin-top: 5%;
 }
 
 .field_container label {
