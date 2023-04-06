@@ -6,7 +6,7 @@ import './mentorDetails.css';
 
 // import { mentors } from "../../../dummydata";
 
-let tempId = 0;
+
 
 function MentorDetails(){
 
@@ -14,45 +14,53 @@ function MentorDetails(){
 
   const { id } = useParams();
   const { id:mentorId } = useParams();
-    //grabbing the correct id for the onboarding object that needs updating
-
-
-
-  // const arrayFindObjectByProp = (arr, prop, val) => {
-  //   return arr.find((obj) => obj[prop] == val);
-  // };
-
-  // let onboardingObject = arrayFindObjectByProp(onboardingArray, "id",onboardingId );
-
-  // {specificVoting = arrayFindObjectByProp(data.schweiz.vorlagen, "vorlagenId", '6310')}
-
-
 
   // FETCHING ALL DATA
-  const [mentorDetailData, setmentorDetailData ] = useState({mentor_tech_stack : []})/*({ events : []});*/
+  const [mentorDetailData, setmentorDetailData ] = useState({mentor_tech_stack : []})
   const [techStack, setTechStack] = useState([]);
   const [events, setEvents] = useState([]);
   const [onboardingArray, setOnboardingArray] = useState([]);
-  const [onboardingId, setOnboardingId] = useState(0);
-  const [onboarding, setOnboarding] = useState({
-    id: '',
-    interview: true,
-    offer: false,
-    contract_sent: false,
-    contract_return: false,
-    onboarding_completed: false,
-    feedback: false,
-    offboarding: false,
-    mentor: '',
-    event: '',
+  // const [onboardingId, setOnboardingId] = useState(0);
+  // const [onboarding, setOnboarding] = useState({
+  //   // id: '',
+  //   // interview: true,
+  //   // offer: false,
+  //   // contract_sent: false,
+  //   // contract_return: false,
+  //   // onboarding_completed: false,
+  //   // feedback: false,
+  //   // offboarding: false,
+  //   // mentor: '',
+  //   // event: '',
 
-  });
+  // });
+
+  const [onboarding, setOnboarding] = useState();
+
+  // console.log(onboarding);
 
 
   let onboarding_steps = 
   ["interview", "offer", "contract_sent",
   "contract_return","onboarding_completed", "feedback",
   "offboarding"]
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}onboarding/`)
+    .then((results) => {
+        return results.json();
+    })
+    .then((data) => {
+      // console.log(data);
+      //put condition if response.detail is invalid (doesn't equal 200), if equals 200, do filter
+      const updatedData = data.filter(data => data.mentor == mentorId);
+      
+      console.log(data);
+      console.log(updatedData);
+      console.log(updatedData[0]);
+      setOnboardingArray(updatedData);
+      setOnboarding(updatedData[0]);
+    })
+  }, []);
 
 
   useEffect(() => {
@@ -86,53 +94,46 @@ function MentorDetails(){
     })
   }, []);
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}onboarding/`)
-    .then((results) => {
-        return results.json();
-    })
-    .then((data) => {
-      // console.log(data);
-      setOnboardingArray(data);
-    })
-  }, []);
-
   
-  let onboardingObject = {};
-  for (let i = 0; i < onboardingArray.length; i ++){
-    // console.log("mentorId: ", mentorId);
-    // console.log("onboardingArray[i].mentor: ", onboardingArray[i].mentor);
-    if(onboardingArray[i].mentor == mentorId ){
 
-      tempId = onboardingArray[i].id
-      onboardingObject = onboardingArray[i];
+  // console.log("onboardingArray[0]: ", onboardingArray[0]);
+
+  // let tempId = 0;
+  // let onboardingObject = {};
+  // for (let i = 0; i < onboardingArray.length; i ++){
+  //   // console.log("mentorId: ", mentorId);
+  //   // console.log("onboardingArray[i].mentor: ", onboardingArray[i].mentor);
+  //   if(onboardingArray[i].mentor == mentorId ){
+
+  //     tempId = onboardingArray[i].id
+  //     onboardingObject = onboardingArray[i];
       
-    }
-  }
+  //   }
+  // }
 
-  // console.log("tempId: ", tempId);
-// 
+  // // console.log("tempId: ", tempId);
 
-  useEffect(() => {
-
-    setOnboardingId({onboardingId: tempId});
+  // useEffect(() => {
 
 
-    // setOnboardingId(prevState => {
-    //   return {
-    //       ...prevState,
-    //       onboardingId : tempId
-    //   }
-    // });
 
-    // setOnboardingId({onboardingId: tempId}, function (){
-    //   console.log("onboardingId: ", onboardingId)
-    // });
+  //   setOnboardingId({onboardingId: tempId});
 
-    // console.log("onboardingId: ", onboardingId);
+  //   // setOnboardingId(prevState => {
+  //   //   return {
+  //   //       ...prevState,
+  //   //       onboardingId : tempId
+  //   //   }
+  //   // });
+
+  //   // setOnboardingId({onboardingId: tempId}, function (){
+  //   //   console.log("onboardingId: ", onboardingId)
+  //   // });
+
+  //   // console.log("onboardingId: ", onboardingId);
   
 
-  },[tempId]);
+  // },[tempId]);
 
 
 //   this.setState({value: event.target.value}, function () {
@@ -140,44 +141,41 @@ function MentorDetails(){
 // });
 
 
+  // let onboardingIdValue = Object.values(onboardingId); 
 
-
-
-  let onboardingIdValue = Object.values(onboardingId); 
-
-  useEffect(() => {
+  // useEffect(() => {
        
     
    
-      fetch(`${import.meta.env.VITE_API_URL}onboarding/5/`)
-      .then((results) => {
-          return results.json();
-      })
-      .then((data) => {
-        setOnboarding(data);
-      })
-      // ${onboardingIdValue}
+  //     fetch(`${import.meta.env.VITE_API_URL}onboarding/5/`)
+  //     .then((results) => {
+  //         return results.json();
+  //     })
+  //     .then((data) => {
+  //       setOnboarding(data);
+  //     })
+  //     // ${onboardingIdValue}
   
-    // const values = Object.values(onboardingObject)
-    // console.log("values: ", values)
+  //   // const values = Object.values(onboardingObject)
+  //   // console.log("values: ", values)
 
-    // setOnboarding((prevOnboarding) => ({
-    //   ...prevOnboarding,
-    //   id: values[0],
-    //   interview: values[1],
-    //   offer: values[2],
-    //   contract_sent: values[3],
-    //   contract_return: values[4],
-    //   onboarding_completed: values[5],
-    //   feedback: values[6],
-    //   offboarding: values[7],
-    //   mentor: values[8],
-    //   event: values[9],
-    // }));
+  //   // setOnboarding((prevOnboarding) => ({
+  //   //   ...prevOnboarding,
+  //   //   id: values[0],
+  //   //   interview: values[1],
+  //   //   offer: values[2],
+  //   //   contract_sent: values[3],
+  //   //   contract_return: values[4],
+  //   //   onboarding_completed: values[5],
+  //   //   feedback: values[6],
+  //   //   offboarding: values[7],
+  //   //   mentor: values[8],
+  //   //   event: values[9],
+  //   // }));
 
   
    
-  }, []);
+  // }, []);
 
   // console.log("onboarding: ", onboarding)
 
@@ -197,7 +195,14 @@ function MentorDetails(){
 
     setOnboarding((prevOnboarding) => ({
       ...prevOnboarding,
-      mentor : mentorId
+      mentor : mentorId,
+      interview: true,
+      offer: false,
+      contract_sent: false,
+      contract_return: false,
+      onboarding_completed: false,
+      feedback: false,
+      offboarding: false,
     }));
 
   };
@@ -224,7 +229,7 @@ function MentorDetails(){
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     postData().then((response)=>{
         
     } )
@@ -247,17 +252,24 @@ function MentorDetails(){
       setOnboarding((prevOnboarding) => ({
         ...prevOnboarding,
         [id]: true
-      }), putData().then((response)=>{
-       
-      } ));
-
+      }));
       // console.log("updateOnboarding check",onboarding.interview);
-
-      event.preventDefault();
-    
-
+    } else {
+      setOnboarding((prevOnboarding) => ({
+        ...prevOnboarding,
+        [id]: false
+      }));
     }
+
+    console.log("onboarding: ", onboarding);
     
+  };
+
+  const handleOnboardingSubmit = (event) => {
+    event.preventDefault();
+    putData().then((response)=>{
+        
+    } )
   };
 
   //update the onboarding fields and call the putData function to update database
@@ -294,7 +306,7 @@ function MentorDetails(){
     const token = window.localStorage.getItem("token");
     // console.log(JSON.stringify(onboarding));
     // console.log(onboardingId);
-    const response = await fetch(`${import.meta.env.VITE_API_URL}onboarding/5/`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}onboarding/${onboarding.id}/`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -316,13 +328,18 @@ function MentorDetails(){
   let eventName = '';
   // let eventID = '';
   
-
-  for (let i = 0; i < events.length; i ++){
-    if(onboardingObject.event == events[i].id){
-      eventName = events[i].title;
-      // console.log(eventName);
+  if(typeof(onboarding) !== 'undefined'){
+    for (let i = 0; i < events.length; i ++){
+      // console.log(onboardingArray[0].event);
+  
+      if(onboarding.event == events[i].id){ // Sarah fix to get the correct event name
+        eventName = events[i].title;
+        // console.log(eventName);
+      }
     }
+    
   }
+  
 
 
  
@@ -336,16 +353,22 @@ function MentorDetails(){
   // let stepBoolean = onboardingObject
 
   // let onboardingObject = onboardingArray[3]
-  const result = Object.values(onboarding)
+  let result = [];
+
+  if(typeof(onboarding) !== 'undefined'){
+    result = Object.values(onboarding);
+    for (let i = 0; i < result.length; i++){
+      if(result[i] != true && result[i] != false ){
+        result.splice(result.indexOf(i), 1);
+      }
+      // console.log("result: ", result);
+    }
+  }
+  
 
   // console.log(result);
 
-  for (let i = 0; i < result.length; i++){
-    if(result[i] != true && result[i] != false ){
-      result.splice(result.indexOf(i), 1);
-    }
-    // console.log(result);
-  }
+  
 
   // console.log("nan", isNaN(+onboarding.event));
   // console.log(typeof(onboarding.event) === 'undefined');
@@ -406,32 +429,36 @@ function MentorDetails(){
                       
                       
              <div className='onboarding_container'>
-              <label htmlFor='onboarding_checkboxes'>Onboarding Checklist</label>
-              <ul id="onboarding_checkboxes">
-                {onboarding_steps.map((key, index) => {
-                  return (
-                    <li key={index}>
-                      <input
-                      type="checkbox"
-                      id= {onboarding_steps[index]}
-                      name= {onboarding_steps[index]}
-                      value={index}
-                      checked={result[index+1]}
-                      onChange= {handleCheckboxChange}
-                      disabled={result[index] != true && onboarding_steps[index] != "interview"}
-                      />
-                      <label htmlFor="steps" className="checkbox-label">{onboarding_steps[index]}</label>
-                    </li>
-                        )
-                    })}
-              </ul>
-              <div className='add_mentor_event'>
-                <button type="submit" onClick={handleSubmit}>Add</button>
-              </div>  
+            <label htmlFor='onboarding_checkboxes'>Onboarding steps:</label>
+            <ul id="onboarding_checkboxes">
+                  {onboarding_steps.map((key, index) => {
+                      return (
+                          <div key={index}>
+                              <input
+                              type="checkbox"
+                              id= {onboarding_steps[index]}
+                              name= {onboarding_steps[index]}
+                              value={index}
+                              checked={result[index +1]}
+                              onChange= {handleCheckboxChange}
+                              // disabled={onboarding.key != true && onboarding_steps[index] != "interview"}
+                              />
+
+                          
+                              <label htmlFor="steps" className="checkbox-label">{onboarding_steps[index]}</label>
+                              
+                          </div>
+                      )
+                  })}
+            </ul>
+            <div className='save-btn'>
+                  <button type="submit" onClick={handleOnboardingSubmit}>Save</button>
+            </div>
 
             </div>  
             </section>
             </section>
+
 
 
           </section>
