@@ -15,15 +15,19 @@ import ChangePasswordForm from './components/ChangePassword/ChangePasswordForm';
 import MentorProfile from './components/AllMentorsList/AllMentors';
 import MentorDetails from './components/MentorDetailsPage/MentorDetails';
 import MentorAddEvent from './components/MentorAddEventPage/Index';
+import Footer from './components/Footer/Footer';
 
 const HeaderLayout = () => {
   return (
     <>
       <Nav />
       <Outlet />
+      <Footer />
     </>
   )
-}
+};
+
+
 
 const router = createBrowserRouter([
   {

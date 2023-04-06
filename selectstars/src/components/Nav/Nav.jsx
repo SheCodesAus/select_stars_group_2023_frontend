@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useNavigate }from 'react-router-dom'; 
 import './nav.css';
 
 function Nav() {
@@ -15,9 +16,15 @@ function Nav() {
     }
   }, [token]);
 
-  const logout = () => {
-    localStorage.clear();
+  const navigate = useNavigate();
+  
+  let logout = () => {
+    
     setIsUserSignedIn(false);
+    localStorage.clear();
+    navigate('/login');
+    
+    
   };
 
   return (

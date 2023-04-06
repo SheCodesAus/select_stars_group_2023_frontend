@@ -5,28 +5,6 @@
     font-family: Arial, sans-serif;
 }
 
-/* .mentor-page .background-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: url("https://s35764.pcdn.co/wp-content/uploads/2022/06/Women-in-Coding_1200x62801.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-.mentor-page .background-image::after {
-    position: absolute;
-    content: " ";
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: #8246AF;
-    background-size: cover;
-    background-position: center;
-    opacity: calc(25%);
-} */
-
 .mentor-page {
     background-color: #8246ae;
     padding-bottom: 30px;
@@ -41,7 +19,7 @@
 
 .mentor-page form {
     margin: 20px auto;
-    max-width: 70%;
+    max-width: 80%;
     padding: 3%;
     border-radius: 10px;
     box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
@@ -80,10 +58,75 @@
     background-color: white;
 }
 
+.mentor_details select {
+
+    display: inline-block;
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    padding: 1;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+    height: 60px;
+    text-align: center;
+
+}
+
+select:focus {
+    outline-color: #F9A426;
+}
+
+#mentor_tech_stack {
+    width: 70%;
+    margin: 0;
+    /* padding: 5%; */
+}
+
+#mentor_tech_stack input {
+    height: 2em;
+    width: 2em;
+}
+
+.mentor_details ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5%;
+    padding: 0;
+    font-size: small;
+}
+
+.mentor_details .travel-box {
+    width: 100%;
+    margin: 0;
+    padding: 5%;
+    padding-left: 0;
+    display: flex;
+}
+
+.travel-box input {
+    height: 2em;
+    width: 2em;
+    margin-left: 1.5%;
+}
+
+/* .mentor_details .travel-box label {
+    display: inline-block;
+    clear: left;
+    width: 25%;
+    margin-right: 5%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #8246ae;
+    text-align: right;
+    padding-left: 20%;
+} */
+
 .mentor_details button[type="submit"] {
     display: block;
     margin: 0 auto;
-    width: 40%;
+    width: 70%;
+    margin-left: 30%;
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -95,11 +138,50 @@
 
 .mentor_details button[type="submit"]:hover {
     background-color: #f3279a;
-    transform: scale(1.1);
+    transform: scale(1.02);
+    /* width: 20%; */
 
 }
 
+
+#mentor_tech_stack li {
+    list-style: none;
+    width: 30%;
+}
+
+
+.title label {
+    text-align: start;
+    padding-bottom: 20%;
+}
+
+
+
+input[type="checkbox"] {
+
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+    /* display: grid;
+    place-content: center; */
+    accent-color: orange;
+    padding-right: 20%;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: #F9A426;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
 /* Responsive styles */
+
 @media screen and (max-width: 480px) {
     form {
         max-width: 100%;
