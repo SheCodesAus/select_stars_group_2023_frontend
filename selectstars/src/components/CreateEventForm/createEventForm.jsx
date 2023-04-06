@@ -307,7 +307,7 @@ function CreateEventForm() {
                         <ul id="event_tech_stack">
                             {techStack.map(({name}, index) => {
                                 return (
-                                    <li key={index}>
+                                    <ul key={index}>
                                         <input
                                         type="checkbox"
                                         id="event_tech_stack"
@@ -318,7 +318,7 @@ function CreateEventForm() {
                                         />
                                         <label htmlFor="event_tech_stack">{name}</label>
 
-                                    </li>
+                                    </ul>
                                 )
                             })}
                         </ul>

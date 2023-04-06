@@ -55,14 +55,14 @@ function EventCard(props) {
     <div className="event-card">
       <img src={eventData.image}></img>
       <h2>{eventData.title}</h2>
-      <h2>{eventData.event_type}</h2>
-      <h4>{eventData.location}</h4>
-      <h4>{eventData.description}</h4>
-      <h6>Tech Stack:</h6><span>{tech_stack_names}</span>
-      <h6>Mentors:</h6><span>{mentor_names}</span>
+
+      <div className="event_type">{eventData.event_type}</div>
+      <div className="location">{eventData.location}</div>
+      <div className="description">{eventData.description}</div>
+      <h6>Tech Stack:</h6><span> <div className="Tech_stack_names">{tech_stack_names}</div></span>
+        <h6>Mentors:</h6><span>{mentor_names}</span>
       <h4>Start Date: {eventData.start_date}</h4>
       <h4>End Date: {eventData.end_date}</h4>
-      {/* <h4>Mentors: {eventData.mentors}</h4> */}
 
         <div className='Assign-Mentor'>
         <Link to="/mentorlist">
