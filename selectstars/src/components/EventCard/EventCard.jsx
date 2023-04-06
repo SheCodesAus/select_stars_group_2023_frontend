@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 
 function EventCard(props) {
   const { eventData } = props;
-  // const { techStack } = props;
+  
   const [techStack, setTechStack] = useState([]);
+  const [mentorData, setMentorData ] = useState([]);
 
    
   useEffect(() => {
@@ -17,6 +18,16 @@ function EventCard(props) {
     })
     .then((data) => {
         setTechStack(data);
+    })
+  }, []);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}mentor/`)
+    .then((results) => {
+        return results.json();
+    })
+    .then((data) => {
+        setMentorData(data);
     })
   }, []);
 
@@ -30,6 +41,16 @@ function EventCard(props) {
       }
     }
 
+    let mentor_names = [];
+
+    for (let i = 0; i < eventData.mentors.length ; i ++){
+      for (let j = 0; j < mentorData.length ; j++) {
+        if(eventData.mentors[i] == mentorData[j].id){
+          mentor_names.push(mentorData[j].first_name);
+        }
+      }
+    }
+    console.log(mentor_names)
   return (
     <div className="event-card">
       <img src={eventData.image}></img>
@@ -38,6 +59,7 @@ function EventCard(props) {
       <h4>{eventData.location}</h4>
       <h4>{eventData.description}</h4>
       <h6>Tech Stack:</h6><span>{tech_stack_names}</span>
+      <h6>Mentors:</h6><span>{mentor_names}</span>
       <h4>Start Date: {eventData.start_date}</h4>
       <h4>End Date: {eventData.end_date}</h4>
       {/* <h4>Mentors: {eventData.mentors}</h4> */}
