@@ -16,10 +16,11 @@
 .event-card h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .event-card h3 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 5px;
 }
 
@@ -27,6 +28,14 @@
     font-size: 16px;
     margin-bottom: 5px;
 }
+
+.event-card h6 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: black;
+    margin-top: 10px;
+}
+
 
 .event-card ul {
     list-style: none;
@@ -60,4 +69,26 @@
 
 .event-card .Assign-Mentor:hover button {
     background-color: #f3279a;
+}
+
+.event-card .Tech_stack_names{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.event-card .location{
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+
+.event-card .desciption{
+    font-weight: 500;
+}
+
+.event-card .event_type{
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
