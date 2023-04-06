@@ -6,10 +6,21 @@ import EventCard from '../EventCard/EventCard';
 function HomePage(props) {
     const [eventData, setEventData] = useState([]);
     const [filterData, setFilterData] = useState([]);
+    const [techStack, setTechStack] = useState([]);
     const { id } = useParams();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [search, setSearch] = useState("")
     const token = window.localStorage.getItem('token');
+
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_API_URL}tech_stack/`)
+        .then((results) => {
+            return results.json();
+        })
+        .then((data) => {
+            setTechStack(data);
+        })
+      }, []);
 
     useEffect(() => {
         if (token === null) {
