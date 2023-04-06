@@ -1,6 +1,6 @@
 #profile_pic {
   max-height: 20rem;
-  border: #F9A426 solid 2px;
+
 }
 .mentorInfoBox{
   display: flex;
@@ -9,12 +9,12 @@
   width: 80vw;
   height: 50vh;
   padding: 3%;
-  border: #F9A426 solid 2px;
+
 }
 
 .mentorInfo{
   padding: 3%;
-  border: blue solid 2px;
+
 }
 
 .mentorname {
@@ -63,6 +63,8 @@
 }
 
 select {
+  margin-top: 5%;
+  margin-bottom: 5%;
   display: block;
   width: 100%;
   border: none;
@@ -76,6 +78,15 @@ select {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
+.add_mentor_event-btn {
+  margin-bottom: 5%;
+
+}
+
+.save-btn {
+  margin-top: 5%;
+}
+
 select:focus {
   outline: none;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
@@ -83,12 +94,13 @@ select:focus {
 
 #onboarding_checkboxes li{
   list-style: none;
+  
 }
 
 button[type="submit"] {
   display: block;
   margin: 0 auto;
-  width: 100%;
+  width: 50%;
   margin-left: 30%;
   border: none;
   border-radius: 5px;
@@ -97,6 +109,7 @@ button[type="submit"] {
   color: #fff;
   background-color: #8246ae;
   cursor: pointer;
+
 }
 
 button[type="submit"]:hover {
