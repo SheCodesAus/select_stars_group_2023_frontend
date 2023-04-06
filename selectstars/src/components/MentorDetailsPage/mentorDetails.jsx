@@ -36,6 +36,7 @@ function MentorDetails(){
   // });
 
   const [onboarding, setOnboarding] = useState();
+  
 
   // console.log(onboarding);
 
@@ -185,17 +186,11 @@ function MentorDetails(){
   const handleChange = (event) => {
     const { id, value } = event.target;
 
-    if (id == "event") {
-      setOnboarding((prevOnboarding) => ({
-        ...prevOnboarding,
-        [id]: value
-      }));
-
-    } 
+    
 
     setOnboarding((prevOnboarding) => ({
       ...prevOnboarding,
-      mentor : mentorId,
+      
       interview: true,
       offer: false,
       contract_sent: false,
@@ -203,7 +198,16 @@ function MentorDetails(){
       onboarding_completed: false,
       feedback: false,
       offboarding: false,
+      mentor : mentorId,
     }));
+
+    if (id == "event") {
+      setOnboarding((prevOnboarding) => ({
+        ...prevOnboarding,
+        [id]: value
+      }));
+
+    } 
 
   };
 
@@ -233,6 +237,10 @@ function MentorDetails(){
     postData().then((response)=>{
         
     } )
+
+    window.location.reload(false);
+
+
   };
 
 
@@ -353,17 +361,40 @@ function MentorDetails(){
   // let stepBoolean = onboardingObject
 
   // let onboardingObject = onboardingArray[3]
+  
   let result = [];
-
   if(typeof(onboarding) !== 'undefined'){
     result = Object.values(onboarding);
-    for (let i = 0; i < result.length; i++){
+    for (let i = 0; i < onboarding.length; i++){
+      console.log("result[i]: ", result[i]);
       if(result[i] != true && result[i] != false ){
         result.splice(result.indexOf(i), 1);
       }
-      // console.log("result: ", result);
+      // if(!isNaN(result[i])){
+      //   result.splice(result.indexOf(i), 1);
+      // }
+      
     }
   }
+
+
+  
+
+  // if(typeof(onboardingArray[0]) !== 'undefined'){
+  //   result = Object.values(onboardingArray[0]);
+  //   for (let i = 0; i < onboarding.length; i++){
+  //     console.log("result[i]: ", result[i]);
+  //     if(result[i] != true && result[i] != false ){
+  //       result.splice(result.indexOf(i), 1);
+  //     }
+  //     // if(!isNaN(result[i])){
+  //     //   result.splice(result.indexOf(i), 1);
+  //     // }
+      
+  //   }
+  // } 
+  console.log("nboardingArray[0]: ", onboardingArray[0]);
+  console.log("result: ", result);
   
 
   // console.log(result);
@@ -414,18 +445,29 @@ function MentorDetails(){
 
             <section  className="onboardingManBox">
             <section className="borderOnboarding">
-            <h3>Assign {mentorDetailData.first_name} to event: {eventName}</h3>
-            {/* {
-              isNaN(onboarding.event) && */}
+            {eventName == '' ? (
+
+                <h3>Assign {mentorDetailData.first_name} to event</h3>
+              
+            ) : (
+              <h3>Assigned event: {eventName}</h3>
+            )}
+
+
             <div className="add_mentor_event">
-              <label htmlFor='add_mentor_event'></label>
-                <select id='event' onChange={handleChange}>
-                <option value="">--  Select Event  --</option>
-                    {events.map((events) => {
-                      return <option key={events.id} value={events.id} > {events.title}</option>
-                        })};
-                </select>
-            </div>    
+                <label htmlFor='add_mentor_event'></label>
+                  <select id='event' onChange={handleChange}>
+                  <option value="">--  Select Event  --</option>
+                      {events.map((events) => {
+                        return <option key={events.id} value={events.id} > {events.title}</option>
+                          })};
+                  </select>
+ 
+                 <div className='add_mentor_event-btn'>
+                   <button type="submit" onClick={handleSubmit}>Add</button>
+                  </div>
+            </div> 
+   
                       
                       
               <div className='onboarding_container'>
@@ -439,9 +481,9 @@ function MentorDetails(){
                               id= {onboarding_steps[index]}
                               name= {onboarding_steps[index]}
                               value={index}
-                              checked={result[index +1]}
+                              checked={result[index + 1]}
                               onChange= {handleCheckboxChange}
-                              // disabled={onboarding.key != true && onboarding_steps[index] != "interview"}
+                              disabled={result[index] != true && onboarding_steps[index] != "interview"}
                               />
 
                           
