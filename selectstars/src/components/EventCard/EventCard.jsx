@@ -7,13 +7,6 @@ import { Link } from 'react-router-dom';
 function EventCard(props) {
   const { eventData } = props
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
-
-  }
-
-
   return (
     <div className="event-card">
       <img src={eventData.image}></img>
@@ -26,15 +19,17 @@ function EventCard(props) {
       {/* <h4>Mentors: {eventData.mentors}</h4> */}
 
         <div className='Assign-Mentor'>
-          <Link to='/mentorlist'>
-            <button type="submit" onClick={handleSubmit}>Assign Mentor</button>
-          </Link>
+        <Link to="/mentorlist">
+        <button>Assign a Mentor</button>
+        </Link>
+
         </div>
 
 </div>
 
   );
-}
+
+  };
 
 export default EventCard;
 

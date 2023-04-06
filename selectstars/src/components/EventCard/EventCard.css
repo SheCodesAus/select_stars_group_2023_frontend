@@ -39,7 +39,7 @@
     font-size: 14px;
 }
 
-.event-card .Assign-Mentor button[type="submit"] {
+.event-card .Assign-Mentor button {
     display: block;
     margin: 0 auto;
     width: 50%;
@@ -52,6 +52,6 @@
     cursor: pointer;
 }
 
-.event-card .Assign-Mentor button[type="submit"]:hover {
+.event-card .Assign-Mentor:hover button {
     background-color: #f3279a;
 }
