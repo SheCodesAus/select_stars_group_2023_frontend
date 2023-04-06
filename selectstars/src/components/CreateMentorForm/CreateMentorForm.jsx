@@ -176,7 +176,18 @@ function CreateMentorForm() {
             <h1>
                 Create New Mentor
             </h1>
+
             <form className='mentor-form'>
+                <div className='mentor_details'>
+                        <label htmlFor='image'>Profile picture:</label>
+                        <input
+                            type="url"
+                            id="image"
+                            placeholder="Mentor photo URL or Empty for Default Image"
+                            onChange={handleChange}
+                        />
+                </div>
+
                 <div className='mentor_details'>
                     <label htmlFor='first_name'>First name:</label>
                     <input
@@ -211,17 +222,7 @@ function CreateMentorForm() {
                     <input
                         type="text"
                         id="bio"
-                        placeholder="Write your bio"
-                        onChange={handleChange}
-                    />
-                </div>
-
-                <div className='mentor_details'>
-                    <label htmlFor='image'>Profile picture:</label>
-                    <input
-                        type="url"
-                        id="image"
-                        placeholder="Mentor photo URL or Leave Empty for Default Image"
+                        placeholder="Enter bio"
                         onChange={handleChange}
                     />
                 </div>

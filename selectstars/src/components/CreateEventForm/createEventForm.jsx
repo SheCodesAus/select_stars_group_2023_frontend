@@ -91,7 +91,7 @@ function CreateEventForm() {
             <form>
                 <div className="eventField">
                     <label htmlFor='image'>Image:</label>
-                    <input type="url" placeholder="Add Event Image or Leave Empty for Default Image" id="image" onChange={handleChange} />
+                    <input type="url" placeholder="Add Event Image or Empty for Default Image" id="image" onChange={handleChange} />
                 </div>
 
                 <div className="eventField">
@@ -100,8 +100,14 @@ function CreateEventForm() {
                 </div>
 
                 <div className="eventField">
+                    <label htmlFor='description'>Description:</label>
+                    <input type="text" placeholder="Enter description" id="description" onChange={handleChange} />
+                </div>
+
+                <div className="eventField">
                     <label htmlFor='location'>Location:</label>
                     <select id='location' onChange={handleChange}> 
+                    <option value="">--Select an option--</option>
                     <option value="Sydney">Sydney</option>
                     <option value="Brisbane">Brisbane</option>
                     <option value="Perth">Perth</option>
@@ -112,6 +118,7 @@ function CreateEventForm() {
                   
                     <label htmlFor='type'>Event Type:</label>
                     <select id='event_type' onChange={handleChange}>
+                    <option value="">--Select an option--</option>
                     <option value="Flash">Flash</option>
                     <option value="Plus">Plus</option>
                     <option value="One Day Workshop">One Day Workshop</option>
