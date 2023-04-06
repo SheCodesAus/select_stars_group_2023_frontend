@@ -9,6 +9,7 @@ const Footer = () => {
 
             <div className="social-icons">
 
+
                 <a href="https://twitter.com/shecodesaus?lang=en" target="_blank" rel="noopener noreferrer">
                     <img src="https://cdn-icons-png.flaticon.com/512/3256/3256013.png" alt="twitter" />
                 </a>
@@ -20,11 +21,14 @@ const Footer = () => {
                 <a href="https://www.linkedin.com/company/shecodesaustralia/?originalSubdomain=au" target="_blank" rel="noopener noreferrer">
                     <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="linkedin" />
                 </a>
+                <div className="copyright">
+                {`Copyright © She Codes ${year}`}
+                </div>
+            
 
             </div>
-            <div className="copyright">
-            {`Copyright © She Codes ${year}`}
-            </div>
+
+
         </footer>
     );
 };
