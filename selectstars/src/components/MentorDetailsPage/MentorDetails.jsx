@@ -229,7 +229,7 @@ function MentorDetails(){
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     postData().then((response)=>{
         
     } )
@@ -260,6 +260,8 @@ function MentorDetails(){
         [id]: false
       }));
     }
+
+    console.log("onboarding: ", onboarding);
     
   };
 
@@ -355,17 +357,18 @@ function MentorDetails(){
 
   if(typeof(onboarding) !== 'undefined'){
     result = Object.values(onboarding);
+    for (let i = 0; i < result.length; i++){
+      if(result[i] != true && result[i] != false ){
+        result.splice(result.indexOf(i), 1);
+      }
+      // console.log("result: ", result);
+    }
   }
   
 
-  console.log(result);
+  // console.log(result);
 
-  for (let i = 0; i < result.length; i++){
-    if(result[i] != true && result[i] != false ){
-      result.splice(result.indexOf(i), 1);
-    }
-    console.log("result: ", result);
-  }
+  
 
   // console.log("nan", isNaN(+onboarding.event));
   // console.log(typeof(onboarding.event) === 'undefined');
@@ -420,7 +423,7 @@ function MentorDetails(){
                               id= {onboarding_steps[index]}
                               name= {onboarding_steps[index]}
                               value={index}
-                              checked={result[index +1] == true}
+                              checked={result[index +1]}
                               onChange= {handleCheckboxChange}
                               // disabled={onboarding.key != true && onboarding_steps[index] != "interview"}
                               />
