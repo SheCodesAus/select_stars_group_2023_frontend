@@ -83,7 +83,11 @@ body {
   background-color: transparent;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 871px) {
+  .logo {
+    display: none;
+  }
+
   .main-nav-container {
     flex-wrap: wrap;
     justify-content: center;
