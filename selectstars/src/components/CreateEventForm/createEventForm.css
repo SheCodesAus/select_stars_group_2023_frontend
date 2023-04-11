@@ -4,16 +4,22 @@
 }
 
 .event-page {
-    background-color: #8246ae;
+    background-color: white;
     /* height: 100%; */
     padding-bottom: 30px;
+    background-image: url(https://shecodes.com.au/wp-content/uploads/2021/10/Artboard-1-2.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .event-page h1 {
-    color: #F5F5F5;
+    color: #8246ae;
     text-align: center;
     padding-top: 2%;
     padding-bottom: 1;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 48px;
 }
 
 .event-page form {
@@ -21,8 +27,8 @@
     max-width: 70%;
     padding: 3%;
     border-radius: 10px;
-    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
-    background-color: #F5F5F5;
+    box-shadow: 1px 1px 5px #c0b0cb;
+    background-color: white;
     display: flex;
     flex-direction: column;
 }
@@ -33,14 +39,14 @@
     width: 100%;
     text-align: right;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .eventField label {
     display: inline-block;
     clear: left;
-    width: 250px;
-    margin-right: 10%;
+    width: 25%;
+    margin-right: 5%;
     margin-bottom: 5px;
     font-weight: bold;
     color: #8246ae;
@@ -50,26 +56,32 @@
 .eventField input {
     display: inline-block;
     width: 100%;
-    border: none;
+    /* border: none; */
     border-radius: 5px;
-    padding: 1;
+    padding: 10px;
     font-size: 16px;
     color: #333;
-    background-color: white;
+    border: 2px solid #c0b0cb;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .eventField select {
 
     display: inline-block;
     width: 102%;
-    border: none;
+    /* border: none; */
     border-radius: 5px;
     padding: 1;
     font-size: 16px;
     color: #333;
-    background-color: white;
     height: 60px;
     text-align: center;
+    border: 2px solid #c0b0cb;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 
 }
 
@@ -82,6 +94,7 @@ select:focus {
     margin: 0 auto;
     width: 70%;
     margin-left: 30%;
+    margin-top: 40px;
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -99,19 +112,48 @@ select:focus {
 #event_tech_stack{
     width: 70%;
     margin: 0;
+    /* display: flex;
+    flex-direction: column; */
+    /* align-items: center; */
 }
 #event_tech_stack input {
     height: 2em;
     width: 2em;
 }
-#event_tech_stack ul{
-list-style: none;
-width: 30%;
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-gap: 0%;
-font-size: small;
+
+.eventField ul{
+    /* list-style: none;
+    width: 30%; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5%;
+    padding: 0;
+    font-size: small;
+    align-items: center;
 }
+
+/* #event_tech_stack label {
+    color: black;
+    font-weight: lighter;
+    font-size: 20px;
+    margin-left: 15px;
+    text-align: left;
+
+} */
+
+#event_tech_stack li {
+    list-style: none;
+    width: 30%;
+}
+
+#event_tech_stack label{
+    color: black;
+    font-weight: lighter;
+    font-size: 14px;
+    margin-left: 15px;
+    text-align: left;
+}
+
 
 input[type="checkbox"] {
 

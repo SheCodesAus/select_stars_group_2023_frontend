@@ -20,17 +20,46 @@
     opacity: calc(25%);
 } */
 
+.purple-cover {
+    background-color: #57287B;
+    opacity: 0.6;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    z-index: -1; 
+}
+
+
+
 .home-page {
-    background-color: #8246AF;
+    background-color: white;
     padding-bottom: 30px;
+    /* z-index: 10; 
+    position: relative; */
+}
+
+.title {
+    background-image: url(https://shecodes.com.au/wp-content/uploads/2021/10/She-Codes-113.jpg);
+    background-position: center center;
+    background-size: cover;
+    padding-bottom: 30px;
+    position: relative;
+    z-index: 1;
+   
 }
 
 .title h1 {
-    font-size: 42px;
+    font-size: 48px;
     color: #F5F5F5;
     text-align: center;
     padding-top: 25px;
     padding-bottom: 25px;
+    z-index: 1; 
+    position: relative;
+    font-family: 'Bebas Neue', cursive;
+   
+    
 }
 
 /* .event-cards-container {
@@ -54,6 +83,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    z-index: 10; 
+    position: relative;
 
 }
 
@@ -97,6 +128,8 @@
     text-align: center;
     display: block;
     margin: 0 auto;
+    z-index: 1; 
+    position: relative;
 }
 
 @media screen and (max-width: 480px) {

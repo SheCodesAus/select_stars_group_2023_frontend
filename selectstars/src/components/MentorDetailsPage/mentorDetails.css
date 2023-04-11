@@ -1,34 +1,109 @@
+.mentor-detail-page {
+  /* background: #8246ae; */
+  padding-bottom: 30px;
+  background-image: url(https://shecodes.com.au/wp-content/uploads/2021/10/Artboard-1-2.svg);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+ 
+
+}
+
+.mentor-detail {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: center;
+  
+}
+
+#mentor-detail-title {
+  background-color: #57287B;
+  opacity: 0.8;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 1;
+
+}
+
+#mentor-detail-title h1 {
+  font-size: 48px;
+  color: #F5F5F5;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  z-index: 1; 
+  position: relative;
+  font-family: 'Bebas Neue', cursive;
+ 
+  
+}
+
+
 #profile_pic {
-  max-height: 20rem;
+  max-height: 15rem;
+  border-radius: 50%;
+  display: flex;
+  box-shadow: 1px 1px 5px #c0b0cb;
 
 }
 .mentorInfoBox{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 80vw;
-  height: 50vh;
-  padding: 3%;
+  flex-direction: column;
+  margin-top: 46px;
+  /* justify-content: center; */
+  align-items: center;
+  width: 50%;
+  
+  /* height: 80vh; */
+  width: 80vh;
+  /* padding: 3%; */
+  /* border: solid black 2px; */
 
 }
 
 .mentorInfo{
-  padding: 3%;
+  /* padding: 3%; */
+  /* background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 80vh;
+   */
 
 }
 
-.mentorname {
-  font-size: 24px;
-  color: #8246AE;
+.mentorInfo .info-box {
+  background: #fff;
+  box-shadow: 1px 1px 5px #c0b0cb;
+  border-radius: 10px;
+  padding: 3%;
+  margin-bottom: 50px;
+  width: 80vh;
+  margin-top: 25px;
+  /* height: 80vh; */
+
+}
+
+.mentor-detail .title {
+  font-size: 48px;
+    color: #F5F5F5;
+    text-align: center;
+    /* padding-top: 25px;
+    padding-bottom: 25px; */
+    z-index: 1; 
+    position: relative;
+    font-family: 'Bebas Neue', cursive;
+    
+  
 }
 
 .mentorInfo h6 {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 5px;
   color: black;
   display: inline-block;
   padding-right: 0.5rem;
-  font-weight: 550;
+  font-weight: 1000;
   
 }
 
@@ -38,31 +113,114 @@
 
 }
 
+.bio {
+  font-style:italic;
+  background: #fff;
+  box-shadow: 1px 1px 5px #c0b0cb;
+  border-radius: 10px;
+  padding: 3%;
+  /* width: 80vh; */
+}
+
+#bio-title {
+  /* background: #8246ae; */
+  width: 100%;
+  /* color: white; */
+  /* padding: 10px; */
+
+}
+
+/* #bio-detail {
+  padding: 20px;
+} */
+
 /* ==============Onboarding======================
 =============================================== */
+.assigned-event {
+  display: flex;
+  flex-direction: row;
+}
 
+h3 {
+  margin: 10px;
+  display:flex;
+}
 
-.onboardingManBox{
-  padding: 5% 30%;
-  width: auto;
+p {
+  font-size: 17px;
+  margin: 10px;
+  margin-bottom: 20px;
+  display:flex;
+  text-align: center;
+}
+
+.onboarding_container li {
+  display: flex;
+  align-items:center;
+}
+
+input {
+  /* display: inline-block; */
+  width: 30%;
+  /* border: solid black 2px; */
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+
+  /* flex-direction: row; */
+  
+}
+
+.onboarding_container ul {
+  display: grid;
+  grid-gap: 5%;
+  padding: 0;
+  font-size: small;
+}
+
+/* .onboarding_checkboxes div {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+} */
+
+.checkbox-label{
+  width: 50%;
+  color: black;
+  font-weight: lighter;
+  font-size: 14px;
+  margin-left: 15px;
+  text-align: right;
+  
+}
+
+.onboardingMainBox{
+  display: flex;
+  padding: 2%;
+  width: 50%;
   margin-top: 10px;
 
 }
 
 .borderOnboarding{
-  border: #F9A426 solid 2px;
-  background-color: #F5F5F5;
-  padding: 10%;
+  /* border: #F9A426 solid 2px; */
+  background: #fff;
+  box-shadow: 1px 1px 5px #c0b0cb;
+  padding: 5%;
+  border-radius: 10px;
+  width: 100%;
+  
+  
 }
 
-.select-container {
+/* .select-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-}
+} */
 
-select {
+#event {
   margin-top: 5%;
   margin-bottom: 5%;
   display: block;
@@ -84,7 +242,7 @@ select {
 }
 
 .save-btn {
-  margin-top: 5%;
+  margin-top: 150px;
 }
 
 select:focus {
@@ -102,6 +260,7 @@ button[type="submit"] {
   margin: 0 auto;
   width: 50%;
   margin-left: 30%;
+  margin-top: 40px;
   border: none;
   border-radius: 5px;
   padding: 2%;

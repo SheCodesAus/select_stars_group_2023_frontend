@@ -25,13 +25,26 @@ function MentorCard(props) {
 return (
 
 <div className="mentorProfile_card">
+  <div id="mentorName">{mentorsData.first_name} {mentorsData.last_name}</div>
   <Link to={`/mentordetails/${mentorsData.id}`}>
-      <h3><img src={mentorsData.image} alt="Profile picture" /></h3>
-      <section className="mentorCardText">
-        <h3 className="mentorname">{mentorsData.first_name} {mentorsData.last_name}</h3>
+    
+    <div className="wrapper">
+      <div >
+        <img src={mentorsData.image} alt="Profile picture" id="profile"/>
+        
+      </div>
+        
+      <div className="mentorCardText">
+        
         <div>
           <h6>Tech Stack:</h6>
-          <span>{tech_stack_names}</span>
+            <span> 
+            {tech_stack_names.map((tech_stack, key)=> {
+              return (
+                <li key={key}>{`${tech_stack} `}</li>
+              )
+            })} 
+            </span>
         </div>
         <div>
           <h6>Mentor type:</h6>
@@ -45,7 +58,10 @@ return (
           <h6>Willing to travel:</h6>
           <span>{can_travel}</span>
         </div>
-      </section>
+      </div>
+
+    </div>
+    
   </Link>
 </div>
 

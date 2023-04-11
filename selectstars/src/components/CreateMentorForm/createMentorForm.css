@@ -1,20 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat+Alternates:wght@200;500&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
+    
 }
 
 .mentor-page {
-    background-color: #8246ae;
+    background-color: white;
     padding-bottom: 30px;
+    background-image: url(https://shecodes.com.au/wp-content/uploads/2021/10/Artboard-1-2.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .mentor-page h1 {
-    color: #F5F5F5;
+    color: #8246ae;
     text-align: center;
     padding-top: 2%;
     padding-bottom: 1;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 48px;
+
 }
 
 .mentor-page form {
@@ -22,8 +32,8 @@
     max-width: 80%;
     padding: 3%;
     border-radius: 10px;
-    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
-    background-color: #F5F5F5;
+    box-shadow: 1px 1px 5px #c0b0cb;
+    background-color: white;
     display: flex;
     flex-direction: column;
 }
@@ -33,7 +43,7 @@
     width: 100%;
     text-align: right;
     display: flex;
-    align-items: flex-end;
+    align-items:center;
 }
 
 .mentor-page label {
@@ -50,26 +60,32 @@
 .mentor-page input {
     display: inline-block;
     width: 70%;
-    border: none;
-    border-radius: 5px;
+    /* border: none;
+    border-radius: 5px; */
     padding: 10px;
     font-size: 16px;
     color: #333;
-    background-color: white;
+    border: 2px solid #c0b0cb;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .mentor_details select {
 
     display: inline-block;
     width: 70%;
-    border: none;
-    border-radius: 5px;
+    /* border: none;
+    border-radius: 5px; */
     padding: 1;
     font-size: 16px;
     color: #333;
-    background-color: white;
     height: 60px;
     text-align: center;
+    border: 2px solid #c0b0cb;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 
 }
 
@@ -127,6 +143,7 @@ select:focus {
     margin: 0 auto;
     width: 70%;
     margin-left: 30%;
+    margin-top: 40px;
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -149,10 +166,21 @@ select:focus {
     width: 30%;
 }
 
+#mentor_tech_stack li label{
+    color: black;
+    font-weight: lighter;
+    font-size: 14px;
+    margin-left: 15px;
+    text-align: left;
+}
 
-.title label {
+
+
+
+.tech_label label {
     text-align: start;
     padding-bottom: 20%;
+    
 }
 
 
