@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import './EventCard.css';
 import { Link } from 'react-router-dom';
+import dayjs from "dayjs";
 
 
 
@@ -50,24 +51,62 @@ function EventCard(props) {
         }
       }
     }
-    console.log(mentor_names)
+    // console.log(typeof(eventData.start_date))
+
+    let startDate = dayjs(eventData.start_date).format("h:mma, DD MMMM YY");
+    let endDate = dayjs(eventData.end_date).format("h:mma, DD MMMM YY");
   return (
     <div className="event-card">
       <img src={eventData.image}></img>
       <h2>{eventData.title}</h2>
 
       <div className="event_type">{eventData.event_type}</div>
-      <div className="location">{eventData.location}</div>
+      <div className="info-heading">{eventData.location}</div>
       <div className="description">{eventData.description}</div>
-      <h6>Tech Stack:</h6><span> <div className="Tech_stack_names">{tech_stack_names}</div></span>
-        <h6>Mentors:</h6><span>{mentor_names}</span>
-      <h4>Start Date: {eventData.start_date}</h4>
-      <h4>End Date: {eventData.end_date}</h4>
+      <h6>Tech Stack:</h6><span> <div className="info">
+        {tech_stack_names.map((tech_stack, key)=> {
+          return (
+            <li key={key}>{`${tech_stack} `}</li>
+          )
+        })} 
+        </div></span>
+
+
+        <h6>Mentors:</h6>
+          <span> 
+
+          {mentor_names.length == 0 ? (
+
+          <div className="info no-mentor">No Mentors assigned to event yet</div>
+
+          ) : (
+            <div className="info">
+              {mentor_names.map((names, key)=> {
+              return (
+                <li key={key}>{`${names} `}</li>
+              )
+              })} 
+
+            </div>
+            
+          )}
+           
+          </span>
+        <div className="date">
+          <div className="info-heading">Start Date: <div className="info-date">{startDate}</div></div>
+
+        </div>
+        <div className="date">
+        <div className="info-heading">End Date: <div className="info-date">{endDate}</div></div>
+
+        </div>
+      
+     
 
         <div className='Assign-Mentor'>
-        <Link to="/mentorlist">
-        <button>Assign a Mentor</button>
-        </Link>
+          <Link to="/mentorlist">
+          <button>Assign a Mentor</button>
+          </Link>
 
         </div>
 

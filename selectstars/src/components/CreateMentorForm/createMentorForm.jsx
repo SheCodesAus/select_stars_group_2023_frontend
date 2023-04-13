@@ -281,7 +281,7 @@ function CreateMentorForm() {
                 </div> */}
 
                 <div className='mentor_details'>
-                    <label className='title' htmlFor='mentor_tech_stack'>Tech stack:</label>
+                    <label className='tech_label' htmlFor='mentor_tech_stack'>Tech stack:</label>
                     <ul id="mentor_tech_stack">
                         {techStack.map(({ name }, index) => {
                             return (
@@ -294,7 +294,7 @@ function CreateMentorForm() {
                                         // checked={mentorTechState[index]}
                                         onChange={handleChange}
                                     />
-                                    <label htmlFor="mentor_tech_stack">{name}</label>
+                                    <label htmlFor="mentor_tech_stack" >{name}</label>
 
                                 </li>
                             )

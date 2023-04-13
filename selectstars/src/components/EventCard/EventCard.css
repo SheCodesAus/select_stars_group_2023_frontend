@@ -11,6 +11,8 @@
     margin: 20px;
     padding: 20px;
     width: 300px;
+
+  
 }
 
 .event-card h2 {
@@ -48,6 +50,9 @@
     font-size: 14px;
 }
 
+
+
+
 .event-card .Assign-Mentor button {
     display: block;
     margin: 0 auto;
@@ -61,6 +66,7 @@
     color: #fff;
     background-color: #8246ae;
     cursor: pointer;
+    
 
 }
 .event-card .Assign-Mentor a {
@@ -71,9 +77,10 @@
     background-color: #f3279a;
 }
 
-.event-card .Tech_stack_names{
+.event-card .info{
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 14px;
 }
 
 .event-card .location{
@@ -83,12 +90,44 @@
 }
 
 
-.event-card .desciption{
+.event-card .description{
     font-weight: 500;
+    font-size: 14px;
 }
 
 .event-card .event_type{
     font-size: 22px;
     margin-bottom: 10px;
     font-weight: bold;
+    font-style: italic;
 }
+
+.event-card .info-heading{
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+    display:flex;
+    text-align: center;
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    
+    
+}
+
+.info-date {
+    display:flex;
+    font-weight:lighter;
+    font-size: 14px;
+    align-items:center;
+    margin-left: 10px;
+}
+
+.no-mentor {
+    font-style: italic;
+
+}
+

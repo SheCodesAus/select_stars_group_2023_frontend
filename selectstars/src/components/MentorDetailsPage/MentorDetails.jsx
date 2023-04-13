@@ -10,8 +10,6 @@ import './mentorDetails.css';
 
 function MentorDetails(){
 
-  const navigate = useNavigate();
-
   const { id } = useParams();
   const { id:mentorId } = useParams();
 
@@ -20,31 +18,21 @@ function MentorDetails(){
   const [techStack, setTechStack] = useState([]);
   const [events, setEvents] = useState([]);
   const [onboardingArray, setOnboardingArray] = useState([]);
-  // const [onboardingId, setOnboardingId] = useState(0);
-  // const [onboarding, setOnboarding] = useState({
-  //   // id: '',
-  //   // interview: true,
-  //   // offer: false,
-  //   // contract_sent: false,
-  //   // contract_return: false,
-  //   // onboarding_completed: false,
-  //   // feedback: false,
-  //   // offboarding: false,
-  //   // mentor: '',
-  //   // event: '',
-
-  // });
-
   const [onboarding, setOnboarding] = useState();
   
 
-  // console.log(onboarding);
 
 
   let onboarding_steps = 
   ["interview", "offer", "contract_sent",
   "contract_return","onboarding_completed", "feedback",
   "offboarding"]
+
+  let onboarding_titles = 
+  ["Invited to Interview", "Offered Position", "Sent Contract",
+  "Contract Received","Onboarding Complete", "Feedback shared",
+  "Offboarded"] 
+  
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}onboarding/`)
     .then((results) => {
@@ -95,98 +83,17 @@ function MentorDetails(){
     })
   }, []);
 
-  
 
-  // console.log("onboardingArray[0]: ", onboardingArray[0]);
-
-  // let tempId = 0;
-  // let onboardingObject = {};
-  // for (let i = 0; i < onboardingArray.length; i ++){
-  //   // console.log("mentorId: ", mentorId);
-  //   // console.log("onboardingArray[i].mentor: ", onboardingArray[i].mentor);
-  //   if(onboardingArray[i].mentor == mentorId ){
-
-  //     tempId = onboardingArray[i].id
-  //     onboardingObject = onboardingArray[i];
-      
-  //   }
-  // }
-
-  // // console.log("tempId: ", tempId);
-
-  // useEffect(() => {
-
-
-
-  //   setOnboardingId({onboardingId: tempId});
-
-  //   // setOnboardingId(prevState => {
-  //   //   return {
-  //   //       ...prevState,
-  //   //       onboardingId : tempId
-  //   //   }
-  //   // });
-
-  //   // setOnboardingId({onboardingId: tempId}, function (){
-  //   //   console.log("onboardingId: ", onboardingId)
-  //   // });
-
-  //   // console.log("onboardingId: ", onboardingId);
-  
-
-  // },[tempId]);
-
-
-//   this.setState({value: event.target.value}, function () {
-//     console.log(this.state.value);
-// });
-
-
-  // let onboardingIdValue = Object.values(onboardingId); 
-
-  // useEffect(() => {
-       
-    
-   
-  //     fetch(`${import.meta.env.VITE_API_URL}onboarding/5/`)
-  //     .then((results) => {
-  //         return results.json();
-  //     })
-  //     .then((data) => {
-  //       setOnboarding(data);
-  //     })
-  //     // ${onboardingIdValue}
-  
-  //   // const values = Object.values(onboardingObject)
-  //   // console.log("values: ", values)
-
-  //   // setOnboarding((prevOnboarding) => ({
-  //   //   ...prevOnboarding,
-  //   //   id: values[0],
-  //   //   interview: values[1],
-  //   //   offer: values[2],
-  //   //   contract_sent: values[3],
-  //   //   contract_return: values[4],
-  //   //   onboarding_completed: values[5],
-  //   //   feedback: values[6],
-  //   //   offboarding: values[7],
-  //   //   mentor: values[8],
-  //   //   event: values[9],
-  //   // }));
-
-  
-   
-  // }, []);
-
-  // console.log("onboarding: ", onboarding)
 
 
   // ADDING EVENT TO MENTOR AND CREATING A NEW ONBOARDING TABLE
 
+  // let eventId = '';
   const handleChange = (event) => {
     const { id, value } = event.target;
 
-    
+    console.log("id: ", id);
+    console.log("value: ", value);
 
     setOnboarding((prevOnboarding) => ({
       ...prevOnboarding,
@@ -201,7 +108,13 @@ function MentorDetails(){
       mentor : mentorId,
     }));
 
+    // if (id == "event") {
+    //   eventId = value;
+
+    // } 
+
     if (id == "event") {
+      console.log("if event value: ", value);
       setOnboarding((prevOnboarding) => ({
         ...prevOnboarding,
         [id]: value
@@ -234,6 +147,16 @@ function MentorDetails(){
 
   const handleSubmit = (event) => {
     // event.preventDefault();
+    // const { id, value } = event.target;
+
+  
+    // setOnboarding((prevOnboarding) => ({
+    //   ...prevOnboarding,
+    //   event: eventId
+    // }));
+
+    
+
     postData().then((response)=>{
         
     } )
@@ -280,34 +203,6 @@ function MentorDetails(){
     } )
   };
 
-  //update the onboarding fields and call the putData function to update database
-
-  // const updateOnboarding = (event) => {
-  //   const { id } = event.target;
-  //   const checked = event.target.checked;
-
-  //   // console.log("updateOnboarding",id);
-  //   // console.log("updateOnboarding",checked);
-
-  //   if(checked){
-  //     setOnboarding((prevOnboarding) => ({
-  //       ...prevOnboarding,
-  //       [id]: true
-  //     }));
-
-  //     // console.log("updateOnboarding check",onboarding.interview);
-
-  //     event.preventDefault();
-  //     putData().then((response)=>{
-  //       // if(response.status == 201){
-  //           // navigate("/");
-  //       // }
-        
-  //     } )
-
-  //   }
-
-  // };
 
 
   const putData = async () => {
@@ -340,7 +235,7 @@ function MentorDetails(){
     for (let i = 0; i < events.length; i ++){
       // console.log(onboardingArray[0].event);
   
-      if(onboarding.event == events[i].id){ // Sarah fix to get the correct event name
+      if(onboarding.event == events[i].id){ 
         eventName = events[i].title;
         // console.log(eventName);
       }
@@ -348,19 +243,6 @@ function MentorDetails(){
     
   }
   
-
-
- 
-  // let onboardingObjectArray = []
-
-  // for (let i = 0; i < onboarding_steps.length; i++){
-  //   let step = onboarding_steps[i];
-  //   onboardingObjectArray.push(onboardingObject.${step});
-  // }
-
-  // let stepBoolean = onboardingObject
-
-  // let onboardingObject = onboardingArray[3]
   
   let result = [];
   if(typeof(onboarding) !== 'undefined'){
@@ -370,39 +252,10 @@ function MentorDetails(){
       if(result[i] != true && result[i] != false ){
         result.splice(result.indexOf(i), 1);
       }
-      // if(!isNaN(result[i])){
-      //   result.splice(result.indexOf(i), 1);
-      // }
       
     }
   }
 
-
-  
-
-  // if(typeof(onboardingArray[0]) !== 'undefined'){
-  //   result = Object.values(onboardingArray[0]);
-  //   for (let i = 0; i < onboarding.length; i++){
-  //     console.log("result[i]: ", result[i]);
-  //     if(result[i] != true && result[i] != false ){
-  //       result.splice(result.indexOf(i), 1);
-  //     }
-  //     // if(!isNaN(result[i])){
-  //     //   result.splice(result.indexOf(i), 1);
-  //     // }
-      
-  //   }
-  // } 
-  console.log("nboardingArray[0]: ", onboardingArray[0]);
-  console.log("result: ", result);
-  
-
-  // console.log(result);
-
-  
-
-  // console.log("nan", isNaN(+onboarding.event));
-  // console.log(typeof(onboarding.event) === 'undefined');
   let tech_stack_names = [];
     for (let i = 0; i < mentorDetailData.mentor_tech_stack.length ; i ++){
       for (let j = 0; j < techStack.length ; j++) {
@@ -413,98 +266,159 @@ function MentorDetails(){
     }
 
   let can_travel = mentorDetailData.can_travel ? "Yes" : "No";
+
+  // console.log("onboardingArray[0].event:", onboardingArray[0].event);
+
   return(
   
-    <>
-      
-      <section className="">
-          <section className="mentorInfoBox">
-            <div className="mentoravatar">
-              <h3><img src={mentorDetailData.image} alt="Profile picture" id="profile_pic"/></h3> 
-            </div>
-            <div className="mentorInfo">
-              <h1 className="mentorname">{mentorDetailData.first_name} {mentorDetailData.first_name}</h1>
-              <div>
-                <h6>Tech Stack:</h6>
-                <span>{tech_stack_names}</span>
-              </div>
-              <div>
-                <h6>Mentor type:</h6>
-                <span>{mentorDetailData.level}</span>
-              </div>
-              <div>
-                <h6>Location:</h6>
-                <span>{mentorDetailData.location}</span>
-              </div>
-              <div>
-                <h6>Willing to travel:</h6>
-                <span>{can_travel}</span>
-              </div>
-            </div>          
-          </section>
+    <div className="mentor-detail-page">
+      <div id="mentor-detail-title">
+        <div className="purple-cover"></div>
+        <h1 >{mentorDetailData.first_name} {mentorDetailData.last_name}</h1>
+        
 
-            <section  className="onboardingManBox">
-            <section className="borderOnboarding">
-            {eventName == '' ? (
+      </div>
+     
 
+      <section className="mentor-detail">
+
+      <section  className="onboardingMainBox">
+          <section className="borderOnboarding">
+
+          {typeof(onboardingArray[0]) == 'undefined' ? (
+
+            <div>
                 <h3>Assign {mentorDetailData.first_name} to event</h3>
-              
-            ) : (
-              <h3>Assigned event: {eventName}</h3>
-            )}
+              <div className="add_mentor_event">
+              <label htmlFor='add_mentor_event'></label>
+                <select id='event' onChange={handleChange}>
+                <option value="">--  Select Event  --</option>
+                    {events.map((events) => {
+                      return <option key={events.id} value={events.id} > {events.title}</option>
+                        })};
+                </select>
 
-
-            <div className="add_mentor_event">
-                <label htmlFor='add_mentor_event'></label>
-                  <select id='event' onChange={handleChange}>
-                  <option value="">--  Select Event  --</option>
-                      {events.map((events) => {
-                        return <option key={events.id} value={events.id} > {events.title}</option>
-                          })};
-                  </select>
- 
-                 <div className='add_mentor_event-btn'>
-                   <button type="submit" onClick={handleSubmit}>Add</button>
-                  </div>
-            </div> 
-   
-                      
-                      
-             <div className='onboarding_container'>
-            <label htmlFor='onboarding_checkboxes'>Onboarding steps:</label>
-            <ul id="onboarding_checkboxes">
-                  {onboarding_steps.map((key, index) => {
-                      return (
-                          <div key={index}>
-                              <input
-                              type="checkbox"
-                              id= {onboarding_steps[index]}
-                              name= {onboarding_steps[index]}
-                              value={index}
-                              checked={result[index + 1]}
-                              onChange= {handleCheckboxChange}
-                              disabled={result[index] != true && onboarding_steps[index] != "interview"}
-                              />
-
-                          
-                              <label htmlFor="steps" className="checkbox-label">{onboarding_steps[index]}</label>
-                              
-                          </div>
-                      )
-                  })}
-            </ul>
-            <div className='save-btn'>
-                  <button type="submit" onClick={handleOnboardingSubmit}>Save</button>
+              <div className='add_mentor_event-btn'>
+                <button type="submit" onClick={handleSubmit}>Add</button>
+                </div>
+              </div> 
             </div>
+
+            
+
+          ) : ( 
+            <div className="assigned-event">
+              <h3>Assigned event: </h3>
+              <p>{eventName} </p>
+              
+            </div>
+
+          )}
+
+                    
+          <div className='onboarding_container'>
+            
+            {typeof(onboardingArray[0]) !== 'undefined' ? (
+
+      
+              <div>
+                <h3>Onboarding steps:</h3>
+                <ul id="onboarding_checkboxes">
+                      {onboarding_steps.map((key, index) => {
+                          return (
+                              <li key={index}>
+                                  <label htmlFor="steps" className="checkbox-label">{onboarding_titles[index]}</label>
+                                  <input
+                                  type="checkbox"
+                                  id= {onboarding_steps[index]}
+                                  name= {onboarding_steps[index]}
+                                  value={index}
+                                  checked={result[index + 1]}
+                                  onChange= {handleCheckboxChange}
+                                  disabled={result[index] != true && onboarding_steps[index] != "interview"}
+                                  />
+
+                                  {/* <label htmlFor="steps" className="checkbox-label">{onboarding_titles[index]}</label> */}
+                                
+                              </li>
+                          )
+                      })}
+                </ul>
+                <div className='save-btn'>
+                    <button type="submit" onClick={handleOnboardingSubmit}>Save</button>
+                </div>
+
+              </div>
+
+            ) : ( 
+              <div>
+        
+                <p>An event needs to be assigned, before the onboarding process can start</p>
+
+              </div>
+
+            )}
+              
+              
 
             </div>  
-            </section>
-            </section>
-
-
-
+            
           </section>
-        {/* <form>
+        </section>
+
+
+        <section className="mentorInfoBox">
+            <h3><img src={mentorDetailData.image} alt="Profile picture" id="profile_pic"/></h3> 
+         
+            <div className="mentorInfo">
+              <div className="bio">
+                  {/* <h6 id="bio-title">Bio:</h6> */}
+                  <span id="bio-detail">{mentorDetailData.bio}</span>
+              </div>
+              <div className="info-box">
+                <div>
+                  <h6>Email:</h6>
+                  <span>{mentorDetailData.email}</span>
+                </div>
+                
+                <div>
+                  <h6>Tech Stack:</h6> 
+                  <div className="info">
+                    {tech_stack_names.map((tech_stack, key)=> {
+                      return (
+                        <li key={key}>{`${tech_stack} `}</li>
+                        )
+                    })} 
+                  </div>
+                </div>
+                <div>
+                  <h6>Mentor type:</h6>
+                  <span>{mentorDetailData.level}</span>
+                </div>
+                <div>
+                  <h6>Location:</h6>
+                  <span>{mentorDetailData.location}</span>
+                </div>
+                <div>
+                  <h6>Willing to travel:</h6>
+                  <span>{can_travel}</span>
+                </div>
+
+              </div>
+              
+            </div>          
+        </section>
+
+        
+
+
+
+      </section>
+       
+    </div>
+
+
+ /* <form>
             {checkboxData.map((checkbox, index) => (
               <label key={checkbox.id} className="checkbox-label">
                 <input
@@ -516,9 +430,8 @@ function MentorDetails(){
                 {checkbox.label}
               </label>
             ))}
-        </form> */}
-        {/* <Link className="" to={`/mentordetails/:id/addEvent`}>Add Mentor To Event</Link> */}
-    </>
+        </form> */
+        /* <Link className="" to={`/mentordetails/:id/addEvent`}>Add Mentor To Event</Link> */
   // const checkboxData = [
   //   { id: '1', label: 'Invited to Interview' },
   //   { id: '2', label: 'Offered Position' },

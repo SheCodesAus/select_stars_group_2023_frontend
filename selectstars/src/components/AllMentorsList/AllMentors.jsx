@@ -55,17 +55,19 @@ function MentorProfile() {
 
   return isLoggedIn ? (
     <div className="allMentors-page">
-      <div className="background-image"></div>
+    
       <div className="allMentorsPage-title">
+        <div className="purple-cover"></div>
         <h1>All Mentors</h1>
+        <input
+          type="search"
+          value={search}
+          onChange={handleSearch}
+          placeholder="Search by mentor name"
+          className="searchFilter"
+        />
       </div>
-      <input
-        type="search"
-        value={search}
-        onChange={handleSearch}
-        placeholder="Search by mentor name"
-        className="searchFilter"
-      />
+    
       <div className="allMentorSection">
         {filteredMentorsData.map((mentorData, key) => {
           return <MentorCard key={key} mentorsData={mentorData} techStack={techStack} />;

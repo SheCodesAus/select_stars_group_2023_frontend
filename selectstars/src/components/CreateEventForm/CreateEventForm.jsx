@@ -302,26 +302,26 @@ function CreateEventForm() {
                     <input type="datetime-local" placeholder="End Date" id="end_date" onChange={handleChange} />
                 </div>
 
-                <div className='eventField'>
-                    <label className='title' htmlFor='event_tech_stack'>Tech stack:</label>
-                        <ul id="event_tech_stack">
-                            {techStack.map(({name}, index) => {
-                                return (
-                                    <ul key={index}>
-                                        <input
-                                        type="checkbox"
-                                        id="event_tech_stack"
-                                        name={name}
-                                        value={name}
-                                        // checked={mentorTechState[index]}
-                                        onChange= {handleChange}
-                                        />
-                                        <label htmlFor="event_tech_stack">{name}</label>
+                <div className='eventField' >
+                    <label className='tech_label' htmlFor='event_tech_stack'>Tech stack:</label>
+                    <ul id="event_tech_stack">
+                        {techStack.map(({name}, index) => {
+                            return (
+                                <li key={index}>
+                                    <input
+                                    type="checkbox"
+                                    id="event_tech_stack"
+                                    name={name}
+                                    value={name}
+                                    // checked={mentorTechState[index]}
+                                    onChange= {handleChange}
+                                    />
+                                    <label htmlFor="event_tech_stack">{name}</label>
 
-                                    </ul>
-                                )
-                            })}
-                        </ul>
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </div>
 
                 <div className='eventField'>
